@@ -4,11 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
 
+        .wrapper{
+            width: 1000px;
+            height: 200px;
+            background-color: #0f0 ;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(127, 152, 227) ;
+            float: left;
+        }
+        .mm1{
+            margin:20px;
+        }
+
+        .mm2{margin: 20px 80px; /*상하 좌우*/
+        }
+
+        .mm3{
+            margin: 20px 80px 30px 50px;  /*상우하좌*/
+        }
+
+
+        .mm4{
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+
+
+        .pp1{
+            padding:20px;
+            margin: 20px;
+        }
+
+        .pp2{padding: 20px 40px; /*상하 좌우*/
+            margin: 20px;
+        }
+
+        .pp3{
+            padding: 20px 30px 30px 40px;  /*상우하좌*/
+            margin: 20px;
+        }
+
+
+        .pp4{
+            padding-top: 20px;
+            padding-bottom: 30px;
+            padding-left: 50px;
+            padding-right: 40px;
+            margin: 20px;
+        }
+
+
+
+
+
+
+    </style>
 
 
 </head>
-    <h1>03_div</h1>
+    <h1>03_box</h1>
+    <h3>magin</h3>
+    <div class="wrapper">
+        <div class="box mm1">마진1</div>
+        <div class="box mm2">마진2</div>
+        <div class="box mm3">마진3</div>
+        <div class="box mm4">마진4</div>
+    </div>
+        
+    <h3>padding</h3>
+    <div class="wrapper">
+        <div class="box pp1">패딩1</div>
+        <div class="box pp2">패딩2</div>
+        <div class="box pp3">패딩3</div>
+        <div class="box pp4">패딩4</div>
+    </div>
 
 
 
