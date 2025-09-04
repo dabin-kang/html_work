@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>default</title>
+
+    <style>
+        *{
+            margin-top: 0px;   /*바깥쪽 여백*/
+            padding: 0;  /*안쪽 여백*/
+
+        }
+
+        div{
+            width: 200px;
+            height: 50px;
+            border: 1px solid #aaa;
+            /* clear:both; */
+        }
+
+        /*class 선택자 : 다중선택*/
+        .aaa{
+            background-color: rgb(3, 28, 28);
+        }
+        /*id : 1개 선택*/
+        #bbb{
+            color: aqua;
+        }
+
+        li{
+            width: 200px;
+            height: 30px;
+            border: 1px solid #bb0d0d; 
+            /* margin-left: 100px; */
+            list-style: none;
+            float: left; 
+            text-align: center;
+        }
+
+        ul{
+            clear:both;
+        }
+
+        .small{
+        width: 200;
+        height: 50;
+        border: 2px solid #bb0d0d;
+        background-color: antiquewhite;
+        float: left;
+        margin: 10px;
+        padding: 10px;
+        }
+
+        .big{
+        width: 732px;
+        height: 184px;
+        background-color: rgb(205, 124, 19);
+        }
+
+
+
+    </style>
+
+</head>
+
+
+
+<body>
+    <h1>default</h1>
+    <div id="bbb" class="aaa">박스1</div>
+    <div id="bbb" >박스2</div>
+    <div class="aaa">박스3</div>
+    <div>박스4</div>
+
+
+    <ul>
+        <li>아메리카노</li>
+        <li>아프리카노</li>
+        <li>이시아노</li>
+        <li>왜 그랬노</li>
+
+        
+
+
+    </ul>
+
+    <div>박스5</div>
+    <div>박스6</div>
+
+    <hr>
+
+    <div class="big">
+        <div class="small">내용1</div>
+        <div class="small">내용2</div>
+        <div class="small">내용3</div>
+        <div class="small"><img src="../fff/title.jpg"width="200px"height="100px"></div>
+        <div class="small">내용4</div>
+        <div class="small">내용5</div>
+    </div>
+
+
+
+
+
+</body>
+</html>

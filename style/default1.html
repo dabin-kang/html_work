@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css연습하기</title>
+
+    <style>
+        .container * {
+            border: 2px solid #000;
+        }
+
+        .mu {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .max {
+            width: 100%;
+            border: 0;
+        }
+
+        .id {
+            width: 550px;
+            height: 300px;
+            margin: 30px;
+            margin-left: 425px;
+            background-color: blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 1400px;
+            height: auto;
+        }
+
+        .box-container {
+            border: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .box-container.bottom {
+            margin-top: 20px;
+        }
+
+        .cl {
+            width: 300px;
+            height: 200px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="id">
+            아이디 / 로고
+        </div>
+
+        <div class="mu">
+            아이디/ 메뉴바
+        </div>
+
+
+        <div class="max">
+            <div class="box-container">
+                <div class="cl">클래스 박스1</div>
+                <div class="cl">클래스 박스2</div>
+                <div class="cl">클래스 박스3</div>
+                <div class="cl">클래스 박스4</div>
+            </div>
+            <div class="box-container bottom">
+                <div class="cl">클래스 박스5</div>
+                <div class="cl">클래스 박스6</div>
+                <div class="cl">클래스 박스7</div>
+                <div class="cl">클래스 박스8</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
