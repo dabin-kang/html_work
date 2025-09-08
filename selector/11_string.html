@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div:nth-of-type(1)::first-letter{/*첫 번째 글자*/
+            font-size: 30px;
+            color: aquamarine;
+        }
+         div:nth-of-type(1)::first-line{/*첫 번째 줄*/
+            color: rgb(21, 89, 66);
+        }
+        div:nth-of-type(1)::first-line{/*첫 번째 줄 evev 짝수(2n)*/
+        
+            color: rgb(21, 89, 66);
+        }
+        div:not(.asdf){/**not 제외 한다는 의미*/
+            border: 5px solid #333;
+            margin: 5px;
+            padding: 5px;
+        }
+        div::selection{/*블럭을 잡을 때 반응*/
+            background-color: #ff0;
+            color : #f0f
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>11_string</h1>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+        Repellendus facere tempora eum nesciunt vitae minus necessitatibus ad officiis quos eveniet, <br>
+        est libero ratione blanditiis ipsam quas excepturi cum accusantium nulla!</div><br>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+        Repellendus facere tempora eum nesciunt vitae minus necessitatibus ad officiis quos eveniet, <br>
+        est libero ratione blanditiis ipsam quas excepturi cum accusantium nulla!</div><br>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+        Repellendus facere tempora eum nesciunt vitae minus necessitatibus ad officiis quos eveniet, <br>
+        est libero ratione blanditiis ipsam quas excepturi cum accusantium nulla!</div><br>
+    <div class="asdf">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+        Repellendus facere tempora eum nesciunt vitae minus necessitatibus ad officiis quos eveniet, <br>
+        est libero ratione blanditiis ipsam quas excepturi cum accusantium nulla!</div><br>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+        Repellendus facere tempora eum nesciunt vitae minus necessitatibus ad officiis quos eveniet, <br>
+        est libero ratione blanditiis ipsam quas excepturi cum accusantium nulla!</div><br>
+    
+</body>
+</html>

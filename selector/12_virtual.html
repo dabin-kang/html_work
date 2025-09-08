@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .box , .aaa, .bbb, .ccc, .ddd, .eee, .fff{
+            width: 200px;
+            height: 200px;
+            background-color: #0f0;
+            margin: 5px;
+        }
+
+        .box::before{
+            content: "비포입니다.";
+            width: 100px;
+            height: 50px;
+            background-color: aliceblue;
+            display: block;
+        }
+        .box::after{
+            content: "애프터입니다.";
+            width: 100px;
+            height: 50px;
+            background-color: rgb(18, 129, 226);
+            display: block;
+        }
+        .aaa:hover::before{
+            content: "숨은비포입니다.";
+            width: 100px;
+            height: 50px;
+            background-color: aliceblue;
+            display: block;
+        }
+        .aaa:hover::after{
+            content: "숨은비포입니다.";
+            width: 100px;
+            height: 50px;
+            background-image:url(../fff/03.jpg);
+            background-size: 100px 50px;
+            display: block;
+        }
+        .bbb::before{
+            content:url(../fff/20250525_101353.mp4);
+            width: 100px;
+            height: 50px;
+            background-color: aliceblue;
+            display: block;
+        }
+        .ddd{/*증가변수* :변수명 변수초기값*/
+            counter-reset: zxcv 5;
+        }
+        .ddd>p::before{/*내용 :증가변수(변수명)*/
+            counter-increment: zxcv ;/*증가변수 1씩 증간*/
+            content: counter(zxcv)"번";
+        }
+        .ccc{/*증가변수* :변수명 변수초기값*/
+            counter-reset: qwer 5;
+        }
+        .ccc>p::before{/*내용 :증가변수(변수명)*/
+            counter-increment: qwer 10 ;/*증가변수 1씩 증간*/
+            content: counter(qwer)"번";
+        }
+        .eee>p::before{
+            content: attr(ttt-data)"=>";
+        }
+
+        .fff{
+            margin-left: 100px;
+        }
+
+        li::marker{
+            content:"❤️❤️";/*읜도우키+>*/
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <h1>12_virtual</h1>
+    <div class="box">box</div>
+    <div class="aaa">aaa</div>
+    <div class="bbb">bbb</div>
+    <div class="ccc">
+        <p>내용</p>
+        <p>내용</p>
+        <p>내용</p>
+    </div>
+    <div class="ddd">
+        <p>문단</p>
+        <p>문단</p>
+        <p>문단</p>
+    </div>
+    <div class="eee">
+        <p ttt-date="1st">금메달</p>
+        <p ttt-date="2st">은메달</p>
+        <p ttt-date="3st">동메달</p>
+    </div>
+    <ul class="fff">
+        <li>오징어</li>
+        <li>육징어</li>
+        <li>칠징어</li>
+    </ul>
+</body>
+</html>

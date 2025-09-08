@@ -36,7 +36,7 @@
         .piano>div:nth-child(7){background-color: #f0f;}
 
         fieldset{
-            width: 400px;
+            width: 600px;
             height: 50px;
             margin: 5px;
         }
@@ -45,8 +45,36 @@
             background-color: #ff0;
         }/**반응선택자 - 커서가 클락하면 반응하는*/
 
-        input : :read-only{
-            text:decoration:line-through;
+        input:read-only{
+            text-decoration:line-through;
+        }
+        input:checked{
+            width: 30px;
+        }
+
+        input[name="gender"]:checked{
+            background-color: #fa0;
+        }
+        #mmdd:checked ~ select[name="mail2"]{
+            display: none;
+        }
+        input[name="mail3"]{
+            display: none;
+        }
+        #mmdd:checked ~ input[name="mail3"]{
+            display: inline-block
+        }
+
+        #mmddimg{
+            width: 30px;
+            height: 30px;
+            background-image: url(../fff/off.png);
+            background-size: 30px 30px;
+            display: inline-block;
+        }
+
+        #mmdd:checked ~ label > #mmddimg{
+            background-image: url(../fff/on.png);
         }
 
 
@@ -80,15 +108,22 @@
     </fieldset>
     <fieldset>
         <legend>취미</legend>
-        <label><input type="text"></label>
+        <label><input type="checkbox" name="hobby" value="cycle">자전거</label>
+        <label><input type="checkbox" name="hobby" value="ggg">독서</label>
+        <label><input type="checkbox" name="hobby" value="movie">영화</label>
     </fieldset>
     <fieldset>
         <legend>성별</legend>
         <label><input type="text"></label>
+        <label><input type="radio" name="gender" value="m">남</label>
+        <label><input type="radio" name="gender" value="f">여</label>
+        <label><input type="radio" name="gender" value="a">모두</label>
     </fieldset>
     <fieldset>
         <legend>이메일</legend>
-        <label><input type="text"name="mail1">@
+        <input type="text"name="mail1">@
+            <input type="checkbox" id="mmdd">
+
             <select name="mail2"id="">
                 <option value="google.com">구글</option>
                 <option value="naver.com">네이버</option>
@@ -96,7 +131,11 @@
                 <option value="nate.com">네이트</option>
 
             </select>
-        </label>
+            <input type="text" name="mail3">
+            
+            <label for="mmdd"><div id="mmddimg"></div>직접입력</label>
+
+        
     </fieldset>
     <fieldset>
         <legend>전화번호</legend>
