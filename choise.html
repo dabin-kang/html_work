@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>choise</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+   
+        .wrapper{
+            width: 100px;
+            height: 500px;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+
+        .piano{
+            position: relative;
+            background-color: #333;
+        }
+
+        .sub{
+            display: none;
+            position:absolute;
+            height: 400px;
+        }
+
+        .piano:hover .sub{
+            display: block;
+        }
+        .sub>div{
+            background-color: #f00;
+        }
+        
+    </style>
+</head>
+
+
+<body>
+    <h1>menu</h1>
+    <div class="wrapper">
+        <div class="piano">메뉴1
+           <label class="sub">
+            <div>sub_1_1</div>
+            <div>sub_1_2</div>
+            <div>sub_1_3</div>
+            <div>sub_1_4</div>
+            </label>
+        </div>
+
+        <div class="piano">메뉴2
+            <label class="sub">
+            <div>sub_2_1</div>
+            <div>sub_2_2</div>
+            <div>sub_2_3</div>
+            <div>sub_2_4</div>
+            </label>
+        </div>
+
+        <div class="piano">메뉴3
+            <label class="sub">
+            <div>sub_3_1</div>
+            <div>sub_3_2</div>
+            <div>sub_3_3</div>
+            <div>sub_3_4</div>
+            </label>
+        </div>
+
+
+
+
+
+    </div>
+    
+</body>
+</html>

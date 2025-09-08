@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>choise</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrapper {
+      width: 150px;
+      background-color: black;
+      color: white;
+      text-align: center;
+    }
+
+    .piano {
+      position: relative;
+      background-color: #333;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .sub {
+      max-height: 0;              /* 처음엔 높이 0 */
+      overflow: hidden;           /* 넘치는 부분 가림 */
+      transition: max-height 0.5s ease-out; /* 부드러운 애니메이션 */
+    }
+
+    .piano:hover .sub {
+      max-height: 500px; /* 충분히 큰 값 (submenu 전체가 보이도록) */
+    }
+
+    .sub > div {
+      background-color: red;
+      padding: 8px;
+    }
+
+    .sub > div:hover {
+      background-color: darkred;
+    }
+  </style>
+</head>
+<body>
+  <h1>menu</h1>
+  <div class="wrapper">
+    <div class="piano">메뉴1
+      <div class="sub">
+        <div>sub_1_1</div>
+        <div>sub_1_2</div>
+        <div>sub_1_3</div>
+        <div>sub_1_4</div>
+      </div>
+    </div>
+
+    <div class="piano">메뉴2
+      <div class="sub">
+        <div>sub_2_1</div>
+        <div>sub_2_2</div>
+        <div>sub_2_3</div>
+        <div>sub_2_4</div>
+      </div>
+    </div>
+
+    <div class="piano">메뉴3
+      <div class="sub">
+        <div>sub_3_1</div>
+        <div>sub_3_2</div>
+        <div>sub_3_3</div>
+        <div>sub_3_4</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
