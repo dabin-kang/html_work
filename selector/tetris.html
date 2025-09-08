@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tetris</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        table, table * {
+            border-collapse: collapse;
+            border: 0;
+        }
+
+        td {
+            width: 30px;
+            height: 30px;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .bg {
+            width: 400px;
+            height: 800px;
+            background-color: bisque;
+        }
+
+        tr:first-of-type {
+            background-color: #ff0;
+        }
+
+        tr:last-child {
+            background-color: #0f0;
+        }
+
+        tr:first-of-type {
+            color: #255, 228, 196;
+        }
+
+        td:nth-child(2) {
+            background-color: blue;
+        }
+
+
+        tr:nth-child(4) > td:nth-child(2) {
+            background-color: blue;
+        }
+        tr:nth-child(1)>td:nth-child(1){
+            background-color: blue;
+        }
+
+
+
+
+
+    </style>
+
+
+
+</head>
+
+
+<body>
+    <div class="bg">
+        <table border="solid">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+
+
+        </table>
+    </div>
+
+
+
+</body>
+
+</html>

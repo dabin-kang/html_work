@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div{
+            width: 300px;
+            padding: 0px;
+            margin: 10px;
+            border: 1px solid #888;
+        }
+
+        img{
+            width: 100px;
+        }
+
+        div[ttt-data="abc"]{color: #f00;}
+        div[ttt-data~=abc]{
+            font-weight: bolder;
+        }
+        div[ttt-data|="abc"]{
+            font-style: italic;
+        }
+
+        div[ttt-data^="abc"]{
+            text-align: center;}/*abc로 시작하는*/
+
+
+        div[ttt-data$="abc"]{
+            text-decoration: underline;}/*abc로 끝나는*/    
+
+        div[ttt-data*="abc"]{
+            background-color: burlywood;}/*abc를 포함하는*/  
+            
+            
+        .aaa{
+            color: #888;
+        }    
+        .bbb{
+            font-size: 30px;
+        }    
+        .ccc{
+            text-align: right;
+        }
+        
+        div[class="aaa bbb"]{
+            background-color: #dec9c9;
+        }
+
+      img[src$=bmp]{
+        border: 5px solid#00f;
+      }
+      img[src="jpg"]{
+        border: 5px solid#00f;
+      }
+
+
+    </style>
+</head>
+
+<body>
+    <h1>07_property</h1>
+    <div ttt-data="abc">abc 입니다</div>
+    <div ttt-data="eee">eee 입니다</div>
+    <div ttt-data="abc qwe">abc qwe 입니다</div>
+    <div ttt-data="abc-qwe">abc-qwe 입니다</div>
+    <div ttt-data="ert abc www">abcwww 입니다</div>
+    <div ttt-data="abcwww">abcwww 입니다</div>
+    <div ttt-data="zzzqwer">zzzqwer 입니다</div>
+    <div ttt-data="zzzasdf">zzzasdf 입니다</div>
+    <div ttt-data="zzzasdfabc">zzzasdfabc 입니다</div>
+
+    <div class="aaa bbb">클래스 aaa bbb</div>
+    <div class="aaa ccc">클래스 aaa ccc</div>
+
+    <img src="../fff/01 .bmp" alt="img1">
+    <img src="../fff/01 .gif" alt="img2">
+    <img src="../fff/01 .jpeg" alt="img3">
+    <img src="../fff/01 .png" alt="img4">
+    <img src="../fff/01.jpg" alt="img5">
+    
+    
+</body>
+</html>
