@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_overflow</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 50px;
+            height: 50px;
+            border: 3px solid #f00;
+        }
+        img{
+            width: 70px;
+            height:70px;
+        }
+        div:nth-of-type(2){
+            overflow: hidden;
+        }
+        div:nth-of-type(3){
+            overflow: scroll;
+        }
+         div:nth-of-type(4){
+            overflow: visible;
+        }
+         div:nth-of-type(5),div:nth-of-type(6),div:nth-of-type(7){
+            overflow: auto;
+        }
+        div:nth-of-type(6)>img{
+            width: 100px;
+            height: 700px;
+        }
+        div:nth-of-type(7)>img{
+            width: 200px;
+            height: 200px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>02_overflow</h1>
+    <div><img src="../fff/02.jpg"></div>
+    <div><img src="../fff/02.jpg"></div>
+    <div><img src="../fff/02.jpg"></div>
+    <div><img src="../fff/02.jpg"></div>
+    <div><img src="../fff/02.jpg"></div>
+    <div><img src="../fff/02.jpg"></div>
+    <div><img src="../fff/02.jpg"></div>
+    
+</body>
+</html>

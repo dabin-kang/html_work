@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        li{
+            width: 100px;
+            background-color: #000 ;
+            color: #fff;
+            
+        }
+
+        li>ul>li{
+            background-color: #aaa;
+            color: #333;
+            display: none;
+        }
+        ul:hover>li{
+            display: block;
+        }
+     
+        li>ul{
+            transition-duration: 0.5s;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>menu</h1>
+    <li>
+        <ul>메뉴1
+            <li>sub_1_1</li>
+            <li>sub_1_2</li>
+            <li>sub_1_3</li>
+            <li>sub_1_4</li>
+        </ul>
+        <ul>메뉴2
+            <li>sub_2_1</li>
+            <li>sub_2_2</li>
+            <li>sub_2_3</li>
+            <li>sub_2_4</li>
+        </ul>
+        <ul>메뉴3
+            <li>sub_3_1</li>
+            <li>sub_3_2</li>
+            <li>sub_3_3</li>
+            <li>sub_3_4</li>
+        </ul>
+    </li>
+    
+</body>
+</html>

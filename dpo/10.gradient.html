@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_gradient</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            width: 1200px;
+            height: 300px;
+            border: 1px solid #ccc;
+            background-image: url(../fff/다운로드\ \(2\).jpg);
+            margin: 10px;
+        }
+
+        .wrapper>div {
+            margin: 20px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid#ccc;
+            float: left;
+
+        }
+
+        .grad>div:nth-child(1) {
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffff88+0,ffff88+100;Yellow+Flat+%231 */
+            background: linear-gradient(to bottom, #ffff88 0%, #ffff88 100%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        }
+
+        .grad>div:nth-child(2) {
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#a09298+0,e07364+33,bfe8f9+51,e07364+70,a09298+100,2ab0ed+100,a09298+101 */
+            background: linear-gradient(135deg, rgba(160, 146, 152, 1) 0%, rgba(224, 115, 100, 1) 33%, rgba(191, 232, 249, 1) 51%, rgba(224, 115, 100, 1) 70%, rgba(160, 146, 152, 1) 100%, rgba(42, 176, 237, 1) 100%, rgba(160, 146, 152, 1) 101%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+        }
+
+        .grad>div:nth-child(3) {
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        }
+
+        .grad>div:nth-child(4) {
+            background: linear-gradient(60deg,
+                    rgba(228, 245, 252, 1) 0%,
+                    rgba(191, 232, 249, 1) 50%,
+                    rgba(159, 216, 239, 1) 51%,
+                    rgba(42, 176, 237, 1) 100%);/
+        }
+
+        .grad>div:nth-child(5) {
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#a09298+0,e07364+33,89b294+53,e07364+70,a09298+100,2ab0ed+100,a09298+101&0.1+0,1+21,0.74+43,1+76,1+76,0.58+98 */
+            background: linear-gradient(135deg, rgba(160, 146, 152, 0.1) 0%, rgba(201, 126, 119, 1) 21%, rgba(224, 115, 100, 0.86) 33%, rgba(181, 147, 124, 0.74) 43%, rgba(137, 178, 148, 0.82) 53%, rgba(224, 115, 100, 0.95) 70%, rgba(188, 127, 127, 1) 76%, rgba(54, 172, 228, 0.58) 98%, rgba(42, 176, 237, 0.58) 100%, rgba(160, 146, 152, 0.58) 101%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        }
+
+        .scop {
+            width: 300px;
+            height: 300px;
+            border: #030000 solid #ccc;
+            background-color: #ffff88;
+            position: relative;
+        }
+
+        .sc {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: #030000 solid#000;
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+7,000000+101&1+0,0+42,0+54,1+100 */
+            background: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.83) 7%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 0) 54%, rgba(0, 0, 0, 1) 100%, rgba(0, 0, 0, 1) 101%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+            position: absolute;
+            top: 50px;
+            left: 40px;
+        }
+
+        .shadow>div {
+            background-color: #fff;
+        }
+
+        .shadow>div:nth-child(1) {
+            box-shadow: 5px 10px #333;
+            /*left ,top , 그림자색 /다중설정 불가*/
+        }
+
+        .shadow>div:nth-child(2) {
+            box-shadow: 20px 0px 0px #f00;
+        }
+
+        .shadow>div:nth-child(3) {
+            box-shadow: 30px 30px 40px #f00;
+        }
+
+        .shadow>div:nth-child(4) {
+            box-shadow: 3px 3px 6px #f00;
+        }
+
+        .shadow>div:nth-child(5) {
+            box-shadow: 20px 0px 6px #f00, 0px 20px 6px #ff0, 0px 20px 6px rgb(78, 78, 36);
+        }
+
+        .shadow>div:nth-child(6) {
+            box-shadow:
+                20px 0px 6px #f00, 
+                0px 20px 6px #ff0,
+                -20px 0px 6px #0f0,
+                 0px -20px 6px #00f;
+        }
+        .shadow>div:nth-child(7) {
+            box-shadow:
+                20px 20px 0px rgb(240, 186, 9), 
+                -20px 20px 0px #ff0,
+                -20px -20px 0px rgb(6, 79, 97),
+                 20px -20px 0px #00f,
+                 20px 0px 0px rgb(91, 226, 208);
+         }/* 새도우의 좌표계는 x축 -,+ y축 -,+로 계산한다
+            레이어는 가장 위에 있는 색이 가장 먼저 보이는 색이 된다*/
+
+
+            .shadow>div:nth-child(8) {
+                box-shadow: inset 5px 5px 10px #333;
+            }
+
+
+
+            .sizing>div {
+            background-color: #fff;
+        }
+        .sizing>div:nth-child(1) {
+            border: 20px solid #000;
+        }
+        .sizing>div:nth-child(2) {/*border,padding을content 안에서 설정*/
+            box-sizing: border-box;
+            border: 20px solid #000;
+        }
+        .sizing>div:nth-child(3) {
+            box-sizing: content-box;
+            border: 20px solid #000;
+        }
+        .sizing>div:nth-child(4) {
+            border: 20px solid #000;
+        }
+        .sizing>div:nth-child(5) {
+            padding: 20px;
+            border: 20px solid #000;
+        }
+        .sizing>div:nth-child(6) {
+            box-sizing: border-box;
+            padding:  20px;
+            border: 20px solid #000;
+        }
+
+
+            
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <h1>10_gradient</h1>
+    <h2>gradient</h2>
+    <div class="wrapper grad">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <h2>scop</h2>
+    <div class="scop">
+        <div>
+            <div class="sc">
+            </div>
+        </div>
+    </div>
+
+    <h2>shadow</h2>
+    <div class="wrapper shadow">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <h2>sizing</h2>
+    <div class="wrapper sizing">
+        <div>내용1</div>
+        <div>내용2</div>
+        <div>내용3</div>
+        <div>내용4</div>
+        <div>내용5</div>
+        <div>내용6</div>
+        <div>내용7</div>
+       
+    </div>
+
+</body>
+
+</html>
