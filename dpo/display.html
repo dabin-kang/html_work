@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div,span{
+            width: 100px;
+            height: 30px;
+            background-color: #ff0;
+            margin: 5px;
+        }
+        .bb{
+            display: block;/**span을 블럭으로 만든다*/
+            /* float: left; */
+        }
+        .ss{
+            display: inline;
+        }
+        .nn{
+            display: none; /*공간과 위치를 차지하지 않는다*/
+        }
+        .hh{
+            visibility: hidden;/*공간과 위치를 차지하고 보이지 않는다*/
+        }
+
+
+        .tb{
+            width: 800px;
+            height: 600px;
+            background-color: #0f0;
+            display: table;
+        }
+        .row{
+            width: 700px;
+            height: 100px;
+            background-color: aqua;
+            display: table-row;
+        }
+        .cell{
+            width: 100px;
+            height: 60px;
+            background-color: rgb(77, 5, 92);
+            display: table-cell;
+            border: 1px solid#fff;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>01_display</h1>
+    <h2>block</h2>
+    <div>div1</div>
+    <div class="bb">div2</div>
+    <span class="bb">div3</span>
+    <img class="bb" src="../fff/07.jpg">
+    <img class="bb" src="../fff/07.jpg">
+    <div>div4</div>
+
+    
+    <h2>none</h2> 
+    <span>div5</span>
+    <span class="nn">div9</span>
+    <div class="nn">div10</div>
+    <img class="nn" src="../fff/07.jpg">
+    <img class="nn" src="../fff/07.jpg">
+    <div >div11</div>
+
+    <h2>hidden</h2>
+    <span>div5</span>
+    <span class="hh">div9</span>
+    <div class="hh">div10</div>
+    <img class="hh" src="../fff/07.jpg">
+    <div >div11</div>
+
+    <h2>table</h2>
+    <div class="tb">
+        <div class="row">
+            <div class="cell">4</div>
+            <div class="cell">5</div>
+            <div class="cell">6</div>
+        </div>
+         <div class="row">
+            <div class="cell">1</div>
+            <div class="cell">2</div>
+            <div class="cell">3</div>
+        </div>
+        
+    </div>
+    
+
+    
+</body>
+</html>

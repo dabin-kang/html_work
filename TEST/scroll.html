@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 200px;
+            height: 300px;
+            display: block;
+        }
+
+        .wrapper {
+            width: 200px;
+            height: 300px;
+            border: 1px solid#f00;
+            overflow: hidden;
+            overflow-y: auto;
+            margin-top: 0;
+        }
+
+        .wrapper > div {
+            width: 200px;
+            height: 900px;
+        }
+
+        .wrapper input:nth-of-type(2):checked ~ div {
+            margin-top: -300px;
+        }
+
+        .wrapper input:nth-of-type(3):checked ~ div {
+            margin-top: -600px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <h1>scroll</h1>
+    <div class="wrapper">
+        <input type="radio" name="no" id="no1" checked>
+        <input type="radio" name="no" id="no2">
+        <input type="radio" name="no" id="no3">
+        <div>
+            <img src="../fff/다운로드 (1).jpg">
+            <img src="../fff/다운로드 (2).jpg">
+            <img src="../fff/다운로드.jpg">
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

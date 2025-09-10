@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_swipe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 200px;
+            height: 150px;
+            display: block;
+            float: left;
+        }
+
+        .wrapper>div,
+        .wrapper3>div {
+            width: 1000px;
+            height: 150px;
+            background-color: #ff0;
+        }
+
+        .wrapper {
+            width: 200px;
+            height: 170px;
+            border: 3px solid #f00;
+            overflow: auto;
+        }
+
+        .wrapper2 {
+            display: block;
+            width: 220px;
+            height: 180px;
+            border: 3px solid #f00;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .wrapper2>div {
+            transition: 0.3s margin-bottom;
+        }
+
+        .wrapper2>input:nth-of-type(1):checked~div {
+            margin-bottom: 0px;
+        }
+
+        .wrapper2>input:nth-of-type(2):checked~div {
+            margin-bottom: 150px;
+        }
+
+        .wrapper2>input:nth-of-type(3):checked~div {
+            margin-bottom: 300px;
+        }
+
+        .wrapper2>input:nth-of-type(4):checked~div {
+            margin-bottom: 450px;
+        }
+
+        .wrapper2>input:nth-of-type(5):checked~div {
+            margin-bottom: 600px;
+        }
+
+        .wrapper3 {
+            width: 200px;
+            height: 180px;
+            border: 3px solid #f00;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .wrapper3>div {
+            transition-duration: 0.5s;
+        }
+
+        .wrapper3>input:nth-of-type(2):checked~div {
+            margin-left: -200px;
+        }
+
+        .wrapper3>input:nth-of-type(3):checked~div {
+            margin-left: -400px;
+        }
+
+        .wrapper3>input:nth-of-type(4):checked~div {
+            margin-left: -600px;
+        }
+
+        .wrapper3>input:nth-of-type(5):checked~div {
+            margin-left: -800px;
+        }
+
+        .wrapper4>input:nth-last-of-type(2):checked~.wrapper4>div {
+            margin-top: -200px;
+        }
+
+        .wrapper4>input:nth-last-of-type(3):checked~.wrapper4>div {
+            margin-top: -400px;
+        }
+
+        .wrapper4>input:nth-last-of-type(4):checked~.wrapper4>div {
+            margin-top: -600px;
+        }
+
+        .wrapper4>input:nth-last-of-type(5):checked~.wrapper4>div {
+            margin-top: -800px;
+        }
+
+        .wrapper4>input:nth-last-of-type(6):checked~.wrapper4>div {
+            margin-top: -1000px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>03_swipe</h1>
+    <div class="wrapper">
+        <div>
+            <img src="../fff/다운로드 (1).jpg" alt="">
+            <img src="../fff/다운로드 (2).jpg" alt="">
+            <img src="../fff/다운로드.jpg" alt="">
+            <img src="../fff/다운로드 (2).jpg" alt="">
+            <img src="../fff/다운로드 (1).jpg" alt="">
+        </div>
+    </div>
+
+    <div class="wrapper2">
+        <input type="radio" name="no" checked>
+        <input type="radio" name="no">
+        <input type="radio" name="no">
+        <input type="radio" name="no">
+        <input type="radio" name="no">
+        <div>
+            <img src="../fff/다운로드 (1).jpg" alt="">
+            <img src="../fff/다운로드.jpg" alt="">
+            <img src="../fff/다운로드 (2).jpg" alt="">
+            <img src="../fff/다운로드.jpg" alt="">
+            <img src="../fff/다운로드 (1).jpg" alt="">
+        </div>
+    </div>
+
+    <div class="wrapper3">
+        <input type="radio" name="no">
+        <input type="radio" name="no">
+        <input type="radio" name="no">
+        <input type="radio" name="no">
+        <input type="radio" name="no">
+        <div>
+            <img src="../fff/다운로드 (2).jpg" alt="">
+            <img src="../fff/다운로드 (1).jpg" alt="">
+            <img src="../fff/다운로드.jpg" alt="">
+            <img src="../fff/다운로드 (2).jpg" alt="">
+            <img src="../fff/다운로드 (1).jpg" alt="">
+        </div>
+    </div>
+
+
+    <div class="wrapper4">
+        <input type="radio" name="no" id="no1">
+        <input type="radio" name="no" id="no2">
+        <input type="radio" name="no" id="no3">
+        <input type="radio" name="no" id="no4">
+        <input type="radio" name="no" id="no5">
+        <div>
+            <img src="../fff/다운로드 (2).jpg" alt="">
+            <img src="../fff/다운로드 (1).jpg" alt="">
+            <img src="../fff/다운로드.jpg" alt="">
+            <img src="../fff/다운로드 (2).jpg" alt="">
+            <img src="../fff/다운로드 (1).jpg" alt="">
+        </div>
+    </div>
+
+
+</body>
+
+</html>
