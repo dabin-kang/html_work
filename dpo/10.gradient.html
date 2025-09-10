@@ -126,6 +126,44 @@
             레이어는 가장 위에 있는 색이 가장 먼저 보이는 색이 된다*/
 
 
+            .shadow>div:nth-child(8) {
+                box-shadow: inset 5px 5px 10px #333;
+            }
+
+
+
+            .sizing>div {
+            background-color: #fff;
+        }
+        .sizing>div:nth-child(1) {
+            border: 20px solid #000;
+        }
+        .sizing>div:nth-child(2) {/*border,padding을content 안에서 설정*/
+            box-sizing: border-box;
+            border: 20px solid #000;
+        }
+        .sizing>div:nth-child(3) {
+            box-sizing: content-box;
+            border: 20px solid #000;
+        }
+        .sizing>div:nth-child(4) {
+            border: 20px solid #000;
+        }
+        .sizing>div:nth-child(5) {
+            padding: 20px;
+            border: 20px solid #000;
+        }
+        .sizing>div:nth-child(6) {
+            box-sizing: border-box;
+            padding:  20px;
+            border: 20px solid #000;
+        }
+
+
+            
+
+
+
 
     </style>
 </head>
@@ -162,6 +200,17 @@
         <div></div>
         <div></div>
         <div></div>
+    </div>
+    <h2>sizing</h2>
+    <div class="wrapper sizing">
+        <div>내용1</div>
+        <div>내용2</div>
+        <div>내용3</div>
+        <div>내용4</div>
+        <div>내용5</div>
+        <div>내용6</div>
+        <div>내용7</div>
+       
     </div>
 
 </body>
