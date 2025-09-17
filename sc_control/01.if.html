@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>if</h2>
+    <script>
+        if(true){
+            document.write("참이지롱<br/>")
+            document.write("거짓이지롱1<br/>")
+            document.write("거짓이지롱1<br/>")
+            document.write("거짓이지롱1<br/>")
+        }
+        if(false){
+            
+        }
+       document.write("if 종료------------------1<br/>")
+       if(false) // {} 없을 경우 이하 1개의 종속 명령 구문 필수
+        document.write("거짓이지롱2<br/>") // 이 명령구문만 if문에 종속
+        
+        
+        document.write("거짓이지롱2<br/>") //if 문과 상관없음
+        document.write("거짓이지롱2<br/>")
+
+       document.write("if 종료------------------2<br/>")
+    </script>
+    
+</body>
+</html>

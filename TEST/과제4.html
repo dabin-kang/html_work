@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en,ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>netflix_home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Dongle&family=East+Sea+Dokdo&family=Gasoek+One&family=IBM+Plex+Sans+KR&family=Nanum+Pen+Script&family=Sirivennela&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #141414;
+            color: #fff;
+        }
+
+        a {
+            color: #e50914
+        }
+
+        .header {
+            padding: 20px 40px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.27) 75%, rgba(98, 98, 98, 0.02) 100%, rgba(102, 102, 102, 0.02) 101%);
+
+        }
+
+        .header1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #f40612;
+            text-decoration: none;
+        }
+
+        .header2 {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .language {
+            background-color: #141414;
+            color: #fff;
+            border: 1px solid #808080;
+            padding: 8px;
+            border-radius: 4px;
+        }
+
+        .login {
+            background-color: #f40612;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            transition-duration: 0.3s;
+        }
+
+        .login:hover {
+            background-color: #e50914;
+        }
+
+
+        .start {
+            width: 100%;
+            height: 500px;
+            margin: auto;
+            text-align: center;
+            position: absolute;
+            top: 200px;
+        }
+
+        .backgroundimg {
+            width: 100%;
+            height: 600px;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url(../fff/_backimages.jpg);
+            background-size: cover;
+            position: relative;
+        }
+
+
+        .start>div:nth-of-type(1) {
+            font-size: 40px;
+        }
+
+        .start>div:nth-of-type(2) {
+            font-size: 17px;
+        }
+
+        .em {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 0.5px solid #fff;
+            border-radius: 2px;
+            height: 50px;
+            color: #fff;
+            width: 400px;
+            padding-left: 10px;
+        }
+
+        .st {
+            background-color: #f40612;
+            color: #fff;
+            height: 50px;
+            width: 130px;
+            margin: 10px;
+            border-radius: 4px;
+            border: none;
+        }
+
+        .st:hover {
+            background-color: #e50914;
+        }
+
+        .curve {
+            width: 100%;
+            height: 300px;
+            background: (#0d1330, #000);
+            border-top-left-radius: 50% 80px;
+            border-top-right-radius: 50% 80px;
+            border-top: 3px solid red;
+        }
+
+        .pc {
+            width: 800px;
+            height: 120px;
+            background-color: rgb(102, 19, 102);
+            margin: auto;
+            border-radius: 10px;
+
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0, 30px;
+
+        }
+
+        .pc:hover {
+            background-color: rgb(156, 66, 153);
+            scale: 1.1;
+            transition: 0.5s;
+        }
+
+        .pc>p {
+            margin: 0;
+        }
+
+        .st1 {
+            border: none;
+            border-radius: 4px;
+            width: 220px;
+            height: 60px;
+            background-color: #949393;
+        }
+
+        .st1:hover {
+            background-color: rgb(102, 19, 102);
+        }
+
+
+
+        .nc {
+            width: 100%;
+            height: 370px;
+        }
+
+        .nc>h3 {
+            margin-left: 250px;
+            margin-top: 20px;
+            padding-left: 35px;
+            margin-bottom: 50px;
+            font-size: 1.5rem;
+        }
+
+        .mv {
+            display: block;
+            width: 100%;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+
+        }
+
+        .po {
+            height: 296px;
+            width: 200px;
+            margin-bottom: 50px;
+            border-radius: 10px;
+
+        }
+
+        .po1:hover {
+            scale: 1.1;
+            transition: 0.5s;
+        }
+
+        .po1 {
+            position: relative;
+        }
+
+        .po1>p {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            font-size: 80px;
+            color: #000;
+        }
+
+        .po2:hover {
+            scale: 1.1;
+            transition: 0.5s;
+        }
+
+        .po2 {
+            position: relative;
+        }
+
+        .po2>p {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            font-size: 80px;
+            color: #000;
+        }
+
+        .po3:hover {
+            scale: 1.1;
+            transition: 0.5s;
+        }
+
+        .po3 {
+            position: relative;
+        }
+
+        .po3>p {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            font-size: 80px;
+            color: #000;
+        }
+
+        .po4:hover {
+            scale: 1.1;
+            transition: 0.5s;
+        }
+
+        .po4 {
+            position: relative;
+        }
+
+        .po4>p {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            font-size: 80px;
+            color: #000;
+        }
+
+        .po5:hover {
+            scale: 1.1;
+            transition: 0.5s;
+        }
+
+        .po5 {
+            position: relative;
+        }
+
+        .po5>p {
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            font-size: 80px;
+            color: #000;
+        }
+
+
+        .eu {
+            padding: 30px 10px;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .eu>h2 {
+            margin-left: 250px;
+            margin-top: 20px;
+            padding-left: 35px;
+            margin-bottom: 50px;
+            font-size: 1.5rem;
+        }
+
+
+        .eu3>h5 {
+            font-size: 20px;
+            margin: 5px;
+            text-align: left;
+        }
+
+        .eu3>div {
+            color: #bbaeae;
+            text-align: left;
+        }
+
+        .eu>.eu2 {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .eu3 {
+            background-color: #a436cf;
+            width: 300px;
+            height: 350px;
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+
+        .qs {
+            width: 100%;
+            height: 800px;
+            margin-top: 200px;
+        }
+
+        .qs>p {
+            margin-left: 250px;
+            margin-top: 20px;
+            padding-left: 35px;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .qs2 {
+
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+
+        }
+
+        .qs3 {
+            background-color: #355a50;
+            width: 1300px;
+            height: 80px;
+            padding: 25px;
+
+        }
+
+        .qs3:hover+.qss1 {
+            background-color: #1c352e;
+            display: flex;
+
+        }
+
+        .qs3:hover+.qss2 {
+            background-color: #1c352e;
+            display: flex;
+        }
+
+        .qs3:hover+.qss3 {
+            background-color: #1c352e;
+            display: flex;
+        }
+
+        .qs3:hover+.qss4 {
+            background-color: #1c352e;
+            display: flex;
+        }
+
+        .qs3:hover+.qss5 {
+            background-color: #1c352e;
+            display: flex;
+        }
+
+        .qs3:hover+.qss6 {
+            background-color: #1c352e;
+            display: flex;
+        }
+
+        .qss1 {
+            width: 1300px;
+            height: 200px;
+            background-color: #355a50;
+            display: flex;
+            align-items: center;
+            padding: 35px;
+            display: none
+        }
+
+        .qss2 {
+            width: 1300px;
+            height: 200px;
+            background-color: #355a50;
+            display: flex;
+            align-items: center;
+            padding: 35px;
+            display: none
+        }
+
+        .qss3 {
+            width: 1300px;
+            height: 200px;
+            background-color: #355a50;
+            display: flex;
+            align-items: center;
+            padding: 35px;
+            display: none
+        }
+
+        .qss4 {
+            width: 1300px;
+            height: 400px;
+            background-color: #355a50;
+            display: flex;
+            align-items: center;
+            padding: 35px;
+            display: none
+        }
+
+        .qss5 {
+            width: 1300px;
+            height: 200px;
+            background-color: #355a50;
+            display: flex;
+            align-items: center;
+            padding: 35px;
+            display: none
+        }
+
+        .qss6 {
+            width: 1300px;
+            height: 200px;
+            background-color: #355a50;
+            display: flex;
+            align-items: center;
+            padding: 35px;
+            display: none
+        }
+
+        .em2 {
+            background-color: #000;
+            text-align: center;
+            margin: 100px;
+
+        }
+
+        .footer {
+            text-align: center;
+        }
+
+        .footer_link {
+            height: 300px;
+        }
+
+        @media (min-width:870px) and (max-width:1300px) {
+            .eu3{
+                
+                width: 380px;
+                font-size: 1.5rem;
+            }
+            .eu>.eu2 {
+                gap: 70px;
+                
+            }
+        }
+        @media (max-width:870px) {
+            .eu3{
+               
+                width: 700px;
+                font-size: 1.7rem;
+            }
+            .eu>.eu2 {
+                gap: 20px;
+                
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header1">
+            <a class="logo">NETFLIX</a>
+            <div class="header2">
+                <select class="language">
+                    <option selected>한국어</option>
+                    <option>English</option>
+                    <option>Французский</option>
+                    <option>일본어</option>
+                </select>
+                <input type="button" value="로그인" class="login">
+            </div>
+        </div>
+    </header>
+
+    <div class="bcover">
+
+        <div class="backgroundimg">
+            <article class="start">
+                <div>영화,시리즈 등을 무제한으로</div>
+                <div>7,000원으로 시작하세요. 멤버심은 언제든지 해지 가능합니다.<br>
+                    시청할 준비가 되셨나요? 멤버심을 등록하거나 재시작하려면 <br>
+                    이메일 주소를 입력하세요.
+                </div>
+                <input type="email" placeholder="이메일주소" class="em">
+                <input type="button" value="시작하기" class="st">
+
+            </article>
+        </div>
+    </div>
+
+
+    <div class="curve"></div>
+
+
+    <div class="pc">
+        <p>7,000원이면 만날 수 있는 넷플릭스.<br>
+            가장 경제적인 광고형 멤버십을 이용해 보세요.
+        </p>
+
+        <input type="button" value="자세히 알아보기" class="st1">
+    </div>
+
+    <div class="nc">
+        <h3>지금 뜨는 콘텐츠</h3>
+        <div class="mv">
+            <div class="po1">
+                <img src="../fff/다운로드 (1).jpg" alt="" class="po">
+                <p>1</p>
+            </div>
+            <div class="po2">
+                <img src="../fff/다운로드 (2).jpg" alt="" class="po">
+                <p>2</p>
+            </div>
+            <div class="po3">
+                <img src="../fff/다운로드.jpg" alt="" class="po">
+                <p>3</p>
+            </div>
+            <div class="po4">
+                <img src="../fff/다운로드 (3).jpg" alt="" class="po">
+                <p>4</p>
+            </div>
+            <div class="po5">
+                <img src="../fff/다운로드(4).jpg" alt="" class="po">
+                <p>5</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="eu">
+        <h2>가입해야 하는 또는 이유</h2>
+        <div class="eu2">
+            <div class="eu3">
+                <h5>tv로 즐기세요</h5>
+                <div>스마트 TV, PlayStation, Xbox,<br>
+                    Chromecast, Apple TV, 블루레이<br>
+                    플레이어 등 다양한 디바이스에서<br>
+                    시청하세요.</div>
+            </div>
+            <div class="eu3">
+                <h5>즐겨 보는 콘텐츠를 저장해 오프라인으로 시청하세요</h5>
+                <div>간편하게 저장하고 빈틈없이 즐겨보세요.</div>
+            </div>
+            <div class="eu3">
+                <h5>다양한 디바이스로 시청하세요</h5>
+                <div>각종 영화와 시리즈를 스마트폰, 태블릿, 노트북, TV에서 무제한으로 스트리밍하세요.</div>
+            </div>
+            <div class="eu3">
+                <h5>어린이 전용 프로필을 만들어 보세요</h5>
+                <div>자기만의 공간에서 좋아하는 캐릭터와 즐기는 신나는 모험. 자녀에게 이 특별한 경험을<br>
+                    선물하세요. 넷플릭스 회원이라면 무료입니다.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="qs">
+        <p>자주 묻는 질문</p>
+        <div class="qs2">
+            <div class="qs3">넷플릭스에서 어떤 콘텐츠를 시청할 수 있나요?</div>
+            <p class="qss1">넷플릭스는 장편영화, 다큐멘터리,시리즈,애니메이션,<br>
+                각종 상을 수상한 넷플릭스 오리지널 등 수많은 콘텐츠를<br>
+                확보하고 있습니다. 마음에 드는 콘텐츠를 원하는 시간에<br>
+                원하는 만큼 시청하실 수 있습니다</p>
+            <div class="qs3">넷플릭스란 무엇인가요?</div>
+            <p class="qss2">넷플릭스는 각종 수상 경력에 빛나는 시리즈 영화,<br>
+                애니메이션,다큐멘터,등 다양한 콘텐츠를 인터넷<br>
+                연결이 가능한 수천 종의 디바이스에서 시청할 수 있는<br>
+                스트리밍서비스 입니다</p>
+            <div class="qs3">넷플릭스 요금은 얼마인가요?</div>
+            <p class="qss3">스마트폰,태블릿,스마트 tv 노트북 스트리밍 디바이스<br>
+                등 다양한 디바이스에서 월정액 요금 하나로 넷플릭스를<br>
+                시청하세요 멤버십 요금은 월 7,000원 부터<br>
+                17,000원 까지 다양합니다 추가비용이나 약정이 없습니다.
+            </p>
+            <div class="qs3">어디에서 시청 할 수 있나요?</div>
+            <p class="qss4">언제 어디서나 시청할 수 있습니다. 넷플릭스 계정으로<br>
+                로그인하면 PC에서 netflix.com을 통해 바로 시청할 수<br>
+                있으며, 인터넷이 연결되어 있고 넷플릭스 앱을 지원하는<br>
+                디바이스(스마트 TV, 스마트폰, 태블릿, 스트리밍 미디어<br>
+                플레이어, 게임 콘솔 등)에서도 언제든지 시청할 수<br>
+                있습니다.<br>
+
+                iOS 또는 Android용 앱에서는 좋아하는 시리즈를<br>
+                저장할 수도 있습니다. 저장 기능을 이용해 이동 중이나<br>
+                인터넷에 연결할 수 없는 곳에서도 시청하세요.<br>
+                넷플릭스는 어디서든<br>
+                함께니까요.
+            </p>
+            <div class="qs3">멤버십을 해지하려면 어떻게 하나요?</div>
+            <p class="qss5">넷플릭스는 부담 없이 간편합니다. 성가신 계약도, 약정도<br>
+                없으니까요. 멤버십 해지도 온라인에서 클릭 두 번이면<br>
+                완료할 수 있습니다. 해지 수수료도 없으니 원할 때<br>
+                언제든 계정을 시작하거나 종료하세요.
+            </p>
+            <div class="qs3">아이들이 넷플릭스를 봐도 좋을까요?</div>
+            <p class="qss6">멤버십에 넷플릭스 키즈 환경이 포함되어 있어 자녀가<br>
+                자기만의 공간에서 가족용 시리즈와 영화를 즐기는 동안<br>
+                부모가 이를 관리할 수 있습니다.<br>
+
+                키즈 프로필과 더불어 PIN 번호를 이용한 자녀 보호<br>
+                기능도 있어, 자녀가 시청할 수 있는 콘텐츠의 관람등급을<br>
+                제한하고 자녀의 시청을 원치 않는 특정 작품을 차단할 수도 있습니다.</p>
+        </div>
+
+
+        <div class="em2">
+            <p>시청할 준비가 되셨나요? 멤버십을 등록하거나 재시작하려면 이메일주소를 입력하세요.</p>
+            <input type="email" placeholder="이메일주소" class="em">
+            <input type="button" value="시작하기" class="st">
+        </div>
+
+
+
+        <footer class="footer">
+            <p>질문이 있으신가요? <br>문의 전화: 055-XXXX-XXXX</p>
+            <div class="footer_link">
+                <a href="#">고객 센터</a>
+                <a href="#">개인정보 처리방침</a>
+                <a href="#">이용 약관</a>
+            </div>
+        </footer>
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>

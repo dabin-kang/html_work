@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02.transition</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .menu{
+            width: 1000px;
+            height: 500px;
+            background-color: #ccc;
+            margin: 100px;
+        }
+        .top{
+            width: 1000px;
+            height: 150pxs;
+            background-color: #fa0;
+        }
+        .top1>div:hover{
+            color: rgb(168, 117, 41);
+        }
+        .top1{
+            height: 100px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .top1>div{
+            padding: 40px;
+        }
+
+
+        .aside{
+            height: 320px;
+            width: 150px;
+            background-color: #fa0;
+            margin-top: 30px;
+            position: relative;
+        }
+        .side1>div{
+            text-align: center;
+           padding: 20px;
+        }
+
+        .a1{
+            width: 150px;
+            height: 60px;
+            background-color: blue;
+            position: absolute;
+            left: 0px;
+            top: 276px;
+            opacity: 0.5;
+            transition: all 0.5 ease ;
+        }
+        .aside:hover .a1{
+            transform: right 100px;
+            left: 0;
+        }
+
+   
+  
+   
+    </style>
+</head>
+<body>
+    <h1>02.transition</h1>
+
+ <div class="menu">
+    <div class="top">
+        <div class="top1">
+        <div>회사소개</div>
+        <div>제품</div>
+        <div>갤러리</div>
+        <div>고객센터</div>
+        </div>
+    </div>
+
+    <div class="aside">
+        <div class="side1">
+            <div>회사소개</div>
+            <div>제품</div>
+            <div>갤러리</div>
+            <div>고객센터</div>
+        </div>
+        
+    </div>
+<div class="a1"></div>
+<div class="aa1"></div>
+
+
+
+ </div>
+
+
+    
+</body>
+</html>

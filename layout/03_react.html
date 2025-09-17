@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_react</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header,
+        section,
+        footer {
+            width: 90vw;
+            height: 100px;
+            margin: 20px;
+            background-color: #ff0;
+            font-size: 3rem;
+        }
+
+        @media screen and (max-width:600px) {/*태블릿*/
+            ::selection {
+                background-color: #f0f;
+                font-size: 2rem;
+            }
+             footer {
+            width: 300px;
+            height: 200px;
+            }
+            
+        }
+        @media screen and (min-width:600px)and (max-width:1200px) {/*데스크 탑*/
+            ::selection {
+                background-color: rgb(43, 7, 43);
+                font-size: 2rem;
+            }
+             header {
+            color: #ff0;
+            background-image: url(../fff/02.jpg);
+            background-size: 300px;
+            }
+            
+        }
+
+       
+        
+    </style>
+</head>
+
+<body>
+    <h1>react</h1>
+    <header>헤더</header>
+    <section>섹션</section>
+    <footer>푸터</footer>
+
+</body>
+
+</html>

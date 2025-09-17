@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12_flex</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .big{
+            width: 600px;
+            height: 300px;
+            background-color: #ff0;
+            margin: 20px;
+            display: flex;
+        }
+        .big>div{
+            width: 50px;
+            height: 50px;
+            background-color: rgb(151, 151, 137);
+            border: 1px solid#555;
+        }
+        .row{
+            flex-direction: row;/*기본 값*/
+        }
+        .gap{
+            gap: 20px;
+        }
+        .row-r{
+            flex-direction: row-reverse;
+        }
+        .column{
+            flex-direction: column;
+        }
+        .column-r{
+            flex-direction: column-reverse;
+        }
+        .item-c{
+            align-items: center;
+        }
+        .item-e{
+            align-items: end;
+        }
+        .item-s{
+            align-items:flex-start;/*기본 값*/
+        }
+        .justify{
+            justify-content:center
+        }
+        .justify-s{
+            justify-content:start
+        }
+        .justify-e{
+            justify-content:end
+        }
+        .justify-between{
+            justify-content: space-between;
+        }
+        .justify-around{
+            justify-content: space-around;
+        }
+        .justify-evenly{
+            justify-content: space-evenly;
+        }
+        .wrap{
+            flex-wrap:wrap ;
+        }
+        .wrap-r{
+            flex-wrap: wrap-reverse;
+        }
+        .wrap-gap-around{
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+        }
+        .wrap-gap{
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+        }
+        .grow>div{
+            flex-grow: 1;
+        }
+        .shrink_0>div{
+            flex-shrink: 0;
+        }
+        .shrink_1>div{
+            flex-shrink: 1;
+        }.basis_100>div{
+            flex-basis: 100px;/*item에 설정,
+                                100px: 크기 :100px
+                                auto: 원래크기(기본값)*/
+        }
+        .align_self>div:nth-of-type(2){
+            align-self: center;/*부모align-items를 해당 item에서 재정의한다
+                                기본값은 auto : 부모 align-items 
+                                item에 설정*/
+        }
+    </style>
+</head>
+<body>
+    <h1>12_flex</h1>
+    <h2>기본</h2>
+    <div class="big">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+    </div>    
+    <h2>row</h2>
+    <div class="big row">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+    </div>    
+    <h2>gap</h2>
+    <div class="big gap">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+    </div>    
+    <h2>row-r</h2>
+    <div class="big row-r">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+    </div>    
+    <h2>column</h2>
+    <div class="big column">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+    </div>    
+    <h2>column-r</h2>
+    <div class="big column-r">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+    </div>    
+    <h2>align-item:center</h2>
+    <div class="big item-c">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+    </div>    
+    <h2>align-item:end</h2>
+    <div class="big item-e">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+    </div>    
+    <h2>align-item:flex-start</h2>
+    <div class="big item-s">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+    </div>    
+    <h2>justify-content</h2>
+    <div class="big justify">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+    </div>    
+    <h2>justify-content:flex-start</h2>
+    <div class="big justify-s">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+    </div>    
+    <h2>justify-content:flex-end</h2>
+    <div class="big justify-e">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+    </div>    
+    <h2>justify-content:space-between</h2>
+    <div class="big justify-between">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+    </div>    
+    <h2>justify-content:space-around</h2>
+    <div class="big justify-around">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+    </div>    
+    <h2>justify-content:space-evenly</h2>
+    <div class="big justify-evenly">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+    </div>    
+    <h2>big</h2>
+    <div class="big" >
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+        <div>box5</div>
+        <div>box6</div>
+        <div>box7</div>
+        <div>box8</div>
+        <div>box9</div>
+        <div>box10</div>
+        <div>box11</div>
+        <div>box12</div>
+        <div>box13</div>
+        <div>box14</div>
+        <div>box15</div>
+        <div>box16</div>
+        <div>box17</div>
+        <div>box18</div>
+        <div>box19</div>
+        <div>box20</div>
+    </div>    
+    <h2>flex-wrap:wrap</h2>
+    <div class="big  wrap">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+        <div>box5</div>
+        <div>box6</div>
+        <div>box7</div>
+        <div>box8</div>
+        <div>box9</div>
+        <div>box10</div>
+        <div>box11</div>
+        <div>box12</div>
+        <div>box13</div>
+        <div>box14</div>
+        <div>box15</div>
+        <div>box16</div>
+        <div>box17</div>
+        <div>box18</div>
+        <div>box19</div>
+        <div>box20</div>
+    </div>    
+    <h2>flex-wrap:wrap-r</h2>
+    <div class="big  wrap-r">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+        <div>box5</div>
+        <div>box6</div>
+        <div>box7</div>
+        <div>box8</div>
+        <div>box9</div>
+        <div>box10</div>
+        <div>box11</div>
+        <div>box12</div>
+        <div>box13</div>
+        <div>box14</div>
+        <div>box15</div>
+        <div>box16</div>
+        <div>box17</div>
+        <div>box18</div>
+        <div>box19</div>
+        <div>box20</div>
+    </div>    
+    <h2>flex-wrap:wrap-gap-around</h2>
+    <div class="big  wrap-gap-around">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+        <div>box5</div>
+        <div>box6</div>
+        <div>box7</div>
+        <div>box8</div>
+        <div>box9</div>
+        <div>box10</div>
+        <div>box11</div>
+        <div>box12</div>
+        <div>box13</div>
+        <div>box14</div>
+        <div>box15</div>
+        <div>box16</div>
+        <div>box17</div>
+        <div>box18</div>
+        <div>box19</div>
+        <div>box20</div>
+    </div>    
+    <h2>flex-wrap:wrap-gap</h2>
+    <div class="big  wrap-gap">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+        <div>box5</div>
+        <div>box6</div>
+        <div>box7</div>
+        <div>box8</div>
+        <div>box9</div>
+        <div>box10</div>
+        <div>box11</div>
+        <div>box12</div>
+        <div>box13</div>
+        <div>box14</div>
+        <div>box15</div>
+        <div>box16</div>
+        <div>box17</div>
+        <div>box18</div>
+        <div>box19</div>
+        <div>box20</div>
+        </div>
+    
+        <h2>grow</h2>
+        <div class="big grow">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+        </div>
+        <h2>shrink</h2>
+    <div class="big  shrink_0">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+        <div>16</div>
+        <div>17</div>
+        <div>18</div>
+        <div>19</div>
+        <div>20</div>
+        </div>    
+    <div class="big  shrink_1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+        <div>16</div>
+        <div>17</div>
+        <div>18</div>
+        <div>19</div>
+        <div>20</div>
+        </div> 
+        <h2>basis</h2>
+        <div class="big basis_100">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        </div>       
+        <h2>align_self</h2>
+        <div class="big align_self">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        </div>       
+    
+</div>    
+</body>
+</html>

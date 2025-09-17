@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>calc</h1>
+    <h2> 2. 일항연산자</h2>
+    <script>
+        var c = 123
+        document.write(`-${c}:${-c}<br/>`)
+        c= 123
+        document.write(`!${c}:${!c}<br/>`)
+        c=c+1
+        document.write(`c=c+1:${c}<br/>`)
+        c++
+        document.write(`c++ : ${c}<br/>`)
+        c--
+        document.write(`c-- : ${c}<br/>`)
+        // c**,c//c%% 는 없다 증감연산자 ++과--만 존재한다
+
+        c= 4
+         document.write(`c++:${c}<br/>`)
+         document.write(`c++:${c++}<br/>`) // 후치연산: 현재 값을 연산식에 호출하고 이후 ++ 연산
+         document.write(`c:${c}<br/>`)
+         document.write(`++c:${++c}<br/>`)// 전치연산 : ++연산 이후 연산식 호출
+         document.write(`c:${c}<br/>`)
+    </script>
+
+
+
+    <h2> 2.1 산술연산자</h2>
+    <script>
+        //param : 숫자(+ - * / % **),기타(+)
+        //return : 숫자           문자열
+
+        var a = 15, b =7
+        document.write(`${a}+${b} : ${a+b}<br/>`)
+        document.write(`${a}-${b} : ${a-b}<br/>`)
+        document.write(`${a}*${b} : ${a*b}<br/>`)
+        document.write(`${a}/${b} : ${a/b}<br/>`)
+        document.write(`${a}%${b} : ${a%b}<br/>`)
+        document.write(`2**4:${2**4}<br/>`)
+        
+        a = 10, b ="장서건" // 문자열이 들어가면 + 만 가능하다(문자열 결합)
+        document.write(`${a}+${b} : ${a+b}<br/>`)// NaN =Not a Number
+        document.write(`${a}-${b} : ${a-b}<br/>`)
+        document.write(`${a}*${b} : ${a*b}<br/>`)
+        document.write(`${a}/${b} : ${a/b}<br/>`)
+        document.write(`${a}%${b} : ${a%b}<br/>`)
+
+        a= 20; b=true //논리 자료형, 숫자로 처리시- turu;: false:0
+        document.write(`${a}+${b} : ${a+b}<br/>`)
+        document.write(`${a}-${b} : ${a-b}<br/>`)
+        document.write(`${a}*${b} : ${a*b}<br/>`)
+        document.write(`${a}/${b} : ${a/b}<br/>`)
+        document.write(`${a}%${b} : ${a%b}<br/>`)
+
+        document.write(`$2+3*4 : ${2+3*4}<br/>`)
+        document.write(`$(2+3)*4 : ${(2+3)*4}<br/>`)
+    </script>
+
+    <h2>2.2 비교연산자</h2>
+    <script>
+        //parm
+        //return
+        a=10; b=10;
+         document.write(`$10:10<br/>`)
+         document.write(`${a}>${b} : ${a>b}<br/>`)
+         document.write(`${a}>=${b} : ${a>=b}<br/>`)
+         document.write(`${a}<=${b} : ${a<=b}<br/>`)
+         document.write(`${a}<${b} : ${a<b}<br/>`)
+         document.write(`${a}==${b} : ${a==b}<br/>`)
+         document.write(`${a}!=${b} : ${a!=b}<br/>`)
+        
+         a=10; b='10'; // 같은 값으로 인지
+         document.write(`$10:'10'<br/>`)
+         document.write(`<br/>${a}>${b} : ${a>b}<br/>`)
+         document.write(`${a}>=${b} : ${a>=b}<br/>`)
+         document.write(`${a}<=${b} : ${a<=b}<br/>`)
+         document.write(`${a}<${b} : ${a<b}<br/>`)
+         document.write(`${a}==${b} : ${a==b}<br/>`) // 값이 일치
+         document.write(`${a}==${b} : ${a!=b}<br/>`) // 값이 불일치
+         document.write(`${a}==${b} : ${a===b}<br/>`) //자료형과 값이 일치
+         document.write(`${a}!==${b} : ${a!==b}<br/>`) //자료형과 값이 불일치
+        
+        
+         a="true"; b="false"; 
+         // ㄱ<ㅎ, ㅏ<ㅣ , a<z
+         document.write(`<br/>${a}>${b} : ${a>b}<br/>`)
+         document.write(`${a}>=${b} : ${a>=b}<br/>`)
+         document.write(`${a}<=${b} : ${a<=b}<br/>`)
+         document.write(`${a}<${b} : ${a<b}<br/>`)
+         document.write(`${a}==${b} : ${a==b}<br/>`) 
+         document.write(`${a}==${b} : ${a!=b}<br/>`) 
+         document.write(`${a}==${b} : ${a===b}<br/>`) 
+         document.write(`${a}!==${b} : ${a!==b}<br/>`) 
+         
+         a="20"; b="이효리"; //크기비교:false, 같다, 다르다 : 확인가능
+         // ㄱ<ㅎ, ㅏ<ㅣ , a<z
+         document.write(`<br/>${a}>${b} : ${a>b}<br/>`)
+         document.write(`${a}>=${b} : ${a>=b}<br/>`)
+         document.write(`${a}<=${b} : ${a<=b}<br/>`)
+         document.write(`${a}<${b} : ${a<b}<br/>`)
+         document.write(`${a}==${b} : ${a==b}<br/>`) 
+         document.write(`${a}==${b} : ${a!=b}<br/>`) 
+         document.write(`${a}==${b} : ${a===b}<br/>`) 
+         document.write(`${a}!==${b} : ${a!==b}<br/>`) 
+
+         a="10"; b="false"; 
+         // false =0 으로 구분한다
+         document.write(`<br/>${a}>${b} : ${a>b}<br/>`)
+         document.write(`${a}>=${b} : ${a>=b}<br/>`)
+         document.write(`${a}<=${b} : ${a<=b}<br/>`)
+         document.write(`${a}<${b} : ${a<b}<br/>`)
+         document.write(`${a}==${b} : ${a==b}<br/>`) 
+         document.write(`${a}==${b} : ${a!=b}<br/>`) 
+         document.write(`${a}==${b} : ${a===b}<br/>`) 
+         document.write(`${a}!==${b} : ${a!==b}<br/>`) 
+
+
+          document.write(`20<10+15 : ${20<10+15}`)
+    </script>
+
+    <h2>2.3 논리연산자</h2>
+        <script>
+            a= true ; b=false
+         document.write(`and :${a}&&${b} : ${a&&b}<br/>`)
+         document.write(`or : ${a}||${b} : ${a||b}<br/>`)
+         document.write(`not : !${a}:${!a}<br/>`)
+       
+         a= "아기상어" ; b=false
+         document.write(`and :${a}&&${b} : ${a&&b}<br/>`)
+         document.write(`or :${a}||${b} : ${a||b}<br/>`)
+         document.write(`not : !${a}:${!a}<br/>`)
+       
+         a= "" ; b= false
+         document.write(`and :${a}&&${b} : ${a&&b}<br/>`)
+         document.write(`or :${a}||${b} : ${a||b}<br/>`)
+         document.write(`not : !${a}:${!a}<br/>`)
+
+         const age =51
+         const ageck ="빨강"
+         const colorchk =color =="빨강"
+
+         document.write(`and : ${agechk && colorchk}<br/>`)
+         document.write(`or : ${agechk || colorchk}<br/>`)
+        </script>
+
+       
+        
+         
+
+
+
+    <h2>2.4bit연산자</h2>
+    <script>
+        a=5; b=6
+        document.write(`bit and: $(a)&$(b) : ${a&b}<br/>`)
+        document.write(`bit or: $(a)|$(b) : ${a|b}<br/>`)
+        document.write(`bit xor: $(a)^$(b) : ${a^b}<br/>`)
+
+        /*
+        2진법으로 바꿔 계산
+        5 : 0101
+        6 : 0110
+
+        5&6 : 4
+        5|6 : 7
+        5^6 : 3
+        */
+    </script>
+
+    <h2>2.shift연산자</h2>
+    <script>
+        a=5
+        document.write(`${a}<<2 : ${a<<2}<br/>`)
+        document.write(`${a}>>2 : ${a>>2}<br/>`)
+        document.write(`${a}>>>2 : ${a>>>2}<br/>`)
+        /* 5: 0101 << 2  :: 부호에 맞춰 오른쪽 쉬프트 샹수,0 음수 :1
+                0101 00
+        
+        0000 0000  0  0  0000 0000 0000 0000
+        0000 0001  1  1  0000 0000 0000 0001
+        0000 0010  2  2  0000 0000 0000 0010
+        0111 1110  126  126  0000 0000 0111 1111
+        0111 1111  -128  127  0000 0000 0111 1110
+        0111 1111  127  127  0000 0000 0111 1110
+        0111 1111  127  127  0000 0000 0111 1110
+        0111 1111  127  127  0000 0000 0111 1110
+        */
+        a=-5
+        document.write(`${a}<<2 : ${a<<2}<br/>`)
+        document.write(`${a}>>2 : ${a>>2}<br/>`)
+        document.write(`${a}>>>2 : ${a>>>2}<br/>`)
+    </script>
+
+
+    <h2>2.5대입연산자</h2>
+    <script>
+        a = 5
+        document.write(`a:${a}<br/>`)
+        a = a + 2
+        document.write(`a=a+2:${a}<br/>`)
+        a +=  2
+        document.write(`a+ = 2:${a}<br/>`)
+        a -=  3
+        document.write(`a- = 3:${a}<br/>`)
+        a *=  5
+        document.write(`a *= 5:${a}<br/>`)
+        a /=  2
+        document.write(`a /= 2:${a}<br/>`)
+        a %=  3
+        document.write(`a % = 3:${a}<br/>`)
+        a **=  3
+        document.write(`a **= 3:${a}<br/>`)
+    </script>
+
+
+    <h2>2.6삼항연산자(조건연산자)</h2>
+    <style>
+        document.write (`true ?"참이지롱":"거짓부렁":${true?"참이지롱":"거짓부렁"} <br/>`)
+        document.write (`true ?"참이지롱":"거짓부렁":${true?"참이지롱":"거짓부렁"} <br/>`)
+        var jum =78
+        document.write (`${jum} : ${>=80?"합격:"불합격"}  <br/>`)
+        // 80:우수 60:양호 40: 정상 ,  미달
+        var res = jum >= 80? "우수 ":
+                  jum >=60 ? "양호":
+                  jum >=40 ? "정상":
+                  "미달"
+
+        document.write (`${jum} : ${res} <br/>`)
+
+        
+    </style>
+</body>
+</html>

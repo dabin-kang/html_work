@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_font</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=East+Sea+Dokdo&family=Gowun+Dodum&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            
+        }
+        html{
+            font-size: 30px;
+        }
+
+
+        p:nth-of-type(1) {
+            font-family: "Roboto", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: <weight>;
+            font-style: normal;
+            font-variation-settings:
+                "wdth" 100;
+        }
+        .wrapper{
+            width: 700px;
+            height: 900px;
+            background-color: aqua;
+        }
+
+
+        p:nth-of-type(2) {
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        p:nth-of-type(3) {
+            font-family: "East Sea Dokdo", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2rem;
+        }
+        p:nth-of-type(4):lang(en) {
+            font-family: "East Sea Dokdo", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+            .wh50{
+                width: 50vw;/*화면넓이의 1% :2048px-->20px*/
+                height: 50vh;/*화면높이의 1% :2048px-->20px*/
+                background-color: beige;
+                margin: 5px;
+                font-size: 3vw;
+
+            }
+            .per50{
+                width: 50%;/*화면넓이의 1% :2048px-->20px*/
+                height: 200px;/*화면높이의 1% :2048px-->20px*/
+                background-color: beige;
+                margin: 5px;
+                font-size: 3vw;
+
+            }
+    </style>
+</head>
+
+<body>
+    <h1>06_font</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit</p>.<br>
+    Veniam, numquam. Amet, sed facilis quas nulla quae modi! Aliquid dolores]<br>
+    facere dolorum perspiciatis vero illum! Fugiat architecto modi harum quo nulla.<br>
+    <p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우라나라 만세 </p><br>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p><br>
+    Veniam, numquam. Amet, sed facilis quas nulla quae modi! Aliquid dolores]<br>
+    facere dolorum perspiciatis vero illum! Fugiat architecto modi harum quo nulla.<br>
+    동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우라나라 만세 <br>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br>
+    Veniam, numquam. Amet, sed facilis quas nulla quae modi! Aliquid dolores]<br>
+    facere dolorum perspiciatis vero illum! Fugiat architecto modi harum quo nulla.<br>
+    동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우라나라 만세</p> <br>
+
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br>
+    Veniam, numquam. Amet, sed facilis quas nulla quae modi! Aliquid dolores]<br>
+    facere dolorum perspiciatis vero illum! Fugiat architecto modi harum quo nulla.<br>
+    동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우라나라 만세 <br>
+
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br>
+    Veniam, numquam. Amet, sed facilis quas nulla quae modi! Aliquid dolores]<br>
+    facere dolorum perspiciatis vero illum! Fugiat architecto modi harum quo nulla.<br>
+    동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우라나라 만세 <br>
+
+        <span>
+            모듈러 시스템
+            web 의 기본font size 인 경우 16px
+            1rem = 16px
+            1.5rem = 24px
+
+            vw
+            vh
+        </span>
+
+        <div class="wh50">장수풍뎅이와 사슴벌레</div>
+        <div class="per50">티라노와 브라키오</div>
+        <div class="wrapper">
+             <div class="wh50">나는 문어 꿈을 꾸는 문어</div>
+             <div class="per50">나는 장어 잠을 깨는 장어</div>
+        </div>
+
+        rem = vw/vh
+        em= per 과 비슷하거나 같은 개념
+
+    </body>
+
+</html>

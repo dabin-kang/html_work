@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>time</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .ti{
+            width: 300px;
+            height: 300px;
+            background-color: brown;
+            border-radius: 150px;
+            position: relative;
+            animation-name:ti;
+            animation-duration: 60s;
+             animation-iteration-count: infinite;
+             animation-timing-function: linear;
+        }
+        .ti>div{
+            width: 120px;
+            height: 5px;
+            background-color: black;
+            transform: rotate(90deg);
+            position: absolute;
+            translate: 90px 80px;
+          
+        }
+        @keyframes ti {
+            0%{
+                  width: 300px;
+            height: 300px;
+            background-color: brown;
+            border-radius: 150px;
+            transform: rotate(0deg);
+            }
+          
+
+            
+
+            100%{
+           width: 300px;
+            height: 300px;
+            background-color: brown;
+            border-radius: 150px;
+            transform: rotate(360deg);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>time</h1>
+
+    <div class="ti">
+        <div></div>
+    </div>
+    
+</body>
+</html>

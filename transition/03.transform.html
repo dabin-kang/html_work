@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03.transform</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        
+        }
+        section{
+            height: 1000px;
+            background-color: #ff0;
+            margin: 5px;
+            margin-left: 200px;
+        }
+        div{
+            width: 50px;
+            height: 50px;
+            background-color: aqua;
+            margin: 5px;
+            border: 1px solid #777;
+        }
+        .mov>div:nth-child(1){
+            transform: translate(100px);
+        }
+        .mov>div:nth-child(2){
+            transform: translate(-100px);
+        }
+        .mov>div:nth-child(3){
+            transform: translateY(200px);
+        }
+        .mov>div:nth-child(4){
+            transform: translateY(200px);
+            transform: translateX(100px);
+        }
+         .mov>div:nth-child(5){
+            transform: translateZ(100px);
+        }
+         .mov>div:nth-child(6){
+            transform: translate(200px,200px); /*x,y*/
+        }
+         .mov>div:nth-child(7){
+            transform: perspective(300px) translate3d(300px,300px,200px); /*x,y,z*/
+        }
+         .mov>div:nth-child(8){
+            transform: translate(400%,-300%); /*객체의 너비,높이를 100%로 기준하여 이동*/
+        }
+         .mov>div:nth-child(9){
+            transform: translateX(400%); /*x,y,z*/
+        }
+         .mov>div:nth-child(10){
+            transform:perspective(500px) translateZ(100px);/*perspective 원근감을 주게하는 속성 z축의  깊이 표현 대상체와의 거리를 표현*/
+        }
+         .mov>div:nth-child(11){
+            transform: perspective(300px) translateZ(-100px);
+        }
+         .mov>div:nth-child(12){
+            transform: translateZ(100px);
+        }
+
+
+        .rotate>div:nth-child(1){
+            transform: perspective(300px) rotateZ(300deg);
+        }
+        .rotate>div:nth-child(2){
+            transform: perspective(300px) rotateZ(300deg);
+        }
+        .rotate>div:nth-child(3){
+            transform: rotate(30deg);
+            transform-origin: top left;/*회전 기준점*/
+        }
+        .rotate>div:nth-child(4){
+            transform: rotate(30deg);
+            transform-origin: center center;/*회전 기준점*/
+        }
+        .rotate>div:nth-child(5){
+            transform: rotate(30deg);
+            transform-origin: right bottom;/*회전 기준점*/
+        }
+        .rotate>div:nth-child(6){
+            transform: rotate(30deg);
+            transform-origin: 30px 0px;/*회전 기준점*/
+        }
+        .rotate>div:nth-child(7){
+            transform: rotate(30deg);
+            transform-origin: 50% 100%;/*회전 기준점*/
+        }
+        .rotate>div:nth-child(8){
+            transform: perspective(300px) rotateY(30deg);
+        }
+        .rotate>div:nth-child(9){
+            transform: perspective(300px) rotatex(30deg);
+        }
+        .rotate>div:nth-child(10){
+            transform: perspective(300px) rotate3d(0,1,0,45deg);/*회전축x,회전축y회전축z 45deg*/
+        }
+        .rotate>div:nth-child(11){
+            transform: perspective(300px) rotate3d(1,1,1,45deg);/*회전축x,회전축y회전축z 45deg*/
+        }
+        .scale>div:nth-child(1){
+            transform:scaleX(2);/*축소0,기본1,확대2*/
+        }
+        .scale>div:nth-child(2){
+            transform:scaleX(0.5);/*축소0,기본1,확대2*/
+        }
+        .scale>div:nth-child(3){
+            transform-origin: top left;
+            transform:scaleX(2);/*축소0,기본1,확대2*/
+        }
+        .scale>div:nth-child(4){
+            transform:scaley(2);/*축소0,기본1,확대2*/
+        }
+        .scale>div:nth-child(5){
+            transform:perspective(300px) scalez(2);/*축소0,기본1,확대2*/
+        }
+        .scale>div:nth-child(6){
+            transform:perspective(300px) scale3d(2,0.5,3);/*축소0,기본1,확대2*/
+        }
+        .scale>div:nth-child(7){
+            transform:scale(2,0.5);/*축소0,기본1,확대2*/
+        }
+        .skew>div:nth-child(1){
+            transition: skewx(30deg);
+        }
+        .skew>div:nth-child(2){
+            transition: skewy(30deg);
+        }
+        .skew>div:nth-child(3){
+            transition: skew(30deg,15deg);
+        }
+        .skew>div:nth-child(3){
+            translate: x(200px);
+            translate: y(100px);
+            translate: z(100px);
+            rotate: (30deg);
+            scale: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>03.transform</h1>
+    <h2>translate</h2>
+    <section class="mov">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+       
+    </section>
+    <h2>rotate</h2>
+    <section class="rotate">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+    <h2>scale</h2>
+    <section class="scale">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+       
+    </section>
+    <h2>skew</h2>
+    <section class="skew">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+       
+    </section>
+    
+</body>
+</html>

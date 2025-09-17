@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            width: 1200px;
+            height: 1000px;
+            background-color: blueviolet;
+            position: relative;
+        
+        }
+
+        header {
+            width: 1000px;
+            height: 180px;
+            background-color: brown;
+            border: 2px solid#000;
+            position: absolute;
+            left: 100px;
+            top: 10px;
+            display: flex;
+            
+        }
+
+        .wrapper>header>logo {
+            width: 200px;
+            height: 180px;
+            background-color: yellow;
+            float: left;
+            align-items: center;
+            padding: 60px;
+        }
+
+        .wrapper>header>menu {
+            width: 40px;
+            height: 20px;
+            background-color: yellow;
+            float: left;
+           text-align: center;
+        }
+
+        .wrapper>header>menu:nth-of-type(1) {
+            position: absolute;
+            right: 120px;
+        }
+
+        .wrapper>header>menu:nth-of-type(2) {
+            position: absolute;
+            right: 80px;
+        }
+
+        .wrapper>header>menu:nth-of-type(3) {
+            position: absolute;
+            right: 40px;
+        }
+
+        .wrapper>header>menu:nth-of-type(4) {
+            position: absolute;
+            right: 0px;
+        }
+
+        .wrapper>header>menu:nth-of-type(5) {
+            position: absolute;
+            right: 120px;
+            bottom: 0px;
+        }
+
+        .wrapper>header>menu:nth-of-type(6) {
+            position: absolute;
+            right: 80px;
+            bottom: 0px;
+        }
+
+        .wrapper>header>menu:nth-of-type(7) {
+            position: absolute;
+            right: 40px;
+            bottom: 0px;
+        }
+
+        .wrapper>header>menu:nth-of-type(8) {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+        }
+
+
+        section{
+            text-align: center;
+        }
+
+
+        section>article:nth-of-type(1) {
+            width: 700px;
+            height: 150px;
+            border: 2px solid #000;
+            background-color: burlywood;
+            position: absolute;
+            top: 210px;
+            left: 100px;
+            padding: 20px;
+            text-align: left;
+
+        }
+
+        section>article:nth-of-type(2) {
+            width: 700px;
+            height: 150px;
+            border: 2px solid #000;
+            background-color: burlywood;
+            position: absolute;
+            top: 370px;
+            left: 100px;
+            padding: 20px;
+            text-align: left;
+
+            
+        }
+
+        section>article:nth-of-type(3) {
+            width: 700px;
+            height: 150px;
+            border: 2px solid #000;
+            background-color: burlywood;
+            position: absolute;
+            top: 530px;
+            left: 100px;
+        }
+
+        aside {
+            width: 200px;
+            height: 350px;
+            background-color: aqua;
+            border: 2px solid #000;
+            position: absolute;
+            right: 100px;
+            top: 210px;
+            text-align: center;
+            padding-top: 10px;
+        }
+        aside>div{
+            width: 150px;
+            height: 50px;
+            background-color: #ccc;
+         
+        }
+
+        footer {
+            width: 1000px;
+            height: 150px;
+            background-color: cadetblue;
+            border: 2px solid #000;
+            position: absolute;
+            left: 100px;
+            top: 690px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <logo><H1>logo</H1></logo>
+            <menu>1</menu>
+            <menu>2</menu>
+            <menu>3</menu>
+            <menu>4</menu>
+            <menu>5</menu>
+            <menu>6</menu>
+            <menu>7</menu>
+            <menu>8</menu>
+        </header>
+        <section>
+            <article>
+                <h3>Main Article1</h3>
+                ColorZilla for Googoe Chrome is an exension that assists web developers and graphic<br>
+                designers with color related tasks - both basic and advancd. ColorZilla includes a color<br>
+                picker, Eye Dropper, Gradient and many additional advanced color tools
+            </article>
+            <article><h3>Main Article2</h3>
+                ColorZilla for Googoe Chrome is an exension that assists web developers and graphic<br>
+                designers with color related tasks - both basic and advancd. ColorZilla includes a color<br>
+                picker, Eye Dropper, Gradient and many additional advanced color tools
+            </article>
+            <article>Main Article3
+                <h3>right aside</h3><br>
+                clolr zilla for google<br>
+                chrome is an extension that<br>
+                assidts.
+            </article>
+        </section>
+        <aside>
+            <h3>right aside</h3>
+            clolr zilla for google<br>
+            chrome is an extension that<br>
+            assidts.
+
+            <input type="text">
+            <input type="submit" value="보내기">
+
+            <div>
+                text
+            </div>
+
+        </aside>
+        <footer>html5</footer>
+    </div>
+
+
+</body>
+
+</html>

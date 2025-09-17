@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            top: 50px;
+            left: 50px;
+            transform: rotateX(-30deg) rotateY(45deg);
+            transform-style:preserve-3d ;
+            /*flat :기본값 -2D화
+             preserve-3d -입체화*/
+        }
+        section>div{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #f88;
+            border: 1px solid #900;
+            line-height: 100px;
+            color: #fff;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        
+        .top{
+            transform: rotateX(90deg) translatez(50px);
+        }
+        .bottom{
+             transform: rotateX(-90deg) translatez(50px);
+        }
+        .front{
+            transform:  translatez(50px);
+        }
+        .back{
+            transform: rotatey(-180deg) translatez(50px);
+        }
+        .left{
+            transform: rotatey(-90deg) translatez(50px);
+        }
+        .right{
+            transform: rotatey(90deg) translatez(50px);
+        }
+    </style>
+</head>
+<body>
+    <h1>05.perspective</h1>
+    <section>
+        <div class="top">위</div>
+        <div class="bottom">아래</div>
+        <div class="front">앞</div>
+        <div class="back">뒤</div>
+        <div class="right">오른쪽</div>
+        <div class="left">왼쪽</div>
+    </section>
+    
+</body>
+</html>

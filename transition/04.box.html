@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04.box</title>
+    <style>
+        *{
+        
+        }
+        .re{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        }
+        .re{
+            transform: skewX(45deg);
+            transform: perspective(200px) rotateZ('40deg');
+            margin-left: 100px;
+            position: relative;
+        }
+        .ge{
+            width: 100px;
+            height: 100px;
+            background-color: #0f0;
+            transform: skewY(45deg);
+            position: absolute;
+            top: 140px;
+            left: 60px;
+        }
+        .bl{
+            width: 100px;
+            height: 100px;
+            background-color: #00f;
+            transform:  rotate(45deg);
+            transform: skewx(0deg);
+              
+            margin-left: 150px;
+            position: absolute;
+        }
+
+
+      
+        .re1{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        }
+        .re1{
+            
+            transform: perspective(200px) skewX(25deg) rotate3d(3,-1,2,75deg) rotate(-75deg);          
+            margin-left: 500px;
+            position: relative;
+        }
+        .ge1{
+            width: 100px;
+            height: 100px;
+            background-color: #0f0;
+            transform: perspective(200px) rotatey(45deg) skewY(-25deg);
+            position: absolute;
+            top: 265px;
+            left: 555px;
+        }
+        .bl1{
+            width: 100px;
+            height: 100px;
+            background-color: #00f;
+            transform:perspective(200px)  rotatey(-45deg)  skewY(38deg);
+            margin-left: 460px;
+            margin-top: -35px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        04.box
+    </h1>
+
+    <div class="re"></div>
+    <div class="ge"></div>
+    <div class="bl"></div>
+
+
+    <div class="re1"></div>
+    <div class="ge1"></div>
+    <div class="bl1"></div>
+    
+</body>
+</html>

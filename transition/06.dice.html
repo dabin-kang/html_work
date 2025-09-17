@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06.dice</title>
+ <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            top: 50px;
+            left: 50px;
+            transform: perspective(160px) rotateX(35deg) rotateY(45deg);
+            transform-style:preserve-3d ;
+            /*flat :기본값 -2D화
+             preserve-3d -입체화*/
+        }
+        section>div{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #f88;
+            border: 1px solid #900;
+            line-height: 100px;
+            color: #fff;
+            text-align: center;
+            box-sizing: border-box;
+            place-items: center;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3,1fr);
+        }
+        section>div>div{
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            border-radius: 15px;
+        }
+        .top{
+            transform: rotateX(90deg) translatez(50px);
+        }
+        .bottom{
+             transform: rotateX(-90deg) translatez(50px);
+             
+        }
+        .front{
+            transform:  translatez(50px);
+        }
+        .back{
+            transform: rotatey(-180deg) translatez(50px);
+            text-align: center;
+            font-size: 10px;
+        }
+        .left{
+            transform: rotatey(-90deg) translatez(50px);
+            align-content: space-around;
+        }
+        .right{
+            transform: rotatey(90deg) translatez(50px);
+        }
+        .top>div:nth-child(1){
+            grid-column: 2;
+            grid-row: 2;
+        }
+        .bottom>div:nth-child(1){grid-row: 1; grid-column: 1;}
+        .bottom>div:nth-child(2){grid-row: 2; grid-column: 2;}
+        .bottom>div:nth-child(3){grid-row: 3; grid-column: 3;}
+
+
+    </style>
+</head>
+<body>
+    <h1>05.perspective</h1>
+    <section>
+        <div class="top">
+            <div></div>
+            <div></div><div></div><div></div>
+        </div>
+        <div class="bottom">
+            <div></div>
+            <div></div>
+            <div></div>
+            
+        </div>    
+        <div class="front"><div></div></div>
+        <div class="back"><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        <div class="right"><div></div><div></div><div></div><div></div><div></div></div>
+        <div class="left"><div></div><div></div></div>
+    </section>
+    
+</body>
+</html>

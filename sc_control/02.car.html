@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+        }
+        .aa{
+           
+        }
+        
+
+        .bb{
+            left: 100px;
+            top: 300px;
+            height: 100px;
+           
+        }   
+
+    </style>
+</head>
+<body>
+<!-- 자동차 성능을 점수로 계산하세요
+ 각 점수는 100점 만점을 기준으로 입력된다
+ 성능 점수의 반영도 속도 40%,연비25% 안전성35%
+ 결과 성능점수 : 80이상 우수 , 60이상 보통 , 나머지 불량
+ 글자색 파란색, 녹색 , 빨강색-->    
+
+<script>
+    const cr = "머스탱"
+    const sp = 40 ,pw=70, sf=90
+    const alls = sp+pw+sf
+
+
+    document.write(`
+    <div class="aa">차종</div>
+    <div class="aa">속도</div>
+    <div class="aa">연비</div>
+    <div class="aa">안전성</div>
+    <div class="bb">${cr}</div>
+    <div class="bb">${sp}</div>
+    <div class="bb">${pw}</div>
+    <div class="bb">${sf}</div>
+    `)
+
+</script>
+
+
+
+</body>
+
+</html>
