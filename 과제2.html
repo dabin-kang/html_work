@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper>div:nth-of-type(1){
+            width: 100%;
+            height: 150px;
+            position: sticky;
+            background-color:rgba(41, 236, 116, 1.5);
+            top: 0;
+            line-height: 150px;
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            
+        }
+        .wrapper>div:nth-of-type(2){
+            width: 100%;
+            height: 1800px;
+            background-color: chocolate;
+             position: relative;      
+    padding-top: 200px;
+     display: flex;
+    justify-content: center;
+    font-size: 40px;
+        }
+        .wrapper>div:nth-of-type(3){
+            width: 100%;
+            height: 1800px;
+            background-color: rgb(160, 247, 21);
+        }
+        .wrapper>div:nth-of-type(4){
+            width: 100%;
+            height: 1800px;
+            background-color: rgb(32, 28, 25);
+        }
+    
+
+        .up{
+            width: 500px;
+            height: 100%;
+            background-color: blue;
+            position: fixed;
+            left:  0px;
+            top: 150px;
+            font-size: 40px;
+            
+        }
+        .up>div:nth-of-type(1){
+            background-color: #000;
+            width: 500px;
+            height: 300px;
+            color: #f0ebeb;
+        }
+        .up>div:nth-of-type(2){
+            background-color: #d62121;
+            width: 500px;
+            height: 520px;
+            color: #f0ebeb;
+        }
+        .up>div:nth-of-type(3){
+            background-color: #000;
+            width: 500px;
+            height: 1300px;
+            color: #f0ebeb;
+        }
+        .up>div:nth-of-type(4){
+            background-color: #be7272;
+            width: 500px;
+            height: 550px;
+            color: #f0ebeb;
+        }
+        .menu{
+            position: absolute;
+            top: 0px;
+            right: 50px;
+            font-size: 40px;
+            display: flex;
+            gap: 30px;
+            
+        }
+        .sc{
+            background-color: #f0ebeb;
+            width: 750px;
+            height: 100px;
+            position: absolute;
+            left: 180px;
+            top: 25px;
+            border:3px solid #333;
+        }
+        
+
+
+    </style>
+</head>
+
+<body>
+    
+    <div class="wrapper">
+        <div>
+            <div class="menu">
+                <span>다운로드</span>
+                <span>회원가입</span>
+                <span>로그인</span>
+            </div>
+            <div class="sc"></div>
+            </div>
+            <div>음악이 필요한 순간 SPR
+            </div>
+            <div></div>
+            <div></div>
+       
+    </div>
+
+
+    <div class="up">
+        <div></div>
+        <div>라이브러리</div>
+        <div>재생목록</div>
+        <div>음악재생</div>
+    </div>
+
+</body>
+
+</html>
