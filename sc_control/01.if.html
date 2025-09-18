@@ -25,7 +25,70 @@
         document.write("거짓이지롱2<br/>") //if 문과 상관없음
         document.write("거짓이지롱2<br/>")
 
+        if(true){ // 단독으로 사용 가능 (머리)
+            document.write("if~else 참이지롱1<br/>")
+        }
+        else{ //(꼬리)
+            document.write("if~else 거짓지롱1<br/>")
+        }
+
        document.write("if 종료------------------2<br/>")
+       //else{
+       //     document.write("if~else 거짓지롱1<br/>")
+       // }  단독으로 사용 불가
+
+       var jum = 58
+       if(jum >=80){ 
+            document.write("우수2<br/>")
+        }
+        else{ //(꼬리)
+            document.write("미달2<br/>")
+        }
+        document.write("if 종료------------------3<br/>")
+        //점층적으로 위에서 부터 아래로 작성해야 한다
+        if(jum >=80){ 
+            document.write("우수3<br/>")
+        }
+        if(jum >=60){ 
+            document.write("정상3<br/>")
+        }
+        else{ //마지막 if에 현재 종속되어 있는 상태
+            document.write("미달3<br/>")
+        }
+        document.write("if 종료------------------4<br/>")
+         if(jum >=80){ 
+            document.write("우수4<br/>")
+        }
+        else if(jum >=60){ // else if 단독으로 사용 불가(몸통)
+            document.write("정상4<br/>")
+        }
+        else if(jum >=40){ //여러반 반복해도 가능
+            document.write("정상4<br/>")
+        }
+        else{ //마지막 if에 현재 종속되어 있는 상태
+            document.write("미달4<br/>")
+        }
+        //항상 구조는
+        // if       (반드시 존재해야 함)
+        // else     (생략가능)
+        // else if  (생략가능)
+        //순서대로 작성해야 한다
+         document.write("if 종료------------------5<br/>")
+         if(jum >=80){ 
+            document.write("우수5<br/>")
+        }
+        else if(jum >=60){ // else if 단독으로 사용 불가(몸통)
+            if(jum%2==0){
+                document.write("짝수 -")
+            }
+            else{
+                document.write("홀수 -")
+            }
+            document.write("양호5<br/>")
+        }
+        else if(jum >=40){ //여러반 반복해도 가능
+            document.write("정상5<br/>")
+        }
     </script>
     
 </body>

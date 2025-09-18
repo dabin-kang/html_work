@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>swich</h2>
+    <script> 
+        switch(20){
+            case 30:
+            document.write("30입니다<br/>")
+            case 10://동일값 가능
+            document.write("10입니다<br/>")
+            case 30:
+            document.write("30입니다<br/>")
+            case 20:// 이동하여 실행
+            document.write("20입니다<br/>")
+            case 40:
+            document.write("40입니다<br/>")
+            case 20:
+            document.write("20입니다<br/>")
+        }
+        document.write("switch 종료-----------------------1<br/>")
+
+        switch(20){
+            case 30:
+            document.write("30입니다<br/>")
+            break//제어문 탈출 
+            case 10://동일값 가능
+            document.write("10입니다<br/>")
+            break
+            case 30:
+            document.write("30입니다<br/>")
+            break
+            case 20:// 이동하여 실행
+            document.write("20입니다<br/>")
+            break
+            case 40:
+            document.write("40입니다<br/>")
+            break
+            case 20: //같은 값이 있을 경우 먼저 설정 딘 case 실행
+            document.write("20입니다<br/>")
+        }
+        document.write("switch 종료-----------------------2<br/>")
+
+        switch(100){
+            case 30:
+            document.write("30입니다<br/>")
+            break//제어문 탈출 
+            case 10://동일값 가능
+            document.write("10입니다<br/>")
+            break
+            default : //else 와 같음 
+            document.write("기본 값 입니다<br/>")
+            break
+            case 20:// 이동하여 실행
+            document.write("20입니다<br/>")
+            break
+            case 40:
+            document.write("40입니다<br/>")
+            break
+        }
+        document.write("switch 종료-----------------------3<br/>")
+      
+        switch(100){ //정수,실수,문자열,boolean모두 가능
+            case true:
+            document.write("true입니다<br/>")
+            break//제어문 탈출 
+            case 123.456://동일값 가능
+            document.write("123.456입니다<br/>")
+            break
+            default : //else 와 같음 
+            document.write("기본 값 입니다<br/>")
+            break
+            case "나는문어":// 이동하여 실행
+            document.write("나는문어<br/>")
+            break
+            case 40,50,60:
+            document.write("40,50,60입니다<br/>")
+            break
+            case 40:
+            document.write("40입니다<br/>")
+            break
+        }
+        document.write("switch 종료-----------------------4<br/>")
+
+        switch(123.456){ //정수,실수,문자열,boolean모두 가능
+            case true:
+            document.write("true입니다<br/>")
+            break//제어문 탈출 
+            case 123.456://동일값 가능
+            document.write("123.456입니다<br/>")
+            break
+            default : //else 와 같음 
+            document.write("기본 값 입니다<br/>")
+            break
+            case "나는문어":// 이동하여 실행
+            document.write("나는문어<br/>")
+            break
+            case 40,50,60: // 다중진입 불가능
+            document.write("40,50,60입니다<br/>")
+            break
+            case 40:
+            document.write("40입니다<br/>")
+            break
+        }
+         document.write("switch 종료-----------------------5<br/>")
+    </script>
+    
+</body>
+</html>
