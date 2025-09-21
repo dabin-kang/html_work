@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>for</h2>
+    <script>
+        for (let i = 3; i < 20; i += 2) {
+            document.write(`${i}<br/>`)
+        }
+
+        document.write(`<br/>`)
+
+        /* 무한 반복문
+         for(;;){
+             console.log("for 문 실행")
+         }
+ 
+         for(let i =5;;){
+             console.log("for 문 실행",i)
+         }
+ 
+          for(let i =5;;i++){
+             console.log("for 문 실행",i)
+         }
+ 
+         for(let i =5;i>0;i++){
+             console.log("for 문 실행",i)
+         }*/
+
+        let tot = 0
+        for (let i = 0; i < 5; i++) { // i = 반복지역변수: for문 끝날때 소멸(반복시에는 소멸 안함)
+            let a = 7 //구간 지역 변수 - 반복이 끝날 때마다 소멸
+            tot += i
+            a++
+            document.write(`${i} : ${tot},${a}<br/>`)
+        }
+        document.write(`합계 : ${tot}<br/>`)
+
+
+        /*i = 0
+        */
+
+        let pop = 0
+        for (let t = 101; t <= 200; t++) {
+            t % 2 === 0 ? pop += t : pop;
+        }
+
+        document.write(`합계:${pop}`)
+
+    </script>
+
+</body>
+
+</html>

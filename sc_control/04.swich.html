@@ -107,6 +107,51 @@
             break
         }
          document.write("switch 종료-----------------------5<br/>")
+
+       
+          
+        let grade = "과장"
+        let base = 500
+
+        switch(grade){
+            case "부장":
+                var bonus = 0.5
+                break
+            case "과장":
+                var bonus = 0.3
+                break
+            case "대리":
+                var bonus = 0.2
+                break
+            default:
+                var bonus = 0.1
+                break
+        }
+
+        let money = base * (1 + bonus)
+        document.write(money)
+
+        document.write("switch 종료-----------------------6<br/>")
+
+
+        let costcf = 1
+
+         let menu = "아메리카노"
+          switch(menu){
+            case "아메리카노":
+                var mo = 2000
+                break
+            case "아시아카노":
+                var mo = 3000
+                break
+            case "아프리카노":
+                var mo = 4000
+                break
+          }
+
+          let cf = mo * costcf
+          document.write(`가격은 ${cf}`)
+
     </script>
     
 </body>

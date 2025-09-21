@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>10.login</h1>
+    <script>
+        //let aaa = prompt("아이디") //입력창
+        //console.log(aaa)
+        //경고창
+        //alert(aaa)
+
+
+        for(;;){ //조건 없는 무한 반복이라는 의미
+            let pid = prompt("아이디")
+            let pw = prompt("암호")
+            if(pid!= 'aaa' || pw!= '1234'){
+                alert('로그인 실패')
+                continue
+            }
+            break
+        } 
+        alert("로그인 되었습니다.")  
+    </script>
+    
+</body>
+</html>
