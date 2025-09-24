@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>funcCall</h1>
+    <script>
+        function fn_1(){
+            let a =10       //블럭변수 (제어문 선언 구간에서만 사용)
+            var b = 2000    // 지역변수(선언된 함수 구간에서만 사용)
+            c = 3333        // 전역변수 - 모든 구간에서 사용
+            document.write(`fn_1() 시작 ${a} ${b} ${c}<br/>`)
+
+            document.write(`fn_1() 끝<br/>`)
+        }
+         function fn_2(){
+            //document.write(`fn_2() 시작 ${a} ${b} ${c}<br/>`)   a,b는 인식을 못해서 출력을 하지 못함
+            let aa = 90
+            var bb = 800
+            cc = 7000
+            document.write(`fn_2() 시작${c} ${aa} ${bb} ${cc}<br/>`)
+            fn_3() // 함수 안에 다른 함수를 부르기
+            cc++
+            document.write(`fn_2() 끝 ${aa} ${bb} ${cc}<br/>`)
+        }
+
+         function fn_3(){
+            //document.write(`&nbsp;&nbsp;&nbsp; fn_3()${aa} ${bb} ${cc} 시작<br/>`)
+            document.write(`&nbsp;&nbsp;&nbsp; fn_3()  시작${cc}<br/>`)
+
+            fn_4()// 함수 안에 다른 함수를 부르기
+            cc++
+            document.write(`&nbsp;&nbsp;&nbsp; fn_3() 끝${cc}<br/>`)
+        }
+
+         function fn_4(){
+            document.write(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fn_4()  시작 ${cc}<br/>`)
+           // fn_2()  해서는 안되는 구조 왜? 순환구조가 되어서(순환무한반복)
+           cc++
+            document.write(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fn_4()  끝 ${cc}<br/>`)
+        }
+
+
+
+         function fn_5(){
+            let a =10       
+            var b = 2000    
+
+            function sub(){ // 함수 내부에 함수를 쓰는  내부 중첩 정의 / 외부에서 함수의변수는 내부함수에서 전역변수로 사용된다
+                // a,b - 전역으로 인식하고 사용하게 됨 / 함수가 정의된 외부에서의 지역 블럭변수는 전역으로 사용
+                 document.write(`&nbsp;&nbsp;&nbsp; sub()  시작${a},${b}<br/>`)
+                tt = "sub에서 선언한 전역"
+                let zz = "sub블럭"
+                var xx = "sub 지역"
+                 document.write(`&nbsp;&nbsp;&nbsp; sub()  끝${a},${b},${tt},${zz},${xx}<br/>`)
+            } 
+       
+            document.write(`fn_5() 시작 ${a} ${b} <br/>`)
+            sub()
+           // document.write(`fn_5() 끝 ${a} ${b},${tt},${zz},${xx} <br/>`)  내부함수에서 선언한 전역변수는 외부함수에서 사용가능
+           // 내부함수의 지역, 블럭변수는 함수 호출이 종료됨과 동시에 변수도 소멸되어 접근 불가
+           // 함수의 결합성 연계성이 문제가 될 수가 있다
+            document.write(`fn_5() 끝 ${a} ${b},${tt} <br/>`) // ${tt}만 출력 할 수 있게 된다
+        }
+
+        fn_1()
+        fn_2()
+
+        fn_5()
+        document.write(`main :  ${c},${cc},${tt} <br/>`)
+        // ${c} 전역변수는 함수가 종료되어도 영향을 끼치기 때문에 되도록 사용하지 않는 것이 좋다
+        //전역변수는 함수가 종료되어도 소멸되지 않는다
+
+        document.write( `<hr/>`)
+
+        function fn_6(aa){ //매개변수 var aa 와 같음
+             document.write(`fn_6() 시작 ${aa} <br/>`)
+            let res = fn_7(10)
+             document.write(`fn_6() 끝 ${aa} ${res}<br/>`)
+             return res/10
+        }
+
+         function fn_7(bb){ // 매개변수의 이름이 같아도 상관이 없다
+            //콜러의 매개변수 접근 불가
+             //document.write(`&nbsp;&nbsp;&nbsp;fn_7() 시작 ${aa}${bb} <br/>`)
+             document.write(`&nbsp;&nbsp;&nbsp;fn_7() 시작 }${bb} <br/>`)
+             let res = fn_8(100,200,300)
+             document.write(`&nbsp;&nbsp;&nbsp;fn_7() 끝 ${bb} ${res} <br/>`)
+             return res+45678
+        }
+
+        function fn_8(cc,dd,ee){ 
+            
+             document.write(`&nbsp;&nbsp;&nbsp;fn_8() 시작 ${cc}${dd}${ee} <br/>`)
+            var cc = 444 //매개변수와 중첨가능 (가능한 사용하지 않는 것이 좋음)
+            //let dd = 555 에러발생
+             document.write(`&nbsp;&nbsp;&nbsp;fn_8() 끝 ${cc}${dd}${ee} <br/>`)
+             return 1234
+        }
+
+
+        let rr = fn_6(3)
+        document.write(`main : ${rr}<br/>`)
+
+
+
+
+        
+
+        
+    </script>
+    
+</body>
+</html>

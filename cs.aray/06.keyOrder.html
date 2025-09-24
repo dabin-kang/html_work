@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>06_keyOrder</title>
 </head>
 <body>
-    <h1> keyOrder</h1>
+    <h1>06_keyOrder</h1>
     <script>
-        const menu = ["김치찌개","부대찌개","된장찌개","부대찌개","고추장찌개"
-                     ,"부대찌개","부대찌개","된장찌개","고추장찌개","고추장찌개"
-                     ,"고추장찌개","부대찌개","부대찌개","김치찌개","김치찌개"]
+        /**
+         * const obj = {
+         *  name: 'Kim',
+         *  age: 32
+         * };
+         * 
+         * obj[age] // 32
+         */
+        const menu = ["김치찌개", "된장찌개", "부대찌개", "된장찌개", "부대찌개", "된장찌개", "고추장찌개",
+            "부대찌개", "부대찌개", "된장찌개", "고추장찌개", "고추장찌개", "된장찌개", "된장찌개"
+            , "된장찌개", "된장찌개", '김치찌개']
 
-    let res = {}
+        let res = {} // { 각 필드: 카운트 }
 
-    for (const mm of menu) {
-        console.log(mm)
-        let vv = 1
+        for (const oneMenu of menu) {
+            let count = 1;
 
-        if(mm in res){
-            vv += res[mm]
+            if (oneMenu in res) {
+                count += res[oneMenu]
+            }
+
+            res[oneMenu] = count;
         }
-        res[mm] = vv
-    }
 
-    for (const key in res) {
-        document.write(`${key} : ${res[ket]}<br/>`)
-        
-    }
+        for (const key in res) {
+            document.write(`${key} : ${res[key]} <br/>`)
+        }
     </script>
-    
 </body>
+
 </html>

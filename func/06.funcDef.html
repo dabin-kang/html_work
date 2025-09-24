@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_funcDef</title>
+</head>
+<body>
+    <h1>06_funcDef</h1>
+    <script>
+
+        // 선언적 형태로 정의
+        function fn_1(aa,bb){
+            document.write(`fn_1()실행 : ${aa}, ${bb}<br/>`)
+            return 1234
+        }
+
+        fn_1("티라노","브라키오")
+
+        let rr = fn_1("두치","뿌꾸")
+        document.write(`rr : ${rr}<br/>`)
+
+        let ff1 = fn_1  //함수를 변수로 대입
+        document.write(`ff1 : ${ff1}<br/>`) //함수 정의내용 출력
+        document.write(`fn_1 : ${fn_1}<br/>`)
+
+        rr = ff1("장수풍뎅이","사슴벌레")   //변수를 함수로 사용(호출)
+        document.write(`rr : ${rr}<br/>`)
+
+        /*
+        function(aa,bb){
+            document.write(`익명()실행 : ${aa}, ${bb}<br/>`)
+            return 5678
+        }
+*/
+        // 함수표현식으로 정의
+        let ff2 = function(aa,bb){
+            document.write(`익명()실행 : ${aa}, ${bb}<br/>`)
+            return 5678
+        }
+
+        rr = ff2("톰","제리")
+        document.write(`rr : ${rr}<br/>`)
+
+
+        // 화살표 함수로 정의     (매개변수1, 매개변수2...) => {}
+        let ff3 = (aa,bb) => {
+            document.write(`화살표함수()실행 : ${aa}, ${bb}<br/>`)
+            return 9012
+        }
+
+        rr = ff3("서수남","하청일")
+        document.write(`rr : ${rr}<br/>`)
+
+
+        // 익명 함수(함수재접근이 불가) 호출
+        rr = (function(aa,bb){
+            document.write(`익명 직접실행() : ${aa}, ${bb}<br/>`)
+            return 123
+        })("키라","아스란")
+
+        document.write(`rr : ${rr}<br/>`)
+
+        rr = ((aa,bb) => {
+            document.write(`화살표함수 익명 직접 실행() : ${aa}, ${bb}<br/>`)
+            return 456
+        })("이치고","루키아")
+
+        document.write(`rr : ${rr}<br/>`)
+
+        rr = (() => {
+            document.write(` 익명 매개없음1 () <br/>`)
+            return 456
+        })( )
+
+        document.write(`rr : ${rr}<br/>`)
+
+        rr = (() => {
+            return 789
+        })( )
+
+        document.write(`rr : ${rr}<br/>`)
+
+        //실행구문이 1개인 경우 {} 생략
+        rr = (() => 111 )( )
+
+        document.write(`rr : ${rr}<br/>`)
+
+        rr = (() => document.write(` 익명 매개없음2 () <br/>`) )( )
+        document.write(`rr : ${rr}<br/>`)
+
+        /* 매개변수가 없을 경우 () 를 생략할 수 없다
+        rr = (document.write(` 익명 매개없음2 () <br/>`) )( )
+        document.write(`rr : ${rr}<br/>`) */
+
+        /* 매개변수가 1개인 경우 () 생략 가능 */
+        rr = (aa => document.write(` 익명 ${aa} <br/>`) )('탄지로' )
+        document.write(`rr : ${rr}<br/>`)
+
+
+        function big1(aa, bb,cc){
+            let res = bb*aa + cc/aa
+            document.write(`big1 : ${res}<br/>`)
+        }
+
+        big1(3,10,15)
+
+        function big2( bb,cc){
+
+            function small(x,y){
+                return x-y
+            }
+            let res = small(cc,bb)
+            document.write(`big2 : ${res}<br/>`)
+        }
+
+        big2(10,15)
+
+        function big3( bb,cc){
+
+            function small(x,y){
+                return x+y
+            }
+            let res = small(cc,bb)
+            document.write(`big3 : ${res}<br/>`)
+        }
+
+        big3(10,15)
+
+
+        function big4(small, bb,cc){  //고차함수 - 함수를 매개변수로 사용하는 함수
+
+            let res = small(cc,bb) + 1000
+            document.write(`big4 : ${res}<br/>`)
+        }
+
+        function qqq(x,y){
+            document.write(`qqq 실행 : ${x}, ${y}<br/>`)
+            return y/x
+        }
+
+        big4(qqq,10,15)
+
+        big4(function ggg(x,y){
+            document.write(`ggg 실행 : ${x}, ${y}<br/>`)
+            return y%x
+        },10,15)
+
+
+        big4(function (x,y){
+            document.write(`함수표현식 실행 : ${x}, ${y}<br/>`)
+            return x - y + 50
+        },10,15)
+
+
+        big4((x,y)=>x/y+ 20    ,10,15)
+       
+        /*
+        
+        대학별 시험점수를 다르게 출력하는 함수를 구현하세요
+
+        입력정보 :이름, 국어 , 영어, 수학
+        합격점수 : 70점
+
+        a대학 : 국어 50%, 영어:30%, 수학:20%
+        b대학 : 국어 10%, 영어:20%, 수학:70%
+        c대학 : 국어 33%, 영어:33%, 수학:34%
+
+        시험 함수는 1개이며 각대학의 점수계산을 고차함수로 처리하세요
+        */
+        function exam(univ, st){
+            let res = '불합격'
+            let avg = univ(st.jum)
+            if(70<= avg){
+                res = "합격"
+            }
+            document.write(`${st.name}님 ${res}(${avg})입니다.<br/>`)
+        }
+
+        exam(arr=> arr[0]*0.5+arr[1]*0.3+arr[2]*0.2, {name:'정우성',jum:[96,68,32]} )
+        exam(arr=> {
+            let res = 0
+            let rate =[0.1,0.2,0.7]
+            for (const i in rate) {
+                res += arr[i]*rate[i]
+            }
+            return res
+        }, {name:'정우성',jum:[96,68,32]} )
+        exam(arr=> arr[0]*0.33+arr[1]*0.33+arr[2]*0.34, {name:'정우성',jum:[96,68,32]} )
+    </script>
+</body>
+</html>

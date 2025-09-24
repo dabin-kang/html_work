@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>연습문제</h1>
+    <script>
+        //문제 배열의 합하기 배열 [10,20,30,40,50]의 모든 합을 구하세요.
+
+        let arr = [10, 20, 30, 40, 50];
+        let sum = 0
+
+        for (let i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        document.write(`${sum} <br/>`);// 반복문 밖에서  출력한다
+
+
+
+        //배열[1,2,3,4,5,6,7,8,9,10] 중 짝수만 출력
+        //순서 1/ 전체 배열을 순회
+        //2  짝수 인지 아닌지 판별
+        // 배열의 요소는 인덱스로 접근한다
+        let arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] % 2 === 0) {
+                document.write(`<div>${arr1[i]}</div>`);
+            }
+        }
+
+        //홀수의 합 구하기 , 배열[1,2,3,4,5,6,7,8,9,10] 중 홀수의 합 출력
+        let arr6 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        let sum1 = 0;
+        for (let i = 0; i < arr6.length; i++) {
+            if (arr6[i] % 2 != 0)
+                sum1 += arr6[i]
+        }
+        document.write(`홀수의 합계: ${sum1}`);
+
+
+        //요소를 하나 선택하고 나머지와 비교한다
+        //가장큰 요소를 찾는다
+        // [45,88,12,67,99,23] 중 가장 큰 값 구하기
+        let arr2 = [45, 88, 12, 67, 99, 23];
+        let ft = arr2[0];
+        for (let i = 0; i < arr2.length; i++) {
+            if (arr2[i] > ft) {
+                ft = arr2[i]
+
+            }
+        }
+        document.write(`<div>${ft}</div><br/>`)
+
+
+        //이중에서 ~~ 구하라 for
+        //~이면 ~해라      if
+
+        // ["아이유","차은우","전소미","박보검"]문자열을 for문으로 하나씩 출력
+
+        let arr3 = ["아이유", "차은우", "전소미", "박보검"];
+        for (let i = 0; i < arr3.length; i++) {
+            document.write(`${arr3[i]}\t`);
+        }
+
+
+        //문제5. 점수배열 평균
+        // [70,80,90,100,85]의 평균 점수를 구하시오
+
+        let arr7 = [70, 80, 90, 100, 85]
+        let sum2 = 0
+        for (let i = 0; i < arr7.length; i++) {
+            sum2 += arr7[i];
+        }
+        let avg = sum2 / arr7.length
+        document.write(`평균 값 : ${avg}`)
+
+
+
+        //숫자들을 입력하여 기본수의 배수의 총점 평균을 출력하는 함수를 구현하세요
+        // 기본수 첫째 매개 변수
+        // 단 배수가 0개일 경우 "3의 배수가 없습니다" 출력
+
+        let num = [11, 23, 44, 65, 77, 99, 55, 103]
+
+        function dd() {
+            let sum = 0
+            let count = 0
+            for (let i = 0; i < num.length; i++) {
+                if (num[i] % 3 === 0) {
+                    sum += num[i] // 3의 배수면 합계
+                    count++
+                }
+            }
+            if (count === 0) {
+                document.write(`3의 배수가 없습니다`);
+            }
+            else {
+                document.write(`총 합계: ${sum}`);
+            }
+
+        }
+
+
+        let num1 = [11, 23, 44, 65, 77, 99, 55, 103]
+
+        const cc = ((a, b) => {
+            let sum = 0
+            let count = 0
+            for (let i = 0; i < num1.length; i++) {
+                if (num1[i] % 3 === 0) {
+                    sum += num[i] // 3의 배수면 합계
+                    count++
+                }
+            }
+            if (count === 0) {
+                document.write(`3의 배수가 없습니다`);
+            }
+            else {
+                document.write(`총 합계: ${sum}`);
+            }
+
+            return () => { };
+        })(1, 3);
+
+
+
+        const ff = (a) => { return a; };
+
+        console.log(ff('아무거나'));
+
+
+
+
+
+
+        document.write(`<div>${((ww, hh) => ww * hh)(30, 30)}</div>`)
+
+
+        function even(들어오는값) {
+            if (들어오는값 % 2 === 0) {
+                document.write(`짝수: ${들어오는값}<br/>`)
+            }
+            else {
+                document.write(`홀수: ${들어오는값}<br/>`)
+            }
+        }
+
+        let arr8 = [12, 456, 85, 33, 69, 48];
+
+        for (const num of arr8) {
+            document.write(
+                ((element) => element % 2 === 0 ? `짝수: ${element}` : `홀수: ${element}`)(num)
+            );
+        }
+
+        const person = {
+            name: 'kim', 
+            age: 32
+        };
+
+        const vipCondition = {
+            vip: true
+        };
+
+        const vipPerson = { ...person, ...vipCondition };
+
+        console.log(vipPerson);
+
+
+        const arr9 = [1, 2, 3];
+        console.log(...arr9);
+
+
+
+        
+    </script>
+</body>
+
+</html>
