@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>string</h1>
+    <script>
+        let tt = "aBcD EFG 오엔오피 onop computer 123 efeg"
+
+
+        // 인덱스 번호 처럼 0123...9 01234... 로 진행
+        document.write("tt : ",tt,"<br/>")
+        document.write("tt[2] : ",tt[2],"<br/>")
+        document.write("tt[33] : ",tt[33],"<br/>")
+        document.write("tt[-2] : ",tt[-2],"<br/>")
+        document.write("tt.length : ",tt.length,"<br/>")
+        document.write("tt.charAt(2) : ",tt.charAt(2),"<br/>")
+        document.write("tt.charAt(2) : ",tt.charCodeAt(2),"<br/><br/>")// 아스키코드로 변환 , 문자를 아스키코드 숫자로 가져오는 함수
+
+        //아스키 코드를 문자로 변환
+        let tt4 = string.fromcharcode(100,65,49,30)
+        document.write
+
+        // 문자열은 : 추가 삭제 변경 불가능 하다 상수처럼 사용
+        // 검색 , 추출이 주 이용 목적
+        document.write("tt.includes('m') : ",tt.includes('m'),"<br/>")
+        document.write("tt.includes('ompu') : ",tt.includes('ompu'),"<br/>")
+        document.write("tt.includes('k') : ",tt.includes('k'),"<br/><br/>")
+
+        document.write("tt.indexOf('put') : ",tt.indexOf('put'),"<br/>")
+        document.write("tt.indexOf('k') : ",tt.indexOf('k'),"<br/><br/>")
+
+        document.write("tt.indexOf('e') : ",tt.indexOf('e'),"<br/>")
+        document.write("tt.indexOf('e',26) : ",tt.indexOf('e',26),"<br/>")
+        document.write("tt.lastIndexOf('e') : ",tt.lastIndexOf('e'),"<br/>")
+        document.write("tt.lastIndexOf('e',33) : ",tt.lastIndexOf('e',33),"<br/><br/>")
+
+
+         document.write("tt.startsWith('aBc') : ",tt.startsWith('aBc'),"<br/>") // 변수값으로 시작하는 지를 묻는 함수
+         document.write("tt.startsWith('ggf') : ",tt.startsWith('ggf'),"<br/><br/>")
+
+         document.write("tt.endsWith('feg') : ",tt.endsWith('feg'),"<br/>")// 끝나는 것을 묻는 함수
+
+        //추출
+        let tt2 = tt.slice(3,10)
+        document.write("tt.slice(3,10) : ",tt2,"<br/>")
+
+        tt2 = tt.substring(3,10)
+        document.write("tt.substring(3,10) : ",tt2,"<br/>")
+
+        tt2 = tt.substr(3,10)
+        document.write("tt.substr(3,10) : ",tt2,"<br/><br/>")
+
+        //변환
+        tt2 = tt.toLowerCase()
+        document.write("tt.toLowerCase() : ",tt2,"<br/><br/>")//소문자로 변화
+        tt2 = tt.toUpperCase()
+        document.write("tt.toUpperCase() : ",tt2,"<br/><br/>")//대문자로 변화
+
+        tt2 = "공룡메카드",repeat(4)
+        document.write(`"공룡메카드",repeat(4) : `, tt2 , "<br/>")
+        tt2 = replace("o",5) //최초 1개 변경
+         document.write(`"공룡메카드",repeat(4) : `, tt2 , "<br/>")
+         tt2 = replaceAll("e",2)//모두변경 
+         document.write(`"공룡메카드",repeat(4) : `, tt2 , "<br/><br/>")
+
+         let tt3 = "     오엔오피 it     "
+         document.write(`${tt3} , ${tt3.length}<br/>`)
+        
+         tt2 = tt3.trim5start()
+         document.write(`${tt3} , ${tt3.length}<br/>`)
+         tt2 = tt3.trim5End()
+         document.write(`${tt3} , ${tt3.length}<br/>`)
+
+         tt2 = tt3.trim() //좌우 빈칸 여백을 자르기
+         document.write(`${tt3} , ${tt3.length}<br/>`)
+
+         tt3 = "신라면,참깨라면,너구리, 안성탕면,짜파게티"
+         console.log('tt3 : ${tt3},${typeof(tt3)}')
+         tt2 = tt3.split(',')// 를 구분자로 하여 배열로 분활
+         console.log('tt3.split(',') : ${tt3},${typeof(tt3)}')
+
+         for (const i in tt2) {
+            if (!Object.hasOwn(object, i)) ctt2e;
+            
+            const element = object[i];
+ tt2     
+         }
+         let arr = [11,22,13,44]
+         tt2 = arr.join('g'
+            console.log(`arr : ,`)
+         )
+         
+    </script>
+    
+</body>
+</html>

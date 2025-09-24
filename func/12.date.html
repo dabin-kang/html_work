@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>date</h1>
+    <script>
+        let today = new Date()
+        console.log(today)
+
+        let frist = new Date(0) // Timestamp ; 1970;1-1;0-0-0
+                                //utc 기준
+        console.log(frist)
+
+        let birth = new Date("1997-03-07 15:23:27")//문자열로 날짜 및 시간 입력
+        console.log(birth)
+
+        birth = new Date(2002,6,2,16,40,12)// 년,월,일,시,분,초
+                                            // 월 : 0 부터 시작
+        console.log(birth)
+    </script>
+</body>
+</html>

@@ -20,8 +20,18 @@
             no++
             document.write(`aaa 이지롱 ${no} <br/> `)
         }
+
+        function aaaStop(){
+            clearInterval(rr) // setInterval()을 종료
+        }
         //aaa()
-        setTimeout(aaa ,2000) //ms : 1000/1 초 단위
+       // setTimeout(aaa ,2000) //ms : 1000/1 초 단위
+       //setInterval(aaa, 1000);
+
+       let rr = setInterval(aaa, 1000)
+
+       //aaaStop()
+         setTimeout(aaaStop ,10000)
 
 
     </script>

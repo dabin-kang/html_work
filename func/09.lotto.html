@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <H1>lotto</H1>
+    <script>
+        let arr = []
+        while (arr.length!=6) {
+            let no = parseInt(Math.random()*45 + 1)
+            if (!arr.includes(no)) {
+                arr.push(no)
+            }
+        }
+        arr.sort()
+        document.write(`${arr}<br/>`)
+
+
+
+        /* 
+        빙고 구현
+        숫자 범위 1~100
+        출력모양 5*5
+        */
+
+        /*
+        1~100까지 숫자를 배열한다
+        랜덤한 숫자 25개를 생성한다.
+        [5*5] 2차원 배열에 랜덤한 숫자들을 넣는다
+        중복검사  includes 를 사용한다
+        5번째 마다 줄 바꿈하기로 5*5배열 완성
+        출력한다. 
+        */
+
+
+        let crr = []
+   for (let i =0; i < 25 ; i++) {      
+             let no
+             do{
+                no = parseInt(Math.random()*100+1)
+             } while (crr. includes(no))
+             
+             crr.push(no)
+        }     
+         document.write(`${crr}`)
+   
+
+    </script>
+
+</body>
+
+</html>

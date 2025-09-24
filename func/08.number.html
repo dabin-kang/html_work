@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>number</h1>
+    <script>
+        //isnan() : 매개변수 내용이 숫자가 아닌지 -숫자가 아니라면 ture
+        document.write(`isNaN(100) : $(isNaN(100)<br/>`)
+        document.write(`isNaN('100') : $(isNaN('100')<br/>`)
+        document.write(`isNaN("아기상어") : $(isNaN("아기상어")<br/>`)
+
+        document.write(`'123'+ 5 : $('123'+5)<br/>`)
+        document.write(`123+ 5 : ${123+5} <br/>`)
+
+
+        //Number()
+        document.write(`Number('123')+ 5 : ${Number('123')+5}<br/>`) // 문자를 숫자로 바꿔주는 방법 '' = 문자 , +5 = 숫자
+        document.write(`Number('123')+ 5 : ${Number('123+5')}<br/>`)// 수식은 변환이 불가능
+
+        //정수로 바꿔준다 , 정수로 잘라준다
+        document.write(`parseInt('123')+ 5 : ${parseInt('123+5')}<br/>`)// 
+        document.write(`parseInt(987.256) : ${parseInt(987.256)}<br/>`)// 
+        
+        //실수화 ,  실수로 만들어 준다
+        document.write(`parseFloat(987.256) : ${parseFloat(987.256)}<br/>`)// 
+
+
+        // eval() 문자열을 숫자, 수식 으로 변환하는 방법       
+        document.write(`eval('123')+ 5 : ${eval('123+5')}<br/>`)// 수식 변환이 가능
+
+
+        // 숫자와 관련된 메세지
+        document.write(`0/10 : ${0/10}<br/>`) // 0
+        document.write(`10/0 : ${10/0}<br/>`)// infinity 극한 무한
+        document.write(`5+'10' : ${5+'10'}<br/>`) // '510'
+        document.write(`5 -'10' : ${5 -'10'}<br/>`)// 4
+        document.write(`a'+ 10' : ${'a'+10}<br/><br/>`)// nan  숫자가 아니다
+
+
+        //isFinite()  매개변수내용이 숫자(유리수)인지
+        document.write(`isFinite(123) : ${isFinite(123)}<br/>`)
+        document.write(`isFinite('123.456') : ${isFinite('123.456')}<br/>`)
+        document.write(`isFinite('엄마상어') : ${isFinite('엄마상어')}<br/>`)//false
+        document.write(`isFinite(NaN) : ${isFinite(NaN)}<br/>`)//false
+        document.write(`isFinite(Infinity) : ${isFinite(Infinity)}<br/>`)//false
+        document.write(`isFinite(undefined) : ${isFinite(undefined)}<br/><br/>`)//false
+
+
+        //isFinite()  매개변수내용이 숫자(유리수)인지 
+        document.write(`Number.isFinite(123) : ${Number.isFinite(123)}<br/>`)
+        document.write(`Number.isFinite('123.456') : ${Number.isFinite('123.456')}<br/>`)
+        document.write(`Number.isFinite('엄마상어') : ${Number.isFinite('엄마상어')}<br/>`)//false
+        document.write(`Number.isFinite(NaN) : ${Number.isFinite(NaN)}<br/>`)//false
+        document.write(`Number.isFinite(Infinity) : ${Number.isFinite(Infinity)}<br/>`)//false
+        document.write(`Number.isFinite(undefined) : ${Number.isFinite(undefined)}<br/>`)//false
+
+
+        let a = 123.45678
+        document.write(`a : ${a} <br/>`)
+        document.write(`a.toFixed(2) : ${a.toFixed(2)} <br/>`) // 반올림
+        document.write(`a.toPrecision(2) : ${a.toPrecision(2)} <br/><br/><br/>ㄴ`) // 지수
+
+        //내림
+        document.write(`Math.floor : ${Math.floor(123.456)}, ${Math.floor(-123.456)},${Math.floor(987.654)},${Math.floor(123.789)} <br/>`) // 
+        
+        //올림
+        document.write(`Math.ceil : ${Math.ceil(123.456)}, ${Math.ceil(-123.456)},${Math.ceil(987.654)},${Math.ceil(123.789)} <br/>`) //
+        
+        //반올림
+        document.write(`Math.round : ${Math.round(123.456)}, ${Math.round(-123.456)},${Math.round(987.654)},${Math.round(123.789)} <br/>`) // 
+
+        //소수점 제거
+        document.write(`Math.trunc : ${Math.trunc(123.456)}, ${Math.trunc(-123.456)},${Math.trunc(987.654)},${Math.trunc(123.789)} <br/>`) // 
+
+        //절대값
+        document.write(`Math.abs : ${Math.abs(123.456)}, ${Math.abs(-123.456)},${Math.abs(987.654)},${Math.abs(123.789)} <br/>`) // 
+
+        //제곱
+        document.write(`Math.pow : ${Math.pow(2,4)} <br/>`) // =  2**4
+
+        //제곱근
+        document.write(`Math.sqrt : ${Math.sqrt(2)} <br/>`) // 
+
+        //로그
+        document.write(`Math.log : ${Math.log(10)} <br/>`) // 
+
+        //배열중에서 가장 큰 값 , 가장 작은 값
+        document.write(`Math.max : ${Math.max(31,45,8,12,3,6,48)} <br/>`) // 
+        document.write(`Math.min : ${Math.min(31,45,8,12,3,6,48)} <br/>`) // 
+
+        //파이
+        document.write(`Math.PI : ${Math.PI} <br/><br/>`) // 
+        document.write(`Math.sin : ${Math.sin(30)} <br/>`) // 
+        document.write(`Math.sin : ${Math.sin(30*Math.PI/100)} <br/>`) // 
+        document.write(`Math.cos : ${Math.cos(30*Math.PI/100)} <br/>`) // 
+        document.write(`Math.tan : ${Math.tan(30*Math.PI/100)} <br/><br/>`) //
+        
+        //역 tan
+        document.write(`Math.atan : ${Math.atan(1,1)} <br/>`) //
+
+
+        // 0< x <1 난수 발생
+        document.write(`Math.random() : ${Math.random()} <br/>`) //
+        // 0< x <1 난수 발생 , 소수점 제거
+        document.write(`Math.random() : ${Math.trunc (Math.random()*40+20)} <br/>`) //
+        
+        
+
+
+
+
+    </script>
+    
+</body>
+</html>
