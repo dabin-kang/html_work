@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <script>
+        //객체 선언
+        let mm1 = {
+            name : '김태희',
+            age : 54,
+            marriage : true,
+
+
+            //key : value : 함수
+            fn_1 : function(){
+                console.log(`fn_1실행()`)
+            },
+
+            fn_2 : function(){
+                console.log(`fn_2실행() ${this.name}`)
+            }
+        }
+
+        console.log('mm1',mm1)
+        mm1.fn_1() // 멤버요소읜 함수 호출
+
+    </script>
+    
+</body>
+</html>

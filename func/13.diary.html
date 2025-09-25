@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            
+        }
+        img{
+            width: 300px;
+            height: 300px;
+
+        }
+        table>tr : :nth-of-type(3) > td:nth-of-type(3){
+            background-color: #ccc ;
+            color: red;
+        }
+        table>tr : :nth-of-type(3) ~ tr > td{
+            text - align: right;
+        }
+        .now{
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        let today = new Date()
+        let title = `${today.getFullYear()}년 ${today.getMonth()+1}월`
+        let now = today.getDate()
+
+        today.setDate(1)
+        let first = today.getDay()
+
+
+        let last = new Date(today.getFullYear(),today.getMonth(+1),0).getDate()
+        console.log(last)
+    </script>
+</head>
+<body>
+    <h1>13.diary</h1>
+    <table cellpadding="3px" cellspacing="0" border="1" align="center" width="300px" height="300px">  
+        <tr>
+            <td colspan="7">
+                <img src="../fff/grim.jpg" width="100%" height="100%" alt="이미지1">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7">
+               <h2><script>document.write(title)</script></h2>
+            </td>
+        </tr>
+        <tr>
+            <script>
+                let week = "일월화수목금토".split('')
+
+                
+                for (const ww of week) {
+                    document.write(`<td>${ww}</td>`)
+                }
+            </script>
+        </tr>
+        <tr>
+            <script>
+                for (let i = 0; i < first; i++) {
+                   document.write(`<td></td>`)
+                }//월 시작 되기 전 까지의 공백
+
+
+                for (let i =1; i <= last; i++) {
+                    today.setDate(i)
+                    let nowCC = ""
+                    if (now == i){
+                        nowCC = "class = 'now'"
+                    } 
+                    document.write(`<td ${nowCC}>${i}</td>`)
+                    if (today.getDay()==6){
+                        document.write(`<tr></tr>`)
+                    }
+                }
+                
+                
+    
+
+                
+                </script>
+        </tr>
+    </table>
+
+    <!-- 테이블 = 표만들기 최적화.. <tr></tr> //가로줄
+        div = 커스텀 : 만능 
+        let arr = [a, b, c]
+        for(let i=0; i<arr.length; i++) {
+            arr[i]
+        }
+
+        for(i in arr) {
+            i : 0 1 2 
+            arr[i] : arr[0] arr[1]
+        }
+        for(aa of arr) {
+            aa : arr[0], arr[1]
+        }
+
+
+    -->
+
+    <script>
+
+
+    </script>
+    
+</body>
+</html>

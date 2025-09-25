@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <script>
+        //myFrm.phone.value = "1122223333"
+        //myFrm 가 무엇인지 부터 하지 못한다 , 하위코드 진행이 되지 않았기 때문
+        
+        
+        //window.onload 함수 overrding(재정의)
+        window.onload = function(){
+            myFrm.phone.value = "444555666" // 전부 로딩하고 난 뒤에 다시 한다, 한번에 다 때려 넣기
+            //alert(myFrm.pid.value)
+            myFrm.pw.style.background = "#ff0"
+
+            // 객체 멤버함수(메서드)로 정의
+            function asdf(){
+                alert(`asdf()실행`)
+            }
+            // 로드 후 객체 접하여 객체관련 이벤트를 재정의 - 객체 이벤트로 실행
+            myFrm.agree.onclick = function(){
+                alert(`agree 눌럿구만?`)
+            }
+        }
+        function qwer(){
+            // 함수 호출 시점이 하위 객체가 생성된 이후 이므로 객체 접근가능
+            alert(`중복확인${myFrm.pid.value}`)
+        }
+
+    </script>
+</head>
+<body>
+    <h1>instance</h1>
+    <!--
+    1. 어느 타이밍에 실행 할지
+    2. 함수안에 있는 함수는 호출이 안되는 것 처럼 호출이 안됨
+    (중첩 함수)
+    
+    -->
+
+    <form action="" name = "myFrm">
+        id : <input type = "text" name = "pid" value =  "aaa">
+             <input type = "button"  value =  "중복확인" onclick="qwer()">
+        
+        <br/>
+        암호 : <input type = "text" name = "pw" ><br/>
+        전화 : <input type = "text" name = "phone" value =  "01037563792"><br/>
+               <input type = "button"  value =  "전화번호확인" onclick="asdf()">
+               <!--"asdf()"가 전역형태가 아니므로 적접호출 불가-->>
+
+                <br/>
+               <input type = "button"  value =  "동의" name = "agree">
+
+    </form>
+
+    <script>
+        myFrm.pid.value = "bbb" // "aaa" 를 "bbb" 로 바꾼다
+    </script>
+  
+    
+</body>
+</html>

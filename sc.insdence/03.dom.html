@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #cons {
+            border:  1px solid #ccc;
+            padding: 10 px;
+            margin: 10px; 
+         }
+    </style>
+    <script>
+        function conLog(msg){
+            //id : cons 인 요소
+            let cons = document.getElementById("cons")
+            //innerHTML : 텍스트 노드 (글자내용)
+            cons.innerHTML += msg +"<br/>"
+        }
+        window.onload = function(){
+            conLog("와 객체다")
+
+            //페이지 전체를 가지고 오는 것
+            let rrtt =document.documentElement
+            console.log(rrtt)
+
+            //전체의 하위 객체 - 자식을 가져옴(후손은 직접가져오지 않음)
+            let arr = rrtt.childNodes
+            console.log(arr)
+            console.log(rrtt.childElementCount)// 하위 갯수
+
+            let arr2 = arr[2].childNodes
+            console.log(arr2)
+            console.log(arr2[1])
+
+            //tag
+
+            let spans = document.getElementsByTagName("span")
+            console.log(spans)
+            console.log(spans[1])
+            console.log(spans[1].innerHTML)
+
+            spans[0].innerHTML = '스펜 제로'
+            conLog(spans[0].getAttribute('zz-date'))
+            spans[0].setAttribute('zz-date',45678)
+            spans[2].setAttribute('zz-date',5454)
+            spans[0].removeAttribute('zz-date')
+            spans[1].style.color = "#f00"
+
+            //class 배열
+            let bbbs = document.getElementsByClassName("bbb")
+            console.log(bbbs)
+            bbbs[1].style.border = "1px solid #000"
+            bbbs[2].setAttribute("id","b2")
+
+            // id = 최초 1개
+            let b0 = document.getElementById("b0")
+            conLog(b0.innerHTML)
+        }
+
+        let q1 = document.getElementById("q1")
+            conLog(q1.innerHTML)
+
+             let b2 = document.getElementById("b2")
+            conLog(b2.innerHTML)
+
+             let q2 = document.getElementById("q2")
+            q2.setAttribute("id")
+            q2.setAttribute("id","qq33")
+
+
+            //요소생성 및 추가
+            // 생성
+            let nnItem = document.createElement("div")
+            nnItem.innerHTML = "새로운div"
+            nnItem.className = "ccc"
+            console.log(nnItem)
+            bbbs[2].appendchild(nnItem)
+
+
+            //삭제
+            //자신을 삭제
+            bbbs[3].remove()
+            //q2.removeChild(div)
+            let q2child = q2 .childNodes
+            console.log(q2child)
+
+            //자식을 삭제
+            q2.removeChild(q2child[1])
+
+
+            //box로 작성된 div를 삭제해 주세요
+
+
+
+    </script>
+</head>
+<body>
+    <h1>03. DOM</h1>
+    <div class = "aaa">
+        aaa0
+        <div class = "bbb" id = "b0">bbb0</div>
+        <div qwer"11" id = "q1">qwer11</div>
+        <div qwer"11" id = "q1" class ="bbb">qwer22 bbb1</div>
+        <span zz-date = "1234">span0</span>
+    </div>
+
+    <div zz-date = "부모지롱">
+        <div class = "bbb">bbb2</div>
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div qwer"33" id = "q1">qwer33</div>
+        <div qwer"44" id = "q2">qwer44
+            <div zz-date="자식이지">자식자식</div>
+        </div>
+        <span class = "bbb">span2</span>
+    </div>
+
+    <div id = "cons"> </div>
+    
+</body>
+</html>

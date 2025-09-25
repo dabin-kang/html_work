@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ 
+
+        let 변수 = 123
+        document.write(변수) //변수값 출력 
+        document.write("문자열") //문자열 출력 
+        document.write('문자열') //문자열 출력 
+        document.write(`문자열`) //문자열 출력 
+        document.write(`${변수}`) //문자열 출력
+        document.write("<br/>") //줄바꿈
+        document.write('문자열<br/>') //문자열 출력 
+        document.write('문 자열<br/>') //문자열 출력 
+        document.write(변수, ' 문자열<br/>') //변수값 출력 
+        document.write(`문자열 ${변수}<br/>`) //문자열 출력
+        console.log(`문자열 ${변수}\n`)//<br/> 안됨
+
+        for(let i=0; i<10; i++) {
+            //반복할내용
+        }
+        /*
+        if(조건문) {
+            위 조건문 참일때 실행하는 구간
+        } else {
+            거짓일때 실행하는 구간
+        }
+        
+        */
+
+
+        //숫자들을 입력하여 기본수의 배수의 총점 평균을 출력하는 함수를 구현하세요
+        // 기본수 첫째 매개 변수
+        // 단 배수가 0개일 경우 "3의 배수가 없습니다" 출력
+
+        //숫자들을 입력하여 -- 1 입력 잘 받았는지 출력
+        //  기본수의 -- 2 입력값중에 기본수 출력
+        //  배수 -- 3 배수 출력 // --4 기본수의 배수인지 확인
+        // 의 총점 --5
+        // 평균을 출력 --6
+        // 하는 함수를 구현하세요 -- 7
+
+        let arr = [3, 11,12,44,6,9,15] //--1 
+        document.write(arr)//출력 
+        document.write("<br/>")
+        document.write(arr[0])
+        document.write("<br/>")
+        document.write(`${arr[1]} \t`)
+        document.write(`${arr[2]} \t`)
+        document.write(`${arr[3]} \t`)
+        document.write(`${arr[4]} \t`)
+        document.write(`${arr[5]} \t`)
+        document.write(`${arr[6]} \t`)
+        document.write("<br/>")
+        //11/3...2
+        document.write(arr[1]%arr[0]==0,arr[1]%arr[0])
+        document.write("<br/>")
+        document.write(arr[2]%arr[0]==0,arr[2]%arr[0])
+        if(arr[1]%arr[0]==0) {
+            document.write(arr[1])
+        } else {
+            document.write(arr[1]%arr[0])
+        }
+
+        if(arr[2]%arr[0]==0) {
+            document.write(arr[2])
+        } else {
+            document.write(arr[2]%arr[0])
+        }
+        
+        document.write("<br/>")
+
+        let sum = 0
+        let count = 0
+        //i++  i=i+1  i+=1
+        for(let i = 0 ; i< 6 ; i++){
+            if(arr[i]%arr[0]==0) {
+                document.write("참:")
+                document.write(`${arr[i]}<br/>`)
+                
+
+
+
+                sum = sum + arr[i]
+                count = count + 1
+
+
+            } else {
+                // document.write("거짓:")
+                // document.write(`${arr[i]%arr[0]}<br/>`)
+            }
+        }
+           document.write(sum)
+            document.write("<br/>")
+           let avg = sum / count
+           document.write(avg)
+        /*
+        if(조건문) {
+            위 조건문 참일때 실행하는 구간
+        } else {
+            거짓일때 실행하는 구간
+        }
+        
+        */
+        document.write("<br/>")
+        
+        for(let i = 1 ; i < 7 ; i ++){
+            document.write(`${arr[i]} \t`)
+        }    
+        
+    </script>
+</body>
+</html>

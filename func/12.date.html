@@ -8,7 +8,8 @@
 <body>
     <h1>date</h1>
     <script>
-        let today = new Date()
+        //1.  날짜 생성
+        let today = new Date() // os 현재시간
         console.log(today)
 
         let frist = new Date(0) // Timestamp ; 1970;1-1;0-0-0
@@ -21,6 +22,114 @@
         birth = new Date(2002,6,2,16,40,12)// 년,월,일,시,분,초
                                             // 월 : 0 부터 시작
         console.log(birth)
+
+        birth = new Date(2013,10-1,11)//년 월 일                                   
+        console.log(birth)
+
+        birth = new Date(2013,10-1,11,5,6) //년 월일 시분
+        console.log(birth)
+
+
+         birth = new Date(2013,45-1,111,665,776) //시간 단위를 초과한 수치도 자동연산 처리                               
+        console.log(birth)
+
+        // 문자열 입력은 시간 수치에 맞춰야 함
+        birth = new Date("1997-78-84-95:83:82") //시간 단위를 초과한 수치도 자동연산 처리                               
+        console.log(birth)
+
+         
+
+
+
+
+        birth = new Date(2025,9-1,1)                                   
+        console.log(birth)
+
+        // 전 월의 마지막날짜 , 마지막 일이 변동이 심하다
+        birth = new Date(2025,9-1,0)                                   
+        console.log(birth)
+
+
+
+        //2. 날짜 가져오기
+
+        //날짜
+        console.log(today.getFullYear()) 
+        console.log(today.getMonth()+1) 
+        console.log(today.getDate())
+
+        console.log(today.getDay()) 
+        // 일 월 화 수 목 금 토
+        // 0  1  2  3 4  5  6
+
+        //시간
+        console.log(today.getHours()) 
+        console.log(today.getMinutes()) 
+        console.log(today.getSeconds()) 
+        console.log(today.getMilliseconds()) 
+        console.log(today.getTimezoneOffset()) // "분"단위 Utc 차이
+        console.log(today.getTime()) 
+
+
+
+
+        today.setFullYear(1234)
+        console.log(today)
+
+         today.setMonth(50-1)
+        console.log(today)
+
+         today.setDate(15)
+        console.log(today)
+
+        today.setHours(37)
+        console.log(today)
+
+        today.setMinutes(50)
+        console.log(today)
+
+        today.setSeconds(50)
+        console.log(today)
+
+
+        today.setMilliseconds(50)
+        console.log(today)
+
+        today.setTime(0)
+        console.log(today)
+
+
+        //2020-2-10 (월) 10 :50  형식으로 출력해주세요
+
+        /*let yy = birth.getFullYear(2025)
+        let mm = birth.getMonth()+1
+        let dd = birth.getDate()
+        let day = birth.getDay(0)
+
+        let hh = birth.getHours(24)
+        let mi = birth.getMinutes(60) 
+
+        console.log("현재시간:",yy,"년",mm,"월",dd,"일",${},hh,"시",mi,"분")
+
+        console.log(``)*/
+
+
+    
+        let arr = new Date()
+
+        console.log(`${arr.getFullYear()}년 ${arr.getMonth()}월 ${'일월화수목금토'[arr.getDay()]}요일 `)
+
+        //문자열의 특징   인덱스번호로 접근이 가능하다
+
+       
+
+      
+
+
+
+
+
+
     </script>
 </body>
 </html>
