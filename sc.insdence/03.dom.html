@@ -3,122 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>03_DOM</title>
     <style>
-         #cons {
-            border:  1px solid #ccc;
-            padding: 10 px;
-            margin: 10px; 
-         }
+        #cons{
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+        }
     </style>
     <script>
         function conLog(msg){
-            //id : cons 인 요소
+            //id : cons 인 요소 
             let cons = document.getElementById("cons")
-            //innerHTML : 텍스트 노드 (글자내용)
-            cons.innerHTML += msg +"<br/>"
+            // innerHTML :  텍스트노드(글자내용)
+            cons.innerHTML += msg+"<br/>"
         }
+
         window.onload = function(){
             conLog("와 객체다")
 
-            //페이지 전체를 가지고 오는 것
-            let rrtt =document.documentElement
-            console.log(rrtt)
+            //전체
+            let rrtt = document.documentElement
+            //console.log(rrtt)
 
-            //전체의 하위 객체 - 자식을 가져옴(후손은 직접가져오지 않음)
+            // 전체의 하위 객체 배열 - 자식을 가져옴(후손은 직접가져오지 않음)
             let arr = rrtt.childNodes
             console.log(arr)
-            console.log(rrtt.childElementCount)// 하위 갯수
+            console.log(rrtt.childElementCount)  //하위 갯수
 
             let arr2 = arr[2].childNodes
             console.log(arr2)
             console.log(arr2[1])
 
-            //tag
-
+            //tag 배열
             let spans = document.getElementsByTagName("span")
             console.log(spans)
             console.log(spans[1])
-            console.log(spans[1].innerHTML)
+            conLog(spans[1].innerHTML)
+            spans[0].innerHTML = '스팬제로'
 
-            spans[0].innerHTML = '스펜 제로'
-            conLog(spans[0].getAttribute('zz-date'))
-            spans[0].setAttribute('zz-date',45678)
-            spans[2].setAttribute('zz-date',5454)
-            spans[0].removeAttribute('zz-date')
-            spans[1].style.color = "#f00"
+            //속성
+            conLog(spans[0].getAttribute('zz-data'))    //속성 가져오기
+            spans[0].setAttribute('zz-data', 5678)      //속성변경
+            conLog(`hasAttribute : ${spans[0].hasAttribute('zz-data')}`)//속성유무
+            spans[2].setAttribute('zz-data', 5454)
+            spans[0].removeAttribute('zz-data')         //속성삭제
+            conLog(`hasAttribute : ${spans[0].hasAttribute('zz-data')}`)
+            spans[0].className = "ddd"
+            spans[0].className = "eee"
+            spans[0].removeAttribute('class')
+            spans[0].setAttribute('class','jjj')
+            spans[0].classList.add('mmm')//추가
+            spans[0].classList.add('ooo')//추가
+            spans[0].classList.add('mmm')//기존에 있으면 또 들어가지는 않음/ 이미 존재하는 클래스는 중첨 추가하지 않는다
+
+            conLog(`mmm 유무 : ${spans[0].classList.contains('mmm')}`)
+            spans[0].classList.remove('mmm')//삭제
+            conLog(`mmm 유무 : ${spans[0].classList.contains('wer')}`)
+
+            spans[0].classList.toggle('sss')// 없으면 추가
+            spans[0].classList.toggle('sss')// 있으면 삭제
+
+            spans[1].style.color="#f00"
 
             //class 배열
             let bbbs = document.getElementsByClassName("bbb")
             console.log(bbbs)
-            bbbs[1].style.border = "1px solid #000"
-            bbbs[2].setAttribute("id","b2")
+            bbbs[1].style.border = "1px solid #0f0"
+            bbbs[2].setAttribute("id", "b2")
 
-            // id = 최초 1개
+            //id - 최초 1개
             let b0 = document.getElementById("b0")
             conLog(b0.innerHTML)
-        }
 
-        let q1 = document.getElementById("q1")
+            let q1 = document.getElementById("q1")
             conLog(q1.innerHTML)
 
-             let b2 = document.getElementById("b2")
+            let b2 = document.getElementById("b2")
             conLog(b2.innerHTML)
 
-             let q2 = document.getElementById("q2")
-            q2.setAttribute("id")
-            q2.setAttribute("id","qq33")
-
+            //속성
+            let q2 = document.getElementById("q2")
+            q2.removeAttribute("id")            
+            q2.setAttribute("id", "qq33")       
 
             //요소생성 및 추가
-            // 생성
+            //생성
             let nnItem = document.createElement("div")
             nnItem.innerHTML = "새로운div"
-            nnItem.className = "ccc"
+            nnItem.className = "ccc"   // 클래스 변경
             console.log(nnItem)
-            bbbs[2].appendchild(nnItem)
+            bbbs[2].appendChild(nnItem)
 
 
-            //삭제
+
+
+
+            
             //자신을 삭제
             bbbs[3].remove()
             //q2.removeChild(div)
-            let q2child = q2 .childNodes
-            console.log(q2child)
+            let q2Child = q2.childNodes
+            console.log(q2Child)
 
             //자식을 삭제
-            q2.removeChild(q2child[1])
+            q2.removeChild(q2Child[1])
+            
+            // box 로 작성된 div 삭제
+            let divs = document.getElementsByTagName("div")
+            for (let i = divs.length-1 ; i>=0 ; i--) {
+                let dd = divs[i]
+                if(dd.innerHTML.startsWith("box")){
+                    console.log(dd)
+                    dd.remove()
+                }
+            }
+
+            let qq33Par = q2.parentNode //부모노드
+            console.log("qq33Par : " ,   qq33Par)
+            conLog(qq33Par.getAttribute("zz-data"))
 
 
-            //box로 작성된 div를 삭제해 주세요
+            let bro1 = q2.previousElementSibling // 앞에 노드
+            console.log(bro1)
+
+            let bro2 = bro1.nextElementSibling //뒤의 노드
+            console.log(bro2)
+
+            let qsb2 = document.querySelector("#b2") // style 선택자 사용
+            console.log(qsb2)
+
+            let qs = document.querySelector(".aaa > div:nth-of-type(3)")
+            conLog(qs.innerHTML)
+
+            qs = document.querySelector(".bbb") // 해당객체가 여러개인 경우 최초 1개만 리턴
+            console.log(qs)
+
+            let qsArr = document.querySelectorAll(".bbb") // 해당객체가 여러개인 경우 배열로 가져온다
+            console.log(qsArr)
+
+            qsArr = document.querySelectorAll("#b2") // 1개 일지라도 배열
+            console.log(qsArr)
+
+            qsArr = document.querySelectorAll("#b1") // 같은 id가 여러개인 경우 배열로 가능
+            console.log(qsArr)
+
+            let aaa = document.getElementsByClassName("aaa")[0]
+            console.log(aaa)
+
+            let rrr = document.createElement("div")
+            rrr.innerHTML="rrr"
+            aaa.prepend(rrr) // 자식으로 추가는 하는데 하위요소 중 맨앞으로 unshift와 비슷
 
 
+             let fff = document.createElement("div")
+            rrr.innerHTML="fff"
+            aaa.insertBefore(fff,q1) // 중간삽입
+
+            aaa.insertBefore(rrr,q1)// 이미 추가된 요소를 다시 추가할 경우 이동(추가가 아니라 위치를 이동하는 것임)
+
+
+             let ggg = document.createElement("div")
+            ggg.innerHTML="ggg"
+            aaa.insertBefore(ggg, null) // 자식으로 추가(참조요소가 null일 경우 맨뒤로이동) == append
+
+        }
 
     </script>
 </head>
 <body>
-    <h1>03. DOM</h1>
-    <div class = "aaa">
+    <h1>03_DOM</h1>
+
+    <div class="aaa">
         aaa0
-        <div class = "bbb" id = "b0">bbb0</div>
-        <div qwer"11" id = "q1">qwer11</div>
-        <div qwer"11" id = "q1" class ="bbb">qwer22 bbb1</div>
-        <span zz-date = "1234">span0</span>
+        <div class="bbb" id="b0">bbb0</div>
+        <div qwer="11" id="q1">qwer11</div>
+        <div qwer="11" id="q1" class="bbb">qwer22 bbb1</div>
+        <span zz-data="1234">span0</span>
+        <span>span1</span>
     </div>
 
-    <div zz-date = "부모지롱">
-        <div class = "bbb">bbb2</div>
+    <div zz-data="부모지롱">
+        <div class="bbb" >bbb2</div>
         <div>box1</div>
         <div>box2</div>
         <div>box3</div>
-        <div qwer"33" id = "q1">qwer33</div>
-        <div qwer"44" id = "q2">qwer44
-            <div zz-date="자식이지">자식자식</div>
+        <div qwer="33" id="q1">qwer33</div>
+        <div qwer="44" id="q2">qwer44
+            <div zz-data="자식이지">자식자식</div>
         </div>
-        <span class = "bbb">span2</span>
+        <span class="bbb">span2</span>
     </div>
 
-    <div id = "cons"> </div>
-    
+    <div id="cons"></div>
+
 </body>
 </html>
