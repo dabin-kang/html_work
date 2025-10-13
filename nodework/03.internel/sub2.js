@@ -1,0 +1,1 @@
+module.exports = () => c //01.instance.js 에서 sub1이 import 되었을 경우 global.c 호출됨
