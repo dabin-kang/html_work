@@ -1,79 +1,123 @@
-const http = require('http')
-const fs = require('fs')
-const path = require('path')
-const {url} = require('url')
+// 필요한 모듈 불러오기
+
+const http = require('http') // http  서버 모듈
+const fs = require('fs')    // 파일 읽고 쓰기(file system)
+const path = require('path')// 경로 관련 유틸리티(dirname, basename 등)
+const {URL} = require('url')// url 문자열을 세부적으로 분석하는 객체
 
 
-((req,res)=>{
-
-try{
+// 서버 생성 부분
+http.createServer((req, res)=>{
+    try {
 
     let service = '/index'
 
-    if(req.url !='/favicon.ico'){
-    //console.log('req',req)
-    console.log('method:',req.method)
-    console.log('url:',req.url)
-    console.log('headers:',req.headers)
-    console.log('httpVersion:',req.httpVersion)
-    console.log('soket:',req.soket)
-    console.log('statusCode:',req.statusCode)
 
-    //기본서버인 경우 ; http://${req.headers.host 가 필요(기본서버는 상대  url만 제공하기 때문)
-    const myurl = new URL(req.url,`http://${req.headers.host}`)
-    console.log('href',myurl.href)
-    console.log('origin',myurl.origin)
-    console.log('protocol',myurl.protocol)
-    console.log('username',myurl.username)
-    console.log('password',myurl.password)
-    console.log('host',myurl.host)
-    console.log('hostname',myurl.hostname)
-    console.log('pathname',myurl.pathname)
-    console.log('dirname',myurl.dirname)
-    console.log('searchParams',myurl.searchParams)
-    console.log('hash',myurl.hash)
-
-    if(path.basename(myurl.pathname).trim()!='/')
-    service = path.basename(myUrl.pathname).trim()
-    }
+//요청 정보 출력        
+//구글 크롬에서 새로고침이 두번 떠서 그것을 방지하기 위해서 사용 :  favicon.ico
+        if(req.url !='/favicon.ico'){
+            //console.log('req', req)
+            console.log('method : ',req.method)
+            console.log('url : ',req.url)
+            //console.log('headers : ',req.headers)
+            console.log('httpVersion : ',req.httpVersion)
+            //console.log('socket : ',req.socket)
+            console.log('statusCode : ',req.statusCode)
 
 
- 
+//url 객체로 분석하기            
+            // 기본서버인 경우 :  `http://${req.headers.host}`가 필요 (기본서버는 상대 URL만 제공하기 때문)
+            const myUrl = new URL(req.url, `http://${req.headers.host}`)
+            //console.log(myUrl)
+            console.log('href : ',myUrl.href)
+            console.log('origin : ',myUrl.origin)
+            console.log('protocol : ',myUrl.protocol)
+            //console.log('username : ',myUrl.username)
+            //console.log('password : ',myUrl.password)
+            console.log('host : ',myUrl.host)
+            console.log('pathname : ',myUrl.pathname)
+            console.log('dirname : ',path.dirname(myUrl.pathname) )
+            console.log('basename : ',path.basename(myUrl.pathname) )
+            console.log('searchParams : ',myUrl.searchParams)
+            console.log('hash : ',myUrl.hash)
 
-  if(service.startsWith('/fff')){ //이미지 폴더
-    const data = fs.readFileSync('${service}')
-    res.writeHead(200,{'content-type':'image/jpeg'})
-    res.end(data)
 
-    else if(service=='/now')
+//페이지 구분 로직  
+            if(myUrl.pathname.trim()!='/'){
+                service = myUrl.pathname.trim()
+            }
+        }
 
-  }else{
-    const data = fs.readFileSync('./views/${service}.html')
-    res.writeHead(200,{'content-type':'text/html; charset=utf8'})
-    res.end(data)
-  }
+        console.log('service ', service)
+
+
+//파일별 응답 처리
+// 이미지 처리        
+        if(service.startsWith('/fff')){  //이미지폴더
+
+            const data = fs.readFileSync(`.${service}`)
+            res.writeHead(200,{'content-type':'image/jpeg'})
+            res.end(data)
+        }
+
+//css 파일 처리        
+        else if(service.endsWith('.css')){  //css 파일
+
+            const data = fs.readFileSync(`.${service}`)
+            res.writeHead(200,{'content-type':'text/css'})
+            res.end(data)
+
+
+// /now 요청처리(현재 시간 페이지)
+        }else if(service=='/now'){  // url : now
+
+            function dateToStr(ddd){
+                let res = `${ddd.getFullYear()}-${ddd.getMonth()+1}-${ddd.getDate()}`
+                res+=` (${'일월화수목금토'[ddd.getDay()]}) ${ddd.getHours()}:${ddd.getMinutes()}`
+                return res
+            }
+
+            let data = fs.readFileSync(`./views/now.html`).toString()
+            
+            // 파일로 받은 문자열을 변수로 치환
+            //const data = dateToStr(new Date())
+            data = data.replaceAll("{{msg}}", dateToStr(new Date()) )
+            
+            res.writeHead(200,{'content-type':'text/html; charset=UTF-8'})
+            res.end(data)
+
+
+// 그 외 페이지 처리            
+        }else{
+            //파일을 읽어와 데이터 전송
+            const data = fs.readFileSync(`./views${service}.html`)
+            res.writeHead(200,{'content-type':'text/html; charset=UTF-8'})
+            res.end(data)
+        }
+        
+        
+
+    } catch (error) {
+        //에러 발생시 화면 처리
+        console.log('에러', error.message)
+        res.writeHead(200,{'content-type':'text/html; charset=UTF-8'})
+        res.end('죄송합니다. 빠른시일내에 복구하겠습니다.')
+        
+    }    
     
-     
 
-}catch(error){
-    res.writeHead(200,{'content-type':'text/html; charset=utf8'})
-    res.end("빠른 시일내에 복구하겠습니다") 
-
-}
+}).listen(80,()=>{
+        console.log("80 서버 실행  , 대기")
 })
-        server.listen(80,()=>{
-            console.log("서버실행중")
-        })
 
+/*
 
+    06_server.js 를 이용하여
+    port : 8080 으로 서버를 실행하세요
 
-        /*
-        06.server.js 를 이용하여
-        port : 8080 으로 서버를 실행하세요
+    메인페이지
+    url : aaa , bbb  두개로 진입
+    aaa : 3 개의 이미지 보이게 할 것
+    bbb : param에서 2개의 수를 받아 더하여 html 페이지에 출력
 
-        메인페이지
-        url : aaa , bbb 두개로 진입
-        aaa : 3개의 이미지가 보이게 할 것
-        bbb : parnm에서 2개으 수를 받아 연산하여 html페이지에 출력
-
-        */
+*/
