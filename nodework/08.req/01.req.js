@@ -8,10 +8,10 @@ http.createServer((req, res) => {
     res.write("<h1>강다빈 입니다</h1>");
     res.write(`<div>url : ${req.url}</div>`);
     res.write(`<div>method : ${req.method}</div>`);
-    res.write(`<div>headers : ${JSON.stringify(req.headers)}</div>`); // ✅ JSON 문자열로 보기 좋게
+    res.write(`<div>headers : ${JSON.stringify(req.headers)}</div>`); //  JSON 문자열로 보기 좋게 보여준다
     res.write(`<div>httpVersion : ${req.httpVersion}</div>`);
-    res.write(`<div>remoteAddress : ${req.socket.remoteAddress}</div>`); // ✅ 클라이언트 IP 확인
-    res.write(`<div>headers['referer'] : ${req.headers['referer'] || '없음'}</div>`); // ✅ 안전한 출력
+    res.write(`<div>remoteAddress : ${req.socket.remoteAddress}</div>`); //  클라이언트 IP 확인
+    res.write(`<div>headers['referer'] : ${req.headers['referer'] || '없음'}</div>`); // 안전한 출력
 
     // 응답 종료
     res.end("req 경로 종료");

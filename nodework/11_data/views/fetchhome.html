@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetchHome</title>
+    <style>
+        #cons {
+            width: 800px;
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            function consLog(msg) {
+                document.querySelector("#cons").innerHTML += msg + '<br/>'
+            }
+
+            document.querySelector("#btn1").onclick = function () {
+                fetch('/test1')      //   http://192.168.0.78/test1
+                    .then(answer => {
+                        console.log('정상 : ', answer.ok, answer.status)
+                        //console.log('text() : ',answer.text())
+                        return answer.text()  // Promise 처리 -> 다음 then 으로 리턴하여 확인
+                    })
+                    .then(data => {
+                        //console.log('data : ',data)
+                        consLog(data)
+                    })
+                    .catch(err => {
+                        console.log('에러 : ', err.message)
+                    })
+            }
+
+
+
+
+            document.querySelector("#btn2").onclick = function () {
+                fetch('/test2?pid=aaa&age=23', {
+                    method: 'GET'
+                })
+                    .then(answer => answer.text())
+                    .then(data => consLog(data))
+                    .catch(err => console.log('에러 : ', err.message))
+            }
+
+            document.querySelector("#btn3").onclick = function () {
+                // json 키배열, 인덱스 배열 형태로 처리 
+                /*
+                const params= {
+                    pid :'bbb',
+                    age : 34,
+                    marriage : true
+                }*/
+
+                const params = {
+                    pid: document.querySelector("#pid").value,
+                    age: document.querySelector("#age").value,
+                    marriage: document.querySelector("#marriage").value
+                }
+
+                //consLog(params) //json은 객체
+                //json ->  문자열
+                const ttt = new URLSearchParams(params).toString()
+                consLog(ttt)        //pid=bbb&age=34&marriage=true
+
+                fetch(`/test2?${ttt}`, {
+                    method: 'GET'
+                })
+                    .then(answer => answer.text())
+                    .then(data => consLog(data))
+                    .catch(err => console.log('에러 : ', err.message))
+            }
+
+
+
+            document.querySelector("#postGo").onclick = function () {
+
+                const params = {
+                    pid: document.querySelector("#pid").value,
+                    age: document.querySelector("#age").value,
+                    marriage: document.querySelector("#marriage").value
+                }
+
+                let ttt = JSON.stringify(params); // json 을 문자열로 파싱 해준다
+                
+                console.log(params); // 오브젝트Object
+                console.log(ttt);    //문자열   String
+
+
+                // 데이터 송신
+                fetch('/test3', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json' //post 데이터 전송타입 설정
+                    },
+                    body: ttt      //post에서 data전송(json 형태의 문자열전송)
+                })
+                    .then(answer => answer.text())
+                    .then(data => consLog(data))
+                    .catch(err => console.log('에러 : ', err.message))
+            }
+
+            document.querySelector("#frmGo").onclick = function (){
+
+                const frm = document.frm 
+
+                const data = new FormData(frm)
+                
+                console.log(data); // 오브젝트Object
+                console.log(data);    //문자열   String
+                // 내용확인
+                for(const [kk,vv]of data.entries()){
+                    console.log(`${kk}, ${vv}`)
+                }
+                fetch('/test4', {
+                    method: 'POST',
+                    body:data
+                })
+                    .then(answer => answer.text())
+                    .then(data => consLog(data))
+                    .catch(err => console.log('에러 : ', err.message))
+            }
+
+            //'Accept'  데이터 수신
+             document.querySelector("#refceiveJsonGo").onclick = function () {
+                fetch('test5', {
+                    method: 'GET',
+                    headers: {
+                        'Accept':'application/json' //데이터 전송타입 설정
+                    },
+                })
+                    .then(answer => answer.json())
+                    .then(data => ({
+                        consLog(data) 
+                        console.log(data)
+                    })
+                    .catch(err => console.log('에러 : ', err.message))
+            }
+ 
+        }
+    </script>
+</head>
+
+<body>
+    <h1>fetchHome</h1>
+    id <input type="text" id="pid"><br />
+    나이 <input type="text" id="age"><br />
+    결혼 <input type="text" id="marriage"><br />
+    <input type="button" value="btn1" id="btn1">
+    <input type="button" value="btn2" id="btn2">
+    <input type="button" value="btn3" id="btn3">
+    <input type="button" value="postGo" id="postGo">
+
+    <form method="post" name="frm">
+        id <input type="text" name="pid"><br />
+        이름 <input type="text" name="pname"><br />
+        전화번호 <input type="text" name="tel"><br />
+    </form>
+        <input type="button" value="frmGo" id="frmGo">
+        <input type="button" value="json수신" id="refceiveJsonGo">
+
+    <div id="cons"></div>
+</body>
+
+</html>
