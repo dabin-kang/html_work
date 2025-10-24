@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_include</title>
+</head>
+<body>
+    <h1>03_include</h1>
+    이름 : {{pmame}}<br/>
+    arr : {{arr}} - {{arr[0]}}<br/>
+    age : {{age}}<br/>
+    mem : {{mem}}<br/>
+    mem : {{mem.pid}} , {{mem.tel}}<br/>
+
+    {#include는 현재 view 페이지 기준 주소 사용 #}
+    {% include 'header.html'%}
+
+    {#상대주소를 이용한 폴더 내부 파일 접근가능
+        nunjucks.configure('views',(...)) nunjucks설정에 명시한views 폴더안에 있어야 한다#}
+    {% include 'uuu/subbb.html'%}
+</body>
+</html>
