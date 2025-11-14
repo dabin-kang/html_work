@@ -12,10 +12,11 @@ const qwer = multer({
             cb(null,upDir) // cb(err혹은 null, 저장폴더)
         },
         filename:(req,file,cb) =>{ // 저장될 때 파일명
+            const oriname = Buffer.from(file.originalname,'latin1').toString('utf8')
             
-            const ext = path.extname(file.originalname)
+            const ext = path.extname(oriname)
             //Date.now(): timestamp
-            cb(null, path.basename(file.originalname,  ext)+Date.now()+ext)
+            cb(null, path.basename(oriname,ext)+Date.now()+ext)
         }
     }),
 
