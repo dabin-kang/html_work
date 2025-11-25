@@ -6,14 +6,21 @@ let arr1 =[10,20,30,40,50]
 let arr2 =[<div key='aa'>box1</div>,<div key='aa22'>box2</div>,<div key='aa44'>box3</div>]// key에러를 없애기 위해 key값을 넣는다
 let arr3 = []
 
+//for 반복문
 for (let i = 0; i < 5 ; i++) {
     let ee = <div key={'aa55'+i}>새로만든box{i}</div>
+
+    // arr3 에 ee 를 넣는다.
     arr3.push(ee)
 }
 
 //배열원소 가져오기
 let data4 = ['정우성','정남성','북극성']
+
+//비어있는 빈 배열
 let arr4 = []
+
+//반복문 in
 for(const i in data4){
     console.log(i,data4[i])
     let ee = <div key={'ss'+i}>{data4[i]}</div>

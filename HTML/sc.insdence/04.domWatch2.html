@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_domWatch</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        .date{
+            font-size: 4rem;
+        }
+        .time{
+            font-size: 3rem;
+        }
+
+        section{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: #ff0;
+            border-radius: 100px;
+            margin: auto;
+        }
+
+        section > .grad{
+            position: absolute;
+            width: 4px;
+            height: 95px;                     
+            left:98px;
+            top:5px;
+            transform-origin: bottom center;
+        }
+
+        section > .grad > .big{
+           
+            width: 100%;
+            height: 15px;
+            background-color: #777; 
+           
+        }
+
+        section > .grad > .small{
+           
+            width: 50%;
+            height: 5px;
+            background-color: #aaa;            
+            margin: 0 auto;
+        }
+
+        section > .niddle{
+            position: absolute;
+            width: 2px;
+            height: 85px;
+            background-color: #f00;
+            box-shadow: 3px 3px 5px #000;
+            left:99px;
+            top:15px;
+            transform-origin: bottom center;
+        }
+
+        section > .niddle:nth-of-type(2){
+            
+            width: 2px;
+            height: 75px;
+            background-color: #0f0;
+            left:99px;
+            top:25px;  
+        }
+
+        section > .niddle:nth-of-type(1){
+            
+            width: 4px;
+            height: 65px;
+            background-color: #00f;
+            left:98px;
+            top:35px;  
+        }
+
+
+    </style>
+    <script>
+        window.onload=function(){
+            
+            let dateBox = document.querySelector(".date")
+            let timeBox = document.querySelector(".time")
+            let sec = document.querySelector("section > .niddle:nth-of-type(3)")
+            let minute = document.querySelector("section > .niddle:nth-of-type(2)")
+            let hour = document.querySelector("section > .niddle:nth-of-type(1)")
+            //console.log(sec)
+
+            let section = document.querySelector("section")
+
+            function gradHH(i, size, degree){
+                let grad = document.createElement("div")
+                grad.className = "grad"
+                let box =document.createElement("div")
+                box.className = size
+                grad.appendChild(box)
+                grad.style.transform = `rotate(${i*degree}deg)`
+                section.appendChild(grad)
+            }
+
+            for (let i = 0; i <60; i++) {
+                gradHH(i,"small",6)  
+            }
+
+
+            for (let i = 0; i <12; i++) {
+                gradHH(i,"big",30)  
+            }
+            
+
+            function dateGo(){
+                let now = new Date()
+                let ttt = `${now.getFullYear() }년 ${now.getMonth()+1 }월 ${now.getDate() }일`
+                //console.log(ttt)
+                dateBox.innerHTML = ttt
+
+                timeBox.innerHTML = `${now.getHours() }:${now.getMinutes()}:${now.getSeconds()}`
+
+                sec.style.transform = `rotate(${now.getSeconds()*6}deg)`
+                minute.style.transform = `rotate(${now.getMinutes()*6}deg)`
+                hour.style.transform = `rotate(${(now.getHours()+now.getMinutes()/60)*30}deg)`
+                //console.log(((now.getHours()+now.getMinutes()/60)*30)%360)
+            }
+
+            let dg = setInterval(dateGo,1000)
+
+        }
+    </script>
+</head>
+<body>
+    <h1>04_domWatch</h1>
+    <div>
+        <div class="date">2020년 7월 12일</div>
+        <div class="time">17:30:20</div>
+    </div>
+
+    <section>
+        <div class="niddle"></div>
+        <div class="niddle"></div>
+        <div class="niddle"></div>
+        
+    </section>
+</body>
+</html>
+
+

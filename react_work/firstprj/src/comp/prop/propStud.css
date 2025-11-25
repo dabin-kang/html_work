@@ -1,0 +1,8 @@
+.stBox{
+    width: 200px;
+    height: 200px;
+    background-color: bisque;
+    padding: 10px;
+    float: left;
+    margin: 10px;
+}
