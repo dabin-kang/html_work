@@ -1,13 +1,14 @@
 import React, { Children, createContext, useContext, useState } from 'react';
 
 //1. Context 생성
+// createContext() 를 선언해야 한다.
 const MyContext = createContext()
 
 //2.Provider 컴포넌트 정의
 const MyProvider = ({ children }) => {
     // return<div>
-    //     MyProvider 입니다
-    //     </div>
+    // MyProvider 입니다
+    // </div>
     // = props.Children
 
     const [state, setState] = useState('yellow');

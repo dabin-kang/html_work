@@ -16,7 +16,7 @@ function FnSt(){
     return<>
         <h1>학생목록</h1>
         <section>
-            {arr.map((v,k)=><PropStud dd={v} state={state} key={k} />)}
+            {arr.map((v,k)=><PropStud nn={v} state={state} key={k} />)}
         </section>
     </>
 }
