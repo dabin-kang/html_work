@@ -1,5 +1,6 @@
-import { BrowserRouter, Routes, Route, Outlet, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Outlet, Link, useNavigate } from 'react-router-dom'
 import './App.css';
+import { useEffect } from 'react';
 
 
 function HeaderGo() {
@@ -72,6 +73,20 @@ function FooterGo() {
     return <footer> 이광재 만세</footer>
 }
 
+function Home(){
+
+    //redirect 하기 위한 함수
+    const navigate = useNavigate()
+
+    //컴포넌트 마운트 이후 navigate 실행
+    //무한 반복 방지
+    useEffect(()=>{
+        navigate("info/hello")
+    },[navigate])
+
+    return null
+}
+
 // 출력하기
 function App() {
 
@@ -86,6 +101,7 @@ function App() {
 
 
             {/* 라우터 */}
+            <Route path='/info' element={<Home />}></Route>
             <Route path='/info' element={<Info />}>
                 <Route index={true} element={<Hello />} />
             </Route>

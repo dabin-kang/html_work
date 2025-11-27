@@ -1,0 +1,29 @@
+$a1 : #0f0; // 전역변수선언
+$ww: 200px;
+
+
+
+.box2{
+    width: $ww;
+    height: $ww;
+    background-color: $a1;
+}
+
+
+.box3{
+    $a1 : #0ff; // 지역변수 - 전역변수와 중첩시 우선권을 가진다
+    $a2: #f0f;
+    $bb : 5px !global; // 전역변수
+    width : $ww;
+    height: $ww;
+    background-color: $a1;
+    border: $bb solid $a2;
+}
+
+.box4{
+    width: $ww;
+    height: $ww;
+    background-color: $a1;
+    border: $bb solid #333
+    //border: $bb solid $a2;  다른 영역의 지역변수 접근 불가
+}

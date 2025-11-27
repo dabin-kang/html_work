@@ -2,10 +2,18 @@ const express = require('express')
 const fs = require('fs')
 const path = require('path')
 const multer = require('multer')
+const cors = require('cors')
 const app = express()
 
 const qwer = multer()
 
+//cors 적용
+app.use(
+    cors({
+        origin:"http://localhost:8888",
+        credentials:true
+    })
+)
 
 //post처리
 app.use(express.urlencoded({extended:true}))
@@ -49,6 +57,6 @@ app.post('/test5',qwer.none(),(req, res) => {
     res.json(data) // json 형태의 문자열로 내보내기
 })
 
-app.listen(80, () => {
+app.listen(5000, () => {
     console.log("fetch 서버 시작")
 })
