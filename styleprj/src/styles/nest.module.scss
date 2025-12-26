@@ -1,0 +1,68 @@
+section {
+    width: 100vw;
+    background-color: #ff0;
+
+    div {
+        //section div
+        padding: 20px;
+        border: 2px solid rgb(190, 31, 31);
+        background-color: #f0f;
+    }
+}
+
+.aaa {
+    width: 60vw;
+    height: 100px;
+    background-color: #f0f;
+    margin: 20px;
+
+    span {
+        // .aaa 안에 span
+        color: rgb(25, 73, 25);
+    }
+
+    .bbb {
+        // .aaa 안에 .bbb
+        border-radius: 30px;
+        width: 200px;
+        height: 30px;
+        border: 1px solid #802f2f;
+    }
+
+    &.ccc {
+        //aaa 이면서 ccc인것, 따로 ccc 쓰는 것과는 상과 없음
+        font-style: italic;
+    }
+}
+
+
+.ccc {
+    font-size: 2rem;
+}
+
+
+.ddd {
+    width: 60vw;
+    height: 100px;
+    background-color: rgb(5, 102, 13);
+    margin: 20px;
+
+    &:hover {
+        color: #ff0;
+        font-size: 2rem;
+    }
+
+    //.ddd .eee가 아닌 상위레벨로 빠져나감 : .eee로 정의 됨
+    @at-root .eee {
+        color: #0f0;
+    }
+
+    .fff {
+        color: #fa0;
+    }
+
+    @at-root #{&}ggg { //상위레벨에서 글자를 더하기하여 클래스 명지정: dddggg
+        color: rgb(212, 14, 31);
+    }
+
+}

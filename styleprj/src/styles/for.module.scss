@@ -1,0 +1,91 @@
+.aaa{
+    background-color: #ff0;
+    margin: 5px;
+
+    // 반복문
+    //through : 포함이라는 뜻
+    //1부터 3까지 포함
+    @for $i from 1 through 3{
+        &:nth-of-type(#{$i}){
+            width: 40px*$i;
+        }
+    }
+}
+
+
+
+
+
+.bbb{
+    background-color: #fa0;
+    margin: 5px;
+
+    // 반복문
+    //to : 미포함이라는 뜻
+    // 3은 적용이 안됨 1부터2까지만
+    @for $i from 1 to 3{
+        &:nth-of-type(#{$i}){
+            width: 40px*$i;
+        }
+    }
+}
+
+
+$arr1:#f00,#ff0,#ffa,#cf0;
+
+$no : 1;
+
+.ccc{
+    width: 100px;
+    height: 20px;
+    margin: 5px;
+
+    @each $e in $arr1{
+        &:nth-of-type(#{$no}){
+            background-color:$e;
+        }
+        $no: $no+1
+    }
+}
+
+
+$arr2:("qq":#f00,"ee":#ff0,"rr":#ffa);
+    
+    @each $k,$e in $arr2{
+        .#{$k}{
+            width: 100px;
+            height: 20px;
+            margin: 5px;
+            background-color: $e;
+        }
+     }
+
+
+
+     //연관배열 유사품
+    $zz:(tt,2rem);
+    $xx:(yy,3rem);
+    $cc:(uu,1.5rem);
+
+    @each $k,$e in $zz,$xx,$cc{
+        .#{$k}{
+            width: 100px;
+            height: 50px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            font-size:$e;
+        }
+     }
+
+
+
+$no: 10;
+@while $no <100{
+    .ddd_#{$no}{
+        width: 100px+$no;
+        height: 50px;
+        margin: 5px;
+        border: 1px solid #ccc;
+    }
+    $no : $no +20
+}

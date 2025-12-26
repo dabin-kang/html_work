@@ -1,0 +1,24 @@
+package excep_p;
+
+
+
+public class ThrowMain {
+
+	public static void main(String[] args) {
+		try {
+			System.out.println("try 실행 1");
+			
+			Exception my = new Exception("내가 만든 쿠키");
+			
+			System.out.println("try 실행 2");
+			
+			throw my; //예외처리 발생, 조건에 의한 throw 가 아니면 에러 , 무조건 던진다
+			
+//			System.out.println("try 실행 3");
+		} catch (Exception e) {
+			System.out.println("catch :" +e.getMessage());
+		}
+			System.out.println("메인종료");
+	}
+
+}
