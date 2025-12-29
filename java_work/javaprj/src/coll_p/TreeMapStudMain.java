@@ -61,16 +61,16 @@ public class TreeMapStudMain {
 		
 		MyMapCom mmc = new MyMapCom();
 		
-		TreeMap res = new TreeMap(new Comparator() {
+		TreeMap<Integer, Integer> res = new TreeMap<>(new Comparator<Integer>() {
 			@Override
-			public int compare(Object o1, Object o2) {
-				int me = (int)o1;
-				int you = (int)o2;
+			public int compare(Integer o1, Integer o2) {
+				int me = o1;
+				int you = o2;
 				return you-me;
 			}
 		});
 		for (TreeStud st : ori) {
-			TreeMap ban ;
+			TreeMap<Integer, Integer> ban ;
 			if(res.containsKey(st.ban)) {
 				ban = (TreeMap)res.get(st.ban);
 			}else {

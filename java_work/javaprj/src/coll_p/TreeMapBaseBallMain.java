@@ -11,7 +11,7 @@ public class TreeMapBaseBallMain {
 				+ "a2,a4,h5,a7,h5").split(",");
 		
 		
-		TreeMap res = new TreeMap();
+		TreeMap<Character,TreeMap <Character,Integer>> res = new TreeMap();
 		for (String hh : hit) {
 			System.out.println(hh);
 			
@@ -19,9 +19,9 @@ public class TreeMapBaseBallMain {
 			char num= hh.charAt(1);
 			
 			
-			TreeMap myTeam;
+			TreeMap <Character,Integer>myTeam;
 			if(res.containsKey(team)) {
-				myTeam = (TreeMap)res.get(team);
+				myTeam = res.get(team);
 			}else {
 				myTeam = new TreeMap();
 			}
@@ -29,17 +29,17 @@ public class TreeMapBaseBallMain {
 			
 			int cnt =1;
 			if(myTeam.containsKey(num)) {
-				cnt+=(int)myTeam.get(num);
+				cnt+=myTeam.get(num);
 			}
 			myTeam.put(num, cnt);
 		}
 //		System.out.println(res);
-		for(Object oo :res.entrySet()) {
-			Map.Entry team = (Map.Entry)oo;
+		for(Map.Entry<Character,TreeMap <Character,Integer>> team :res.entrySet()) {
+//			Map.Entry<Character,TreeMap <Character,Integer>> team = (Map.Entry)oo;
 			System.out.println(team.getKey()+">>>");
-			for(Object ooo : ((TreeMap)team.getValue()).entrySet()) {
-				Map.Entry player = (Map.Entry)ooo;
-				System.out.println(player.getKey()+"▲".repeat((int)player.getValue()));
+			for(Map.Entry <Character,Integer> player : team.getValue().entrySet()) {
+//				Map.Entry <Character,Integer> player = (Map.Entry)ooo;
+				System.out.println(player.getKey()+"▲".repeat(player.getValue()));
 			}
 		}
 	}

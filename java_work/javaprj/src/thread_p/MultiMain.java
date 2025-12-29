@@ -28,12 +28,12 @@ class MultiExam extends Thread{
 		
 		
 		for (Object Obj : map.entrySet()) {
-			if(chk) {
-				break;
-			}	
 			Map.Entry me = (Map.Entry)Obj;
 			
 			String rr = JOptionPane.showInputDialog(me.getKey());
+			if(chk) {
+				break;
+			}	
 			
 			
 			System.out.println("rr :"+rr);
