@@ -26,8 +26,12 @@ public class CapshapeMain {
 	public static void main(String[] args) {
 		shapeAAA cv = new shapeAAA();
 		
-		System.out.println(cv.getAa());
+		String a = cv.getBb();
+		
+		System.out.println(a); //과정을 확인하는 수단
+		
 		//직사각형 넓이 둘레
+		System.out.println("넓이, 둘레");
 	}
 
 }
