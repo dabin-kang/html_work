@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+	<!--인스턴스 생성 후 ==> c2로 beam 설정 
+		property 설정시 setter 필수
+	 -->
+	<bean name="c2" class="di_p.Camera">
+		<property name="name" value="니콘300"/>
+		<property name="pixel">
+			<value>5000</value>
+		</property>
+		
+	</bean>
+	
+
+	<bean name="c3" class="di_p.Camera" p:name="삼콘300" p:pixel="5100" />
+	
+	
+	<bean name="c4" class="di_p.Battery" p:name="배터리" p:remoeable="false" />
+	
+	<!-- -는 구분을 하려고 사용한다 -->
+	<bean name="ph2" class="di_p.HandPhone" p:name="은하수" p:pixel="888" 
+		p:bc-ref="c3"
+		p:bat-ref="c4">
+		<property name="fc">
+			<ref bean="c2"/>
+		</property>
+	</bean>
+	
+	
+	
+</beans>
+
