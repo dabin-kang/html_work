@@ -9,8 +9,8 @@ public class ExamDTO {
 		Date regDate;
 		
 		
-		
-		
+		//get, set 메서드 
+		//멤버 변수가 직접 노출되지 않도록 '캡슐화'를 적용한 메서드들이다
 		public Integer getId() {
 			return id;
 		}
@@ -71,6 +71,9 @@ public class ExamDTO {
 		public void setRegDate(Date regDate) {
 			this.regDate = regDate;
 		}
+		
+		
+		
 		@Override
 		public String toString() {
 			return "ExamDTO [id=" + id + ", name=" + name + ", hakgi=" + hakgi + ", pid=" + pid + ", kor=" + kor
