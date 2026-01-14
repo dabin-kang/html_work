@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+
+<bean name="강백호" class="di_p.StudentData" init-method="calc">
+	<property name="name" value="강백호"></property>
+	<property name="kor" value="12"></property>
+	<property name="eng" value="22"></property>
+	<property name="mat" value="32"></property>
+</bean>
+<bean name="산청룡" class="di_p.StudentData" init-method="calc">
+	<property name="name" value="산청룡"></property>
+	<property name="kor" value="22"></property>
+	<property name="eng" value="62"></property>
+	<property name="mat" value="32"></property>
+</bean>
+<bean name="이북두산" class="di_p.StudentData" init-method="calc">
+	<property name="name" value="이북두산"></property>
+	<property name="kor" value="12"></property>
+	<property name="eng" value="72"></property>
+	<property name="mat" value="32"></property>
+</bean>
+
+	
+
+
+
+
+
+</beans>

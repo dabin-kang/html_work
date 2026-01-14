@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+
+	
+	<bean name="aaa" class="di_p.Desktop" p:settop="본체" autowire="byType"/>
+	<bean name="nnn" class="di_p.Notebook" p:mouse="마우스" p:settop="본체" autowire="byType"/>
+
+	</beans>
+	
+	
+	
+<!-- 	/*AutowireComMain
+ * 부품,완성품, xml을 분리하여 context 작업할 것
+ * autowire로 작업 요망
+ * 
+ * 데스크 탑 - 본체1. 모니터1 키보드1 마우스1
+ * 노트 북 - 본체1 , 마우스1
+ * 
+ */ -->

@@ -25,7 +25,7 @@ public class ExamController extends HttpServlet {
     //doget 방식의 요청이 들어올 때 실행되는 메서드
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println(request.getRequestURI());//jspprj/exam/list  전체주소를 보여준다
+		System.out.println(request.getRequestURI());//   jspprj/exam/list  전체주소를 보여준다
 		System.out.println(request.getContextPath()+"/exam/");//jspprj/exam/ 프로젝트 루트 경로
 		String service = request.getRequestURI().substring( // 서비스 이름 추출
 				(request.getContextPath()+"/exam/").length());

@@ -1,0 +1,29 @@
+package aop_p;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import anno_p.phone.ConfigScan;
+import aop_p.webToon.JoSuk;
+
+public class ArWebToonMain {
+
+	public static void main(String[] args) {
+		AbstractApplicationContext context =
+		new ClassPathXmlApplicationContext("aop/arWebToon.xml");
+		
+		
+		JoSuk js = context.getBean("joSuk",JoSuk.class);
+		
+		Object rr = js.dog1(10, "아기상어");
+		System.out.println("rr:"+rr);
+		
+		System.out.println("---------------------------------------------");
+		
+		rr = js.dog2(20, "엄마상어");
+		System.out.println("rr:"+rr);
+		context.close();
+	}
+
+}
