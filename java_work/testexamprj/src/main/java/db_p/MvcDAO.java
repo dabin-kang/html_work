@@ -82,13 +82,5 @@ public class MvcDAO {
 		
 		return res;
 	}
-
-
-
-
-
-
-	
-	
 	
 }

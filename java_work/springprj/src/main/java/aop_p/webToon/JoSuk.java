@@ -16,4 +16,10 @@ public int dog2(int aa, String bb) {
 	System.out.println("dog2 실행 : "+aa+","+bb);
 	return 1234;
 }
+
+
+public int dog3(int aa, String bb) {
+	System.out.println("dog3s 실행 : "+aa+","+bb);
+	return "애봉이";
+}
 }

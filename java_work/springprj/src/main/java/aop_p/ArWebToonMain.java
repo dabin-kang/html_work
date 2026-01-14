@@ -16,12 +16,23 @@ public class ArWebToonMain {
 		
 		JoSuk js = context.getBean("joSuk",JoSuk.class);
 		
-		Object rr = js.dog1(10, "아기상어");
+		Object rr = js.dog1(9, "아기상어");
 		System.out.println("rr:"+rr);
 		
 		System.out.println("---------------------------------------------");
 		
 		rr = js.dog2(20, "엄마상어");
+		System.out.println("rr:"+rr);
+		context.close();
+		
+		
+		System.out.println("---------------------------------------------");
+		rr = js.dog3(30, "아빠상어");
+		System.out.println("rr:"+rr);
+		context.close();
+		
+		System.out.println("---------------------------------------------");
+		rr = js.dog1(40, "할머니상어");
 		System.out.println("rr:"+rr);
 		context.close();
 	}

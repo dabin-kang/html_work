@@ -42,7 +42,7 @@ public class SignDAO {
 				dto.setName(rs.getString("name"));
 				dto.setEmail(rs.getString("email"));
 				dto.setPhonenum(rs.getInt("phonenum"));
-				dto.setAdress(rs.getString("asress"));
+				dto.setAdress(rs.getString("adress"));
 				dto.setAt_day(rs.getDate("at_day"));
 				list.add(dto);
 			}
