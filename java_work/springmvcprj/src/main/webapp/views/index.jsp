@@ -1,0 +1,136 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>springMvc</title>
+</head>
+<body>
+	<h1>springMvc입니다</h1>
+	<h2>request</h2>
+	<a href="/req/getGo">get</a>
+	<a href="/req/getExam">get</a>
+	<a href="/req/buyOrder">buyOrder</a>
+	
+	
+	<<h2>return</h2>
+	<a href="/ret/vv">vv</a>
+	<a href="/ret/vv2">vv2</a>
+	<a href="/ret/vv3">vv3</a>
+	<a href="/ret/moAndvv">modelAndView</a>
+	<a href="/ret/pp1">pp1</a>
+	<a href="/ret/pp2">pp2</a>
+	<a href="/ret/per">per</a>
+	<a href="/ret/arr">arr</a>
+	<a href="/ret/map">map</a>
+	<a href="/ret/obj1">obj1</a>
+	<a href="/ret/obj2">obj2</a>
+	
+	
+	<<h2>rest</h2>
+	<a href="/rest/vv">vv</a>
+	<a href="/rest/vv2">vv2</a>
+	<a href="/rest/vv3">vv3</a>
+	<a href="/rest/moAndvv">modelAndView</a>
+	<a href="/rest/pp1">pp1</a>
+	<a href="/rest/pp2">pp2</a>
+	<a href="/rest/per">per</a>
+	<a href="/rest/arr">arr</a>
+	<a href="/rest/map">map</a>
+	<a href="/rest/obj1">obj1</a>
+	<a href="/rest/obj2">obj2</a>
+	
+	
+	
+	<<h2>file</h2>
+	<a href="/file">form</a>
+	
+	
+	<<h2>cookie</h2>
+	<a href="/coo/make">쿠키생성</a>
+	<a href="/coo/view">쿠키보기</a>
+	<a href="/coo/modify">쿠키수정</a>
+	<a href="/coo/delete">쿠키삭제</a>
+	
+	
+	<a href="/login">로그인</a>
+	<a href="/login/view">로그인보기</a>
+	
+	
+	
+	<<h2>session</h2>
+	<a href="/session/make">세션생성</a>
+	<a href="/session/view">세션보기</a>
+	<a href="/session/modify">세션수정</a>
+	<a href="/session/delete">세션삭제</a>
+	
+	
+	<a href="/login/login">세션로그인</a>
+	
+	
+	<<h2>model</h2>
+	<a href="/mmm/hello">hello</a>
+	<a href="/mmm/history">history</a>
+	
+	<a href="/mmm/hello">hello1</a>
+	<a href="/mmm/hello?zipcode=111&addr1=서울&addr2=남산">hello2</a>
+	<a href="/mmm/hello?zipcode=222&addr1=서울&addr2=코엑스">hello3</a>
+	<a href="/mmm/history">history1</a>
+	<a href="/mmm/hello?zipcode=111&addr1=창원&addr2=테크노파크">hello2</a>
+	<a href="/mmm/hello?zipcode=222&addr1=창원&addr2=성산아트홀">hello3</a>
+	
+	
+	
+	
+	<a href="/company/main">회사메인</a>
+	
+	
+	<<h2>path</h2>
+	<a href="/path/info/aaa/detail">info/aaa/detail</a>
+	<a href="/path/info/aaa/insert">info/aaa/insert</a>
+	<a href="/path/gall/aaa/detail">gall/aaa/detail</a>
+	<a href="/path/gall/aaa/list">gall/aaa/list</a>
+	<a href="/path/product/aaa/modify">product/aaa/modify</a>
+	<br />
+	<a href="/path/info/bbb">/info/bbb</a>
+	<a href="/path/gall/bbb">/gall/bbb</a>
+	<a href="/path/info/27">/info/27</a>
+	<a href="/path/gall/15">gall/15</a>
+	<br />
+	<h2>path</h2>
+	<a href="/path/info/ddd/detail">info/ddd/detail</a>
+	<a href="/path/info/ddd/insert">info/ddd/insert</a>
+	<a href="/path/gall/ddd/detail">gall/ddd/detail</a>
+	<a href="/path/gall/ddd/list">gall/ddd/list</a>
+	<a href="/path/product/ddd/modify">product/ddd/modify</a>
+	<br />
+	<a href="/path/info/ddd/detail?pNo=10">info/ddd/detail?pNo</a>
+	<a href="/path/info/eee/detail/20">info/eee/detail/20</a>
+	<a href="/path/info/eee/detail/20?pNo=30">info/eee/detail/30</a>
+	
+	
+	<h2>pc</h2>
+	<a href="/pc/mlist">mlist</a>
+	<a href="/pc/mdetail">mdetail</a>
+	<a href="/pc/minsert">minsert</a>
+	
+	
+	<h2>validata</h2>
+	<a href="/val">validata</a>
+	
+	<h2>initGo</h2>
+	<a href="/initGo?birth=1999-03-20">initGo</a>
+	<a href="/initGo2">initGo2</a>
+	
+	
+	<h2>inter</h2>
+	<a href="/inter/envent/abc">enventabc</a>
+	<a href="/inter/envent/dfg">enventdfg</a>
+	<a href="/inter/envent/hij">enventhij</a>
+	
+	
+	
+	
+</body>
+</html>

@@ -9,8 +9,8 @@
 <body>
 	<h1>쓰기완료</h1>
 	<script type="text/javascript">
-		alert("쓰기완료")
-		location.href="ExamList"
+		alert("작성완료")
+		location.href='/exam/examDetail/${mainData}'
 	</script>
 	
 	

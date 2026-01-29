@@ -1,0 +1,12 @@
+server :
+    port : 80
+spring :
+    mvc :
+        view :
+            prefix : /views/
+            suffix : .jsp
+    datasource :
+        driver-class-name : com.mysql.cj.jdbc.Driver
+        url : jdbc:mysql://localhost:/onop_db?characterEncoding=utf-8
+        username : onop
+        password : 123456

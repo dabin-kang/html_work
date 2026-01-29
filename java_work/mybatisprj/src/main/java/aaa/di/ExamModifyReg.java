@@ -1,0 +1,40 @@
+package aaa.di;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import aaa.model.ExamDTO;
+import aaa.model.ExamMapper;
+import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@Service
+public class ExamModifyReg  implements ExamAction {
+	
+	@Resource
+	ExamMapper mapper;
+
+	@Override
+	public Object execute(
+			ExamDTO dto,
+			PageInfo pInfo,
+			HttpServletRequest request,
+			HttpServletResponse response) {
+		
+		
+		
+		
+		System.out.println("ExamModifyReg : "+dto);
+		
+		mapper.modify(dto);
+		
+		return dto.getId();	
+	}
+	
+	
+	
+}

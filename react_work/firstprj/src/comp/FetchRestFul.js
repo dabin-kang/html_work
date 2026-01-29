@@ -151,29 +151,29 @@ function MemModify(props){
     const [pw, setPw] = useState('')
 
 
-    function sendGo(){
-        // PUT 은 formData로 전송불가
-        //const frm = document.forms.frm
-        //const data = new FormData(frm)
+    // function sendGo(){
+    //     // PUT 은 formData로 전송불가
+    //     //const frm = document.forms.frm
+    //     //const data = new FormData(frm)
 
-        const data = { no, pid, age, marriage, pw }
-        console.log('수정보내기전', data)     //object
+    //     const data = { no, pid, age, marriage, pw }
+    //     console.log('수정보내기전', data)     //object
 
-        fetch(backUrl,
-            {
-                method: 'PUT',
-                body: JSON.stringify(data),
-                headers: { 'Content-Type': 'application/json' },  //post 데이터 전송타입 설정 - json
-            }
-        )
-            .then(answer => answer.text())
-            .then(data =>{
-                console.log(data)
-                alert('수정성공')
-                goDetail()
-            })
-            .catch(err => console.log('수정에러 : ', err.message))
-    }
+    //     fetch(backUrl,
+    //         {
+    //             method: 'PUT',
+    //             body: JSON.stringify(data),
+    //             headers: { 'Content-Type': 'application/json' },  //post 데이터 전송타입 설정 - json
+    //         }
+    //     )
+    //         .then(answer => answer.text())
+    //         .then(data =>{
+    //             console.log(data)
+    //             alert('수정성공')
+    //             goDetail()
+    //         })
+    //         .catch(err => console.log('수정에러 : ', err.message))
+    // }
 
     function goDetail(){
         props.goNo(props.no)

@@ -18,8 +18,13 @@ public int dog2(int aa, String bb) {
 }
 
 
-public int dog3(int aa, String bb) {
+public String dog3(int aa, String bb) {
 	System.out.println("dog3s 실행 : "+aa+","+bb);
 	return "애봉이";
+}
+
+public String father(int aa, String bb) {
+	System.out.println("father 실행 : "+aa+","+bb);
+	return "조철왕";
 }
 }
