@@ -25,7 +25,7 @@ public interface ExamMapper {
 	int insert(ExamDTO dto);
 	
 	
-	//데이터 값중에서 가장 높은 값을 가져와라
+	//데이터 값중에서 가장 높은 값을 가져와1라
 	@Select("select max(id) as id from exam ")
 	int maxId();
 	
