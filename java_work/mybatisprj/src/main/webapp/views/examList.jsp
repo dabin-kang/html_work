@@ -1,4 +1,5 @@
 
+<%@page import="aaa.di.PageInfo"%>
 <%@page import="aaa.model.ExamDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -13,6 +14,8 @@
 	<h1>시험목록</h1>
 	<%
 	ArrayList<ExamDTO> mainData = (ArrayList<ExamDTO>)request.getAttribute("mainData");
+	
+	PageInfo pInfo = (PageInfo)request.getAttribute("pageInfo");
 	%>
 	
 	${pageInfo.PTotal} 
@@ -34,7 +37,7 @@
 	
 	<table border="">
 		<tr>
-			<td colspan="7">
+			<td colspan="8">
 			
 			<form action="examSch">
 				<select name="schTitle1">
@@ -51,6 +54,7 @@
 		</tr>
 	
 		<tr>
+			<td>번호</td>
 			<td>학기</td>
 			<td>시험</td>
 			<td>학생ID</td>
@@ -59,8 +63,14 @@
 			<td>영어</td>
 			<td>수학</td>
 		</tr>
-		<% for(ExamDTO dto : mainData) {%>
+		
+		<% 
+		int k =0;
+		for(ExamDTO dto : mainData) {
+			k++;
+		%>
 		<tr>
+			<td><%=pInfo.getStart()+k %></td>
 			<td><%= dto.getHakgi() %></td>
 			<td><a href="/exam/examDetail/${pageInfo.getPNo()}/<%=dto.getId() %>"><%= dto.getName() %></a></td><!--상세페이지로 이동하기  -->
 			<td><%= dto.getPid() %></td>
@@ -73,13 +83,21 @@
 		<%}%>
 		
 		
-		<tr>
-			<td colspan="7" align="center">
-			<%
-				for(int i =1; i <= 8; i++){%>
-				<a href="/exam/examList/<%=i %>"><%=i %></a>
-			<%}%>
-				
+		<!--페이지네이션 하단에 만들기  -->
+		<tr> 
+			<td colspan="8" align="center">
+			<%if(pInfo.getPStart()>1) {%><!--1이 아니면 [이전 버튼이 나오도록 한다]  -->
+				<a href="/exam/examList/<%=pInfo.getPStart()-1 %>">[이전]</a>
+			<%}
+				for(int i =pInfo.getPStart(); i <= pInfo.getPEnd(); i++){
+					if(pInfo.getPNo()==i){
+				%>[<%=i %>]
+				<%} else  {%>
+					<a href="/exam/examList/<%=i %>"><%=i %></a>
+				<%}}
+				if(pInfo.getPEnd() < pInfo.getPTotal()) {%>
+					<a href="/exam/examList/<%=pInfo.getPEnd()+1 %>">[다음]</a>
+			<%}%>	
 			</td>
 		</tr>
 		
@@ -88,7 +106,7 @@
 		
 		
 		<tr>
-			<td colspan="7" align="right">
+			<td colspan="8" align="right">
 				<a href="/exam/examInsertForm/${pageInfo.getPNo()}">쓰기</a>
 				<a href="/exam/examInsertList/${pageInfo.getPNo()}">다중쓰기</a>
 			</td>
