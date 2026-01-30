@@ -15,9 +15,12 @@ public class ExamList  implements ExamAction {
 	ExamMapper mapper;
 
 	@Override
-	public Object execute(ExamDTO dto, PageInfo pInfo,HttpServletRequest request,
+	public Object execute(ExamDTO dto, PageInfo pInfo,
+			HttpServletRequest request,
 			HttpServletResponse response) {
 		
-		return mapper.list();
+		pInfo.setTotal(mapper.total());
+		
+		return mapper.list(pInfo);
 	}
 }

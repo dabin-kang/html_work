@@ -15,6 +15,8 @@
 	ArrayList<ExamDTO> mainData = (ArrayList<ExamDTO>)request.getAttribute("mainData");
 	%>
 	
+	${pageInfo.PTotal} 
+	
 	<<h3>examSch</h3>
 	
 	<a href="/exam/examSch?schTitle1=name&schVal1=semi&schTitle2=hakgi&schVal2=1&schTitle3=pid&schVal3=b">검색123</a>
@@ -60,7 +62,7 @@
 		<% for(ExamDTO dto : mainData) {%>
 		<tr>
 			<td><%= dto.getHakgi() %></td>
-			<td><a href="/exam/examDetail/<%=dto.getId() %>"><%= dto.getName() %></a></td><!--상세페이지로 이동하기  -->
+			<td><a href="/exam/examDetail/${pageInfo.getPNo()}/<%=dto.getId() %>"><%= dto.getName() %></a></td><!--상세페이지로 이동하기  -->
 			<td><%= dto.getPid() %></td>
 			<td><%= dto.getRegDate() %></td>
 			<td><%= dto.getKor() %></td>
@@ -70,10 +72,25 @@
 		</tr>
 		<%}%>
 		
+		
+		<tr>
+			<td colspan="7" align="center">
+			<%
+				for(int i =1; i <= 8; i++){%>
+				<a href="/exam/examList/<%=i %>"><%=i %></a>
+			<%}%>
+				
+			</td>
+		</tr>
+		
+		
+		
+		
+		
 		<tr>
 			<td colspan="7" align="right">
-				<a href="/exam/examInsertForm">쓰기</a>
-				<a href="/exam/examInsertList">다중쓰기</a>
+				<a href="/exam/examInsertForm/${pageInfo.getPNo()}">쓰기</a>
+				<a href="/exam/examInsertList/${pageInfo.getPNo()}">다중쓰기</a>
 			</td>
 		</tr>
 			

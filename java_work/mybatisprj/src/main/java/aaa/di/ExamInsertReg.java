@@ -28,13 +28,19 @@ public class ExamInsertReg  implements ExamAction {
 		
 		dto.setFf(fileSave(dto.getUpff(),request));// 파일을 만들고 난 뒤에 여기에 저장
 		
-		mapper.insert(dto);
+//		mapper.insert(dto);
+//		
+//		int maxId = mapper.maxId();
+//		
+//		System.out.println("ExamInsertReg : "+maxId);
+//		
+//		return maxId; //null로 해서 받을 수있다 , maxId 로 값 하나만 받아서 할 수 있다	
 		
-		int maxId = mapper.maxId();
+//		mapper.insertKey(dto);
+		mapper.insertKeyAfter(dto);
+		System.out.println("ExamInsertReg:"+dto.getId());
+		return dto.getId();
 		
-		System.out.println("ExamInsertReg : "+maxId);
-		
-		return maxId; //null로 해서 받을 수있다 , maxId 로 값 하나만 받아서 할 수 있다	
 	}
 	
 	

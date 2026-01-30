@@ -19,7 +19,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
-@RequestMapping("/exam/{service}")
+@RequestMapping("/exam/{service}/{pNo}")
 public class ExamController {
 	
 	@Resource

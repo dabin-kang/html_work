@@ -7,13 +7,21 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectKey;
 import org.apache.ibatis.annotations.Update;
+
+import aaa.di.PageInfo;
 
 @Mapper
 public interface ExamMapper {
 	
-	@Select("select * from exam")
-	List<ExamDTO> list();
+	@Select("select count(*) as total from exam")
+	int total();
+	
+	
+	//#{start} 페이지번호 url 값에 따라 변화하게 한다
+	@Select("select * from exam order by id desc limit #{start}, #{cnt}")
+	List<ExamDTO> list(PageInfo pInfo);
 	
 	@Select("select * from exam where id = #{id}")
 	ExamDTO detail(ExamDTO dto);
@@ -23,6 +31,39 @@ public interface ExamMapper {
 				+"values "
 				+"(#{hakgi},#{name},#{pid},#{kor},#{eng},#{mat},#{pw},#{ff},now())")
 	int insert(ExamDTO dto);
+	
+	
+	//id를 추가하기,추가가 끝나기전에 id 번호를 추가하는 방식
+	@SelectKey(
+			keyProperty = "id",
+			resultType =  Integer.class,
+			before = true,
+			statement =  "select max(id)+1 from exam "
+			)
+	@Insert("insert into exam "
+			+"(id,hakgi,name,pid,kor,eng,mat,pw,ff,reg_date)"
+			+"values "
+			+"(#{id},#{hakgi},#{name},#{pid},#{kor},#{eng},#{mat},#{pw},#{ff},now())")
+	int insertKey(ExamDTO dto);
+	
+	
+	//Insert 할 때 @SelectKey를 어떻게 사용하는지, 추가가 끝나고 id 번호를 추가하는 방식
+	@SelectKey(
+			keyProperty = "id",
+			resultType =  Integer.class,
+			before = false,
+			statement =  "select max(id) from exam "
+			)
+	@Insert("insert into exam "
+			+"(hakgi,name,pid,kor,eng,mat,pw,ff,reg_date)"
+			+"values "
+			+"(#{hakgi},#{name},#{pid},#{kor},#{eng},#{mat},#{pw},#{ff},now())")
+	int insertKeyAfter(ExamDTO dto);
+	
+	
+	
+	
+	
 	
 	
 	//데이터 값중에서 가장 높은 값을 가져와1라

@@ -32,9 +32,9 @@
 			<td>파일</td><td><%= dto.getFf() %></td>
 			</tr><tr>
 			<td colspan="2" align="center">
-				<a href="/exam/examList">목록으로</a>  <!-- 절대주소로 작성해야한다, 뎁스가 많아서 엇갈릴 수 있어서--> 
-				<a href="/exam/examDelete/<%= dto.getId() %>">삭제</a>
-				<a href="/exam/examModifyForm/<%= dto.getId() %>">수정</a>
+				<a href="/exam/examList/${pageInfo.getPNo()}">목록으로</a>  <!-- 절대주소로 작성해야한다, 뎁스가 많아서 엇갈릴 수 있어서--> 
+				<a href="/exam/examDelete/${pageInfo.getPNo()}/<%= dto.getId() %>">삭제</a>
+				<a href="/exam/examModifyForm/${pageInfo.getPNo()}/<%= dto.getId() %>">수정</a>
 			</td>
 		</tr>
 	</table>
